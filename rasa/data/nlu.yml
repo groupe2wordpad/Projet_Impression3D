@@ -1,0 +1,599 @@
+version: "3.1"
+
+
+nlu:
+# Definition des synomyne
+
+- synonym: Statuette
+  examples: |
+    - idole
+    - statue
+    - divinité
+    - objet d'art
+    - fétiches
+
+- synonym: Histoire
+  examples: |
+    - existence
+    - vecues
+    - passé
+    - parcours
+    - biographie
+    - récit
+    - conte
+    - 
+
+- synonym: Culture
+  examples: |
+    - croyance
+    - connaissance
+    - savoir-faire
+    - coutume
+    - civilisation
+    - mode de vie
+
+- synonym: Origine
+  examples: |
+    - génèse
+    - source
+    - racine
+    - naissance
+    - création
+    - lieu de création
+    - prevenance 
+
+- synonym: Peuple
+  examples: |
+    - habitant
+    - population
+    - communauté 
+    - groupe
+    - société
+    - clan
+    - tribu
+    - nation
+
+- synonym: Information
+  examples: |
+    - renseignements
+    - indication
+    - précision
+    - connaissance
+    - savoir
+    - communication
+    - message
+
+- synonym: rôle
+  examples: |
+    - fonction
+    - attribution
+    - devoir
+    - mission
+    - responsabilité
+    - tache
+
+- synonym: Singularité
+  examples: |
+    - particularité
+    - spécificité
+    - qualité
+    - caractéristique
+    - originalité
+
+- synonym: village
+  examples: |
+    - localité
+    - commune
+    - agglomération
+    - hameau
+    - bourg 
+
+- synonym: fabriquer
+  examples: |
+    - produire
+    - concevoir
+    - réaliser
+    - élaborer
+    - mettre au point
+
+- synonym: materiaux
+  examples: |
+    - matière
+    - subtances
+    - composants
+    - éléments
+    - resources
+    - fourniture
+
+- synonym: rite
+  examples: |
+    - cérémonie
+    - rituel
+    - tradition
+    - pratique
+    - usage
+    - coutume
+
+- synonym: baoulé
+  examples: |
+    - baouli
+
+- synonym: activité
+  examples: |
+    - Profession
+    - occupation
+    - mission
+    - action
+    - tâche
+    - exercice
+
+- synonym: fêtes
+  examples: |
+    - festivité
+    - célébration
+    - réjouissance
+    - commémoration
+    - manifestion
+    - solennité
+    - rassemblement
+
+- synonym: Croyance
+  examples: |
+    - fonction
+    - réligion
+    - conviction
+    - persuasion
+    - dogme
+    - espoir
+    - prétention
+
+- synonym: tenues
+  examples: |
+    - habits
+    - vêtements
+    - costume
+    - uniforme
+    - habillement
+    - accoutrement
+
+- synonym: Danse
+  examples: |
+    - pas
+    - ronde
+    - ballet
+    - performance
+
+- synonym: Importance
+  examples: |
+    - valeur
+    - conséquence
+    - priorité
+    - notoriété
+    - portée
+    - influence
+    - envergure
+    - signification
+
+- synonym: Ancetre
+  examples: |
+    - Ancien
+    - aieux
+    - progéniteurs
+    - prédécesseurs
+    - ascendants
+    - pères
+
+#Definition des questions d'interaction 
+
+#Questions Divers 
+- intent: salutation
+  examples: |
+    - hey
+    - hello
+    - hi
+    - Yo bro 
+    - yo 
+    - Hé
+    - Wesh
+    - Bien le bonjour
+    - Comment ça va ?
+    - hello there
+    - good morning
+    - good evening
+    - Salut
+    - Coucou
+    - bonjour
+    - bonsoir
+    - t'es la ?
+    - tu vas bien ?
+    - good afternoon
+- intent: Etat
+  examples: |
+    - Comment vas tu ?
+    - c'est comment 
+    - tu vas bien 
+    - comment te porte tu .
+    - sava bien ?
+    - comment te sents tu aujourd'hui 
+    - on dit quoi 
+    - quoi de neuf 
+    - sava ?
+    - je vais bien et toi
+    - je vais bien 
+    - sava 
+    - sava et toi
+    - et toi 
+    - et toi tu vas bien 
+    - je vais mal 
+    - je vais mal et toi 
+    - je ne vais pas bien 
+    - je ne me porte pas bien 
+    - je ne me porte pas bien et toi 
+
+
+    
+# Questions Sur Aboya 
+
+# Identité (de la statue ou de l’entité qui parle) et signification du nom
+
+- intent: Aboya_Identities
+  examples: |
+    - tu es qui ?
+    - qui est tu ?
+    - Qui t'a créé ?
+    - Parle moi de toi  
+    - qu'est ce que je dois savoir de toi 
+    - que peut tu me dire sur toi 
+    - Presente toi 
+    - qu'est ce que je peux savoir de toi 
+    - C'est quoi Aboya
+    - Qui est Aboya 
+    - Quel est ton nom
+    - C'est quoi ton nom 
+    - Comment tu t'appelles
+
+# Origine de la statuette Aboya
+- intent: Aboya_Origin
+  examples: |
+    - Tu viens d'où
+    - Quelle est l'origine de la statuette Aboya?
+    - Quelle est ton origine ? 
+    - De combien d'année date tu?
+    - Qui t’a sculptée et pourquoi ?
+    - Quel rôle jouais-tu dans la société Baoulé ?
+    - Depuis combien d'année tu existe ? 
+    - Tu es de quelle peuple
+    - A quelle peuple appartien tu 
+    - D'ou viens-tu ?
+    - Je veux des informations sur ta provenance
+    - tu es de quelle origine
+
+
+# Role     
+- intent: Aboya_Role
+  examples: |
+    - Tu sers a quoi ?
+    - Quel est ton rôle dans la culture Baoulé ?
+    - C'est quoi ton role 
+    - Quelle est ta signification dans la culture Baoulé
+    - Quelle est ta signification
+    - Quelle signification peut t'on peut on donner a la statuette 
+    - c'est quoi ton role dans la culture baoulé
+     
+# Importance et utilite de la statuette Aboya 
+- intent: Aboya_Importance
+  examples: |
+    - Que représente tu pour le peuple Baoulé ?
+    - Que représente tu dans la culture baoulé ?
+    - Quelle est ton utilité ?
+    - A quelle occasion est tu sollicité ou utilisé ?.
+    - Que represente la statuette pour le peuple Baoule
+    - Qu'est ce que tu incarnes dans la culture baoulé
+    - Tu incarne quoi dans la culture Baoulé
+    - Qu'est ce que tu decris dans la culture baoulé 
+    - Tu symbolise quoi dans la culture baoulé
+
+
+# Histoire de création d'Aboya
+- intent: Aboya_Histoire
+  examples: |
+    - Quelle est ton histoire?
+    - Pourquoi le nom Aboya
+    - Que signifie aboya?
+    - J'aimerais connaître l'histoire de Aboya
+    - Quels est l'histoire derrière cette statue ?
+    - Quelle est la dévotion que les baoulé ont envers toi et d'où vient son origine
+    - quelle l'inspiration culturelle de cette invention humaine ?
+    - Aboya qu’est ce qui a inspiré ta création ?
+    
+    - 
+
+# Particularité d'Aboya
+- intent: Aboya_Particularité
+  examples: |
+    - Quelle est ta particularité et qu'est ce qui te  rend si singulière ?
+    - Quelle est ta particularité
+    - qu'est ce qui te  rend si singulière ?
+    - En quoi est tu differente des autres statues
+    - qu'est ce qui te differencie des autres statues
+    - Quelle est ta singularité
+
+
+# Description et Signification attribut physique et position
+
+
+# Representation d'Aboya
+- intent: Aboya_Representation 
+  examples: |
+    - Est-ce que tu représentes quelque chose de particulier ?
+    - Es-tu une représentation d’un esprit, d’un ancêtre ou d’un être humain ?
+    - Représentes-tu un homme ou une femme ? Et pourquoi ?
+    - Qu'est ce que la statuette incarne
+
+# Materiel de fabrication d'Aboya
+- intent: Aboya_Materiel_Fabrication # Representation d'Aboya
+  examples: |
+    - Quelle sont les matériaux qui ont été utilisés pour te concevoir
+    - Quel matériau a été utilisé pour te fabriquer ?
+
+# Signification symbole sur la tete 
+- intent: Aboya_Signication_Symbole_Tete
+  examples: |
+    - Quel est le symbole que tu portes sur la tête ?
+   
+# Explication posture
+- intent: Aboya_Signication_Posture
+  examples: |
+    - Pourquoi as-tu cette posture assise ? Est-ce un signe de sagesse ou de respect ?
+
+# Explication Expression du visage
+- intent: Aboya_Signication_Posture
+  examples: |
+    - Que signifie l’expression de ton visage ?
+    
+# Utilisation dans les rituels et rites
+- intent: Aboya_Rite
+  examples: |
+    - Dans quel rite est tu utilisé
+    - As-tu été utilisée dans des rituels ? Si oui, lesquels ?
+
+# Localisation de ABOYA
+- intent: Aboya_Village 
+  examples: |
+    - Quelles sont les villages ou on te trouve ?
+    - Tu es issue de quel village ?
+
+
+# QUESTION SUR LES BAOULES
+
+# Histoire des baoulés
+- intent: Baoule_History
+  examples: |
+    - L’origine des baoulés
+    - Raconte moi l'histoire du peuple baoulé
+    - Les baoule sont arrivés quand en côte d ivoire
+    - Je veux savoir plus sur l’origine du peuple Baoulé et sa Culture.
+    - D'où viennent le peuple baoulé ? 
+    - En quel année il s'installe en côte d'ivoire et par quel moyen ? 
+    - Qui sont les Baoulé et d’où viennent-ils ?
+
+# Histoire des traditions
+- intent: Baoule_Tradition
+  examples: |
+    - Comment ce peuple vivait avant
+    - Quelle était leur activité
+
+# Veracité Legende Abla Pokou 
+- intent: Baoule_Veracité_Legende
+  examples: |
+    - La légende de Abla pokou est tellement réelle?
+
+# Organisation Politique des Baoulés
+- intent: Baoule_Organisation_Politique
+  examples: |
+    - Quelle est leur organisation politique, économique et sociale ? 
+    - Quelle est l'organisation politique ,economique et social des baoulé
+    - C'est quoi l'organisation politique, economique et social des baoulé
+    - Parle moi de l'organisation politique economique et social des baoulé
+
+# Evenement et célébration
+- intent: Baoule_Fete_rejouissance
+  examples: |
+    - Cite Moi les différentes fêtes de réjouissances du peuple baoulé ? 
+    - quelles sont les differentes fetes de rejouissances chez les baoulés
+
+# Croyance religieuse 
+- intent: Baoule_Croyance_Religieuse
+  examples: |
+    - Quel est leur croyance ?
+    - Quelles sont les croyances spirituelles des Baoulé ?
+    
+# Localisation des baoulés
+- intent: Baoule_Croyance_Religieuse
+  examples: |
+    - Où vivent les baoulés
+    - Dans quelle region trouve t'on les baoulés
+    - Dans quelle localité trouve t'on les baoulés 
+    - 
+    -
+
+# Culture baoulé 
+- intent: Baoule_Culture_Baoulé
+  examples: |
+    - Détaille moi un peu la culture Baoulé
+    - Qu'est ce qu'on peut retenir de cette culture 
+    - Parle moi de la culture Baoulé
+
+# Tenues Baoulé
+- intent: Baoule_Tenue
+  examples: |
+    - Quelles sont les tenues que porte les BAOULES 
+
+# Masque Baoulé
+- intent: Baoule_Tenue
+  examples: |
+    - Quelles sont les differents type de Masque Baoulé 
+    - Quelle est la signification du masque [Goli](masque) chez les Baoulé ?
+
+# Danse Baoulé
+- intent: Baoule_Tenue
+  examples: |
+    - Quelles sont les differents type de danses  chez les baoulés
+
+#Habitude Culinaire
+- intent: Baoule_Tenue
+  examples: |
+    - L'habitude culinaire des baoulés ?
+    - Les baoulés mangent quoi 
+
+# Rites des baoulés 
+- intent: Baoule_Tenue
+  examples: | 
+    - Pourquoi lave-t'on les jeunes filles à la puberté?
+
+- intent: Baoule_Rite
+  examples: | 
+    - Quelles sont les differents rites qui existent chez les baoulés
+
+# Importance de la culture baoulé
+- intent: Baoule_Importance 
+  examples: | 
+    - Quelle est l'importance de la culture baoulé dans ce pays, où il existe une multitude de langue et de culture
+
+# Symbolisme de la statue chez les baoulé
+- intent: Baoule_Symbolique_Statuette
+  examples: | 
+    - Pourquoi l'instauration de statuettes dans votre culture ?
+    - Quel est le rôle des statuettes dans la tradition Baoulé ?
+
+# Actualité Statuette
+- intent: Baoule_Statuette_Actualité 
+  examples: | 
+    - Les Baoulé utilisent-ils toujours ces statuettes aujourd’hui ?
+
+# Symbole important dans la culture baoulé
+- intent: Baoule_Symbole_Important 
+  examples: | 
+    - Quels sont les symboles les plus importants dans la culture Baoulé ?
+
+# Celebration des ancetres 
+- intent: Baoule_Hommage_ancetre
+  examples: | 
+    - Comment les Baoulé célèbrent-ils leurs ancêtres ?
+
+# Role Femme  
+- intent: Baoule_Role_Femme
+  examples: | 
+    - Quel est le rôle de la femme dans la société Baoulé 
+
+# Coiffure travaillé statuette baoulé
+- intent: Baoule_Coiffure_Statuette
+  examples: | 
+    - Pourquoi la coiffure est-elle si travaillée sur les statuettes Baoulé ?
+
+# Baoule Transmission Culture
+- intent: Baoule_Transmission_Culture
+  examples: | 
+    - Comment la culture Baoulé est-elle transmise aux jeunes générations ?
+  
+
+# Alliance ethnique
+- intent: Baoule_Transmission_Culture
+  examples: | 
+    - Les Baoulé sont les alliés de quel peuple
+    - Quelles sont les alliés des baoulé
+    -
+    -
+    - 
+
+# Alliance Baoulé  
+- intent: Baoule_Alliance
+  examples: | 
+    - Les Baoulé sont les alliés de quel peuple
+
+# Celebration 
+- intent: Baoule_Celebration
+  examples: | 
+  - Les Baoulé observent quelle fête de plus après parquinou ?
+
+    
+ 
+
+
+
+
+
+
+
+    
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+    
+
+
+
+
+    
+    
+    
+
+
+
+
+
+
+
+
+
+
+
+    
+
+
+

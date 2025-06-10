@@ -1,0 +1,38 @@
+version: "3.1"
+
+stories:
+
+- story:  Salutation et Question
+  steps:
+  - intent: salutation
+  - action: utter_salutation
+  - intent: Information_sur_le_chat
+  - action: utter_information_sur_le_chat
+  - action: utter_information
+  
+ 
+
+- story: salutation et question REPONSE agnis
+  steps:
+  - intent: salutation
+  - action: utter_salutation
+  - intent: Information_agnis
+  - action: utter_Information_agnis
+
+- story: salutation et question REPONSE baoule
+  steps:
+  - intent: salutation
+  - action: utter_salutation
+  - intent: Information_baoule
+  - action: utter_Information_baoule
+
+- story: salutation et information Cote d'Ivoire
+  steps:
+  - intent: salutation
+  - action: utter_salutation
+  - intent: Information_sur_la_CI
+  - action: utter_Information_sur_la_CI
+ 
+ 
+
+

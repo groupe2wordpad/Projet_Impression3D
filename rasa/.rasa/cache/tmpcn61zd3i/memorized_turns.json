@@ -1,0 +1,10 @@
+{
+  "lookup": {
+    "eJyLrq6NBQAEOAGx": "action_listen",
+    "eJyLrq7VUaguKEoti09MLsnMz7NSqIYw4vMSc1OtFKCcnMziktQ8oNrS4tQioJrMPCC3xEqhODGntCQRpKS2NhYAehsdsg==": "utter_salutation",
+    "eJyLrq7VUaguKEoti09MLsnMz7NSqIYw4vMSc1OtFKCcnMziktQ8oNrS4tQioJrMPCC3xEqhODGntCQRpKSWgEGlJSWpRfFI6vGaFQsAptA7Hg==": "action_listen",
+    "eJyLrq7VUaguKEoti09MLsnMz7NSqIYw4vMSc1OtFKCcnMziktQ8oNrS4tQioJrMPCC3xEqhODGntCQRpKSWgEGlJSWpRfFI6ikwi4CjPPPS8otywSbFF5cWxeekxidnJJbU1sYCAAqbXEk=": "utter_information_sur_le_chat",
+    "eJyLrq7VUaguKEoti09MLsnMz7NSqIYw4vMSc1OtFKCcnMziktQ8oNrS4tQioJrMPCC3xEqhODGntCQRpKSWgEGlJSWpRfFI6ikwi4CjPPPS8otywSbFF5cWxeekxidnJJYQ58JMHJppZgsJJscCAFK4pyE=": "utter_choix_utilisateur",
+    "eJy1kNsJwzAMRVfxAJ3AG3SGUIQwKhE4cpGlEjDZPe7joz8lKW3/dOHo6KKhLYfQLkpXwGRcJIb2GEBwohieIXM1ks56Je0MS48WQ8Xshjdk2RC5GSm88F+4Nkod5Vx0upugukImSCPavob8ZvlvV35sTmPhGdy4fweNXD/wn1YD58yo": "action_listen"
+  }
+}

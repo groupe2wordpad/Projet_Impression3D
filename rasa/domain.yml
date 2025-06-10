@@ -1,0 +1,34 @@
+version: "3.1"
+
+intents:
+  - salutation
+  - Information_sur_le_chat
+  - Information_sur_la_CI
+  - Information_agnis
+  - Information_baoule
+ 
+responses:
+  utter_salutation:
+  - text: "Salut! Comment vas tu?"
+
+  utter_information_sur_le_chat:
+  - text: "Je suis Makers_IA ton assistant IA qui t'aide a en savoir plus sur la culture de la belle terre de Cote d'Ivoire"
+  
+  utter_information:
+  - text: "Je peux te donner des informations sur la Cote d'Ivoire de facon générale ainsi que sur la culture des peuples agnis,baoulé et sénoufo "
+  
+  utter_choix_utilisateur:
+  - text: "Que souhaite tu savoir d'autre ?"
+
+  utter_Information_sur_la_CI:
+  - text: "La Côte d'Ivoire est un pays d'Afrique de l'Ouest doté de stations balnéaires, de forêts tropicales et d'un patrimoine colonial français. Abidjan, sur la côte Atlantique, est le principal centre urbain du pays. Ses sites modernes regroupent la Pyramide, un édifice en béton faisant penser à une ziggourat. La cathédrale Saint-Paul est une structure inclinée rattachée à une immense croix. Au nord du quartier central des affaires, le parc national du Banco est une réserve de forêt tropicale au sein de laquelle serpentent des chemins de randonnée."
+  
+  utter_Information_agnis:
+  - text: "Les Agnis sont un peuple d'Afrique de l'Ouest d'environ 1 200 000 personnes, vivant principalement en Côte d'Ivoire. Ils sont également présents au voisin Ghana. Ils ont été le premier peuple de la région à entrer en contact avec les Européens au XVIIᵉ siècle."
+  
+  utter_Information_baoule:
+  - text: "Les Baoulés sont un peuple de Côte d'Ivoire, vivant pour sa grande majorité au centre du pays, dans les villes de Bouaké et de Yamoussoukro Il n'y a pas d'étude statistique axée sur les ethnies en Côte d'Ivoire. Toutefois, en 2021, le grand groupe ethnique Akan répresente 38,0% de la population ivoirienne[1]. Les Baoulés font partie du groupe Akan et sont originaires du royaume Ashanti, situé dans le Ghana actuel."
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
