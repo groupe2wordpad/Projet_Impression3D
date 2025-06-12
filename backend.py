@@ -4,7 +4,7 @@ app = Flask(__name__)
 
 @app.route('/')
 def home():
-    return render_template("index.html")
+    return render_template("carousel.html")
 
 # Route pour servir le fichier manifest.json depuis static/
 @app.route('/manifest.json')
