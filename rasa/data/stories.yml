@@ -2,37 +2,58 @@ version: "3.1"
 
 stories:
 
-- story:  Salutation et Question
+#Scenario 1 Salutation phrase introductive ,etat et reponse a l'etat
+
+- story:  Salutation et Phrase Introductive
   steps:
   - intent: salutation
   - action: utter_salutation
-  - intent: Information_sur_le_chat
-  - action: utter_information_sur_le_chat
-  - action: utter_information
+  - intent: Etat
+  - action: utter_Etat
+  
+#Scenario 2  Demande d'identité et signification gestuelle generale
+- story:  Demande Identite
+  steps:
+  - intent: Aboya_Identities
+  - action: utter_Aboya_Identities
+
+
+#Scenario 3 S demande explication gestuelle
+- story:  Demande Signification gestuelle
+  steps:
+  - intent: Aboya_Signification_Gestuelles_generale
+  - action: utter_Aboya_Signification_Gestuelles_generale
+
+
+#Scenario 4  demande materiaux de fabrication
+- story:  Demande materiel fabrication
+  steps:
+  - intent: Aboya_Materiel_Fabrication
+  - action: utter_Aboya_Materiel_Fabrication
+
+
+#Scenario 5 demande materiaux de fabrication
+- story: Signification Posture assise
+  steps:
+  - intent: Aboya_Signification_Posture_assise
+  - action: utter_Aboya_Signification_Posture_assise
+
+
+#Scenario 6 Demande signe sur la tete
+#- story: Signification signe sur la tete
+#  steps:
+#  - intent: Aboya_Aboya_Signification_Symbole_Tete
+#  - action: utter_Aboya_Signification_Symbole_Tete
+
+
+  
+
+
+
+
   
  
 
-- story: salutation et question REPONSE agnis
-  steps:
-  - intent: salutation
-  - action: utter_salutation
-  - intent: Information_agnis
-  - action: utter_Information_agnis
 
-- story: salutation et question REPONSE baoule
-  steps:
-  - intent: salutation
-  - action: utter_salutation
-  - intent: Information_baoule
-  - action: utter_Information_baoule
-
-- story: salutation et information Cote d'Ivoire
-  steps:
-  - intent: salutation
-  - action: utter_salutation
-  - intent: Information_sur_la_CI
-  - action: utter_Information_sur_la_CI
- 
- 
 
 

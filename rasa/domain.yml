@@ -1,34 +1,106 @@
 version: "3.1"
 
 intents:
+#Intent Divers
   - salutation
-  - Information_sur_le_chat
-  - Information_sur_la_CI
-  - Information_agnis
-  - Information_baoule
- 
+  - Etat
+# Intent sur Aboya
+  - Aboya_Identities
+  - Aboya_Role
+  - Aboya_Importance
+  - Aboya_Histoire 
+  - Aboya_Particularite
+  - Aboya_Representation
+  - Aboya_Materiel_Fabrication
+  - Aboya_Signification_Symbole_Tete
+  - Aboya_Signification_Posture_assise
+  - Aboya_Signification_Expression_Visage
+  - Aboya_Signification_Gestuelles_generale
+
+#Intent sur les Baoulés
+  - Baoule_History
+  - Baoule_Tradition
+  - Baoule_Veracité_Legende
+  - Baoule_Organisation_Politique
+  - Baoule_Fete_rejouissance
+  - Baoule_Croyance_Religieuse
+  - Baoule_Culture
+  - Baoule_Tenue
+  - Baoule_Masque
+  - Baoule_Danse
+  - Baoule_Habitude_Culinaire
+  - Baoule_Tradition1
+  - Baoule_Rite
+  - Baoule_Importance
+  - Baoule_Symbolique_Statuette
+  - Baoule_Statuette_Actualité
+  - Baoule_Symbole_Important
+  - Baoule_Hommage_ancetre
+  - Baoule_Role_Femme
+  - Baoule_Coiffure_Statuette
+  - Baoule_Transmission_Culture
+  - Baoule_Alliance
+  - Baoule_Celebration
+  
 responses:
+#Reponse question Divers
   utter_salutation:
-  - text: "Salut! Comment vas tu?"
+    - text: "Akwaba, bienvenue. Je suis N’Botumbo, ou Aboya, gardien ancien du peuple baoulé.
+           Via l’interface ci-dessous, tu peux me poser des questions sur moi ou sur mon peuple, les Baoulés. "
+  utter_Etat:
+    - text: "Je vais bien, petit du monde moderne.
+           La sagesse veille, et l’esprit des anciens m’accompagne.
+           Que Puis Je Faire Pour Toi ? "
 
-  utter_information_sur_le_chat:
-  - text: "Je suis Makers_IA ton assistant IA qui t'aide a en savoir plus sur la culture de la belle terre de Cote d'Ivoire"
-  
-  utter_information:
-  - text: "Je peux te donner des informations sur la Cote d'Ivoire de facon générale ainsi que sur la culture des peuples agnis,baoulé et sénoufo "
-  
-  utter_choix_utilisateur:
-  - text: "Que souhaite tu savoir d'autre ?"
+#Reponse Question sur Aboya
+  utter_Aboya_Identities:
+    - text: " Je suis N’Botumbo, aussi appelé Aboya, une statuette sacrée du peuple baoulé.
+           Bien que de base je sois sculpté dans un bois dur et ancien, recouvert d’une couche solide appelée patine qui montre mon âge et mon importance,
+           la version de moi que tu vois ici en face de toi est une reproduction faite par impression 3D avec une résine spéciale.Ainsi, mon esprit et ma force restent présents, même dans cette nouvelle apparence.
+           Ma tête ressemble à celle d’un singe avec une gueule allongée et ouverte, où l’on voit de grandes dents.
+           Dans mes mains, je tiens une coupe.
+           Je suis un objet très puissant. Je protège les personnes qui me respectent contre les dangers invisibles 
+           la sorcellerie, les maladies, et les attaques des ennemis.
+           Je suis lié à des forces très fortes, plus puissantes que les esprits de la forêt.
+           C’est pour cela qu’on me garde loin des femmes, à l’écart du village, et que je ne sors que pour des cérémonies très importantes.
+           Mon apparence, un peu menaçante, montre que je suis là pour défendre et protéger.
+           Pose-moi encore ta question, si tu en as ."
 
-  utter_Information_sur_la_CI:
-  - text: "La Côte d'Ivoire est un pays d'Afrique de l'Ouest doté de stations balnéaires, de forêts tropicales et d'un patrimoine colonial français. Abidjan, sur la côte Atlantique, est le principal centre urbain du pays. Ses sites modernes regroupent la Pyramide, un édifice en béton faisant penser à une ziggourat. La cathédrale Saint-Paul est une structure inclinée rattachée à une immense croix. Au nord du quartier central des affaires, le parc national du Banco est une réserve de forêt tropicale au sein de laquelle serpentent des chemins de randonnée."
-  
-  utter_Information_agnis:
-  - text: "Les Agnis sont un peuple d'Afrique de l'Ouest d'environ 1 200 000 personnes, vivant principalement en Côte d'Ivoire. Ils sont également présents au voisin Ghana. Ils ont été le premier peuple de la région à entrer en contact avec les Européens au XVIIᵉ siècle."
-  
-  utter_Information_baoule:
-  - text: "Les Baoulés sont un peuple de Côte d'Ivoire, vivant pour sa grande majorité au centre du pays, dans les villes de Bouaké et de Yamoussoukro Il n'y a pas d'étude statistique axée sur les ethnies en Côte d'Ivoire. Toutefois, en 2021, le grand groupe ethnique Akan répresente 38,0% de la population ivoirienne[1]. Les Baoulés font partie du groupe Akan et sont originaires du royaume Ashanti, situé dans le Ghana actuel."
+  utter_Aboya_Signification_Gestuelles_generale:
+    - text: "Ma posture debout, avec les jambes un peu pliées, montre que je suis toujours prêt à protéger.
+            Je veille sur tous ceux qui respectent les traditions du peuple baoulé.
+            Je suis là pour les défendre contre les dangers qu’on ne voit pas :
+            la sorcellerie, les maladies bizarres, les mauvais esprits, ou même des ennemis venus de loin.
+            Je suis toujours en alerte, prêt à réagir, jour et nuit, sans jamais me reposer.
+            Ma tête, avec sa forme de singe et ses grandes dents, est faite pour faire peur aux forces mauvaises.
+            Ce n’est pas une tête humaine, car je représente des forces très anciennes et très puissantes.
+            Je tiens une coupe dans mes mains. Pendant les cérémonies, on y met des offrandes pour les esprits :
+            de la nourriture, du sang ou des œufs. Cette coupe sert à transmettre les messages entre les humains et les esprits puissants.
+            Tu peux continuer à me poser tes questions, je suis là pour te répondre."
 
+  utter_Aboya_Signification_Posture_assise:
+    - text: "Ma posture debout, avec les jambes un peu pliées, montre que je suis toujours prêt à protéger.
+            Je veille sur tous ceux qui respectent les traditions du peuple baoulé.
+            Je suis là pour les défendre contre les dangers qu’on ne voit pas :
+            la sorcellerie, les maladies bizarres, les mauvais esprits, ou même des ennemis venus de loin.
+            Je suis toujours en alerte, prêt à réagir, jour et nuit, sans jamais me reposer. 
+            Tu peux continuer à me poser tes questions, je suis là pour te répondre."
+
+  utter_Aboya_Materiel_Fabrication:
+    - text: "Ma version originale est faite en bois dur, un bois solide et ancien, recouvert d’une patine qui la protège et lui donne ce bel aspect.
+             Mais la représentation que tu vois ici, en face de toi, a été réalisée autrement : elle est faite par impression 3D avec une résine spéciale.
+             Cette technique moderne permet de créer une copie  de ma forme et de mes détails, même si le matériau est différent.
+             Ainsi, mon esprit et ma force restent présents, même dans cette nouvelle apparence.
+             Tu peux continuer à me poser tes questions, je suis là pour te répondre."
+
+  
+
+  # utter_Aboya_Signification_Symbole_Tete:
+  #  - text: ""
+
+  
+
+  
 session_config:
   session_expiration_time: 60
   carry_over_slots_to_new_session: true
