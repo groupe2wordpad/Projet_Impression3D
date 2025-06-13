@@ -5,8 +5,8 @@
 <title>Texte Magique ABOYA parle</title>
 <style>
   body {
-    background: #111;
-    color: #F77F00;
+    background: #f8f5f0;
+    color: #4b2e15;
     font-family: 'Courier New', Courier, monospace;
     display: flex;
     align-items: center;
@@ -17,11 +17,12 @@
 
   #texte-parle {
     font-size: 3rem;
-    text-shadow: 0 0 10px #F77F00, 0 0 20px #F77F00;
+    text-shadow: 0 0 10px #4b2e15, 0 0 20px #4b2e15;
     letter-spacing: 4px;
     white-space: nowrap;
     overflow: hidden;
-    border-right: 0.15em solid #F77F00;
+    font-weight:bold;
+    border-right: 0.15em solid #4b2e15;
     box-sizing: border-box;
     animation: glowPulse 1.5s infinite alternate;
   }
@@ -44,6 +45,7 @@
 </head>
 <body>
 
+<!-- Interface 3 : ABOYA PARLE -->
 <div id="texte-parle"></div>
 
 <script>
@@ -54,7 +56,7 @@
   function typeWriter(text, element, speed, callback) {
     let i = 0;
     element.textContent = '';
-    element.style.borderRight = "0.15em solid #F77F00";
+    element.style.borderRight = "0.15em solid #4b2e15";
     const interval = setInterval(() => {
       element.textContent += text.charAt(i);
       i++;

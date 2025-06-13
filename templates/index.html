@@ -91,11 +91,6 @@
    .img-right{
     margin-right:2em;
    }
-   
-
-    
-    
-
     /* Texte animé au centre */
     #animated-text {
       font-family: 'Courier New', monospace;
@@ -147,8 +142,7 @@
 
     }
 
-    #cadre_medias_masques,
-    #cadre_medias_danse {
+    #cadre_medias_masques {
       width: 100%;
       height: 100vh;
       display: flex;
@@ -158,10 +152,30 @@
       overflow: hidden;
     }
 
-    /* Cacher tous sauf masques au départ */
-    #cadre_medias_danse {
-      display: none;
-    }
+  #cadre_medias_danse {
+    display: none;              /* caché par défaut */
+    width: 100%;
+    height: 100%;
+    padding: 1rem;
+    box-sizing: border-box;
+
+    display: flex;              /* affichage flex pour centrer */
+    justify-content: center;
+    align-items: center;
+
+    background-color: #f8f5f0;  /* optionnel : fond neutre */
+  }
+
+  #cadre_medias_danse video {
+    max-width: 100%;
+    max-height: 88vh;
+    object-fit: contain;
+    border-radius: 10px;
+    display: block;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.2); /* optionnel pour style */
+  }
+
+
 
     .carousel-fade {
       position: relative;
@@ -187,28 +201,85 @@
       opacity: 1;
       z-index: 1;
     }
+     
 
-    #cadre_medias_danse video {
-      max-height: 88vh;
-      max-width: 200%;
-      object-fit: contain;
-      border-radius: 10px;
-      display: block;
-      margin: 0 auto;
+  #texte-parle {
+    font-size: 3rem;
+    text-shadow: 0 0 10px #4b2e15, 0 0 20px #4b2e15;
+    letter-spacing: 4px;
+    white-space: nowrap;
+    overflow: hidden;
+    font-weight:bold;
+    border-right: 0.15em solid #4b2e15;
+    box-sizing: border-box;
+    animation: glowPulse 1.5s infinite alternate;
+  }
+
+  @keyframes glowPulse {
+    0% {
+      text-shadow: 0 0 10px #F77F00, 0 0 20px #F77F00;
+      transform: scale(1);
     }
+    50% {
+      text-shadow: 0 0 20px #F77F00, 0 0 40px #F77F00;
+      transform: scale(1.05);
+    }
+    100% {
+      text-shadow: 0 0 10px #F77F00, 0 0 20px #F77F00;
+      transform: scale(1);
+    }
+  }
+    
 
     
 
-    /* -------- RESPONSIVE -------- */
+    /* -------- TABLETTE DEBOUT -------- */
 @media screen and (max-width: 768px) {
   #typewriter {
     font-size: 2em;
+    font-weight:bold;
   }
 
   .container {
     padding: 20px;
   }
+  #page-aboya .container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* ← centre verticalement */
+  align-items: center;     /* ← centre horizontalement */
+  height: 100vh;           /* ← prend toute la hauteur de la page */
+  padding: 0;
+}
+   #texte-parle {
+    font-size: 3rem;
+    text-shadow: 0 0 10px #4b2e15, 0 0 20px #4b2e15;
+    letter-spacing: 4px;
+    white-space: nowrap;
+    overflow: hidden;
+    font-weight:bold;
+    
+    border-right: 0.15em solid #4b2e15;
+    box-sizing: border-box;
+    animation: glowPulse 1.5s infinite alternate;
+  }
 
+  @keyframes glowPulse {
+    0% {
+      text-shadow: 0 0 10px #F77F00, 0 0 20px #F77F00;
+      transform: scale(1);
+    }
+    50% {
+      text-shadow: 0 0 20px #F77F00, 0 0 40px #F77F00;
+      transform: scale(1.05);
+    }
+    100% {
+      text-shadow: 0 0 10px #F77F00, 0 0 20px #F77F00;
+      transform: scale(1);
+    }
+  }
+
+  
   header {
     display: flex;
     margin-top:2em;
@@ -261,6 +332,29 @@
     aspect-ratio: 4 / 3;
   }
 
+  #cadre_medias_masques {
+      width: 80%;
+      height: 80vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #fff;
+      overflow: hidden;
+    }
+
+    .carousel-fade img {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      height: 70vh;
+      width: auto;
+      object-fit: contain;
+      object-position: center center;
+      opacity: 0;
+      transition: opacity 1s ease-in-out;
+    }
+
 }
 /* --- Responsive spécifique écran 8.7" portrait (typique ~ 1200x1920) --- */
 @media screen and (min-width: 800px) and (max-width: 1300px) and (orientation: portrait) {
@@ -295,6 +389,10 @@
       margin-top: 2em;
       
     }
+   
+    
+
+    
 
     
     
@@ -303,7 +401,7 @@
   
 }
 
-/* --- Responsive spécifique écran 8.7" paysage (typique ~ 1920x1200) --- */
+/* --- TABLETTE RETOURNE --- */
 @media screen and (min-width: 800px) and (max-width: 2000px) and (orientation: landscape) {
   .container {
     padding: 20px 40px 40px 40px;
@@ -324,7 +422,7 @@
       height: 400%;
       
     }
-
+    
     /* Images animées à gauche et droite */
     .img-left, .img-right {
       width: 10%;
@@ -393,6 +491,46 @@
       
     }
 
+  #page-aboya .container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* ← centre verticalement */
+  align-items: center;     /* ← centre horizontalement */
+  height: 100vh;           /* ← prend toute la hauteur de la page */
+  padding: 0;
+}
+
+#texte-parle {
+  font-size: 3rem;
+  text-shadow: 0 0 10px #4b2e15, 0 0 20px #4b2e15;
+  letter-spacing: 4px;
+  white-space: nowrap;
+  overflow: hidden;
+  font-weight: bold;
+  border-right: 0.15em solid #4b2e15;
+  box-sizing: border-box;
+  animation: glowPulse 1.5s infinite alternate;
+  
+}
+
+
+
+  @keyframes glowPulse {
+    0% {
+      text-shadow: 0 0 10px #F77F00, 0 0 20px #F77F00;
+      transform: scale(1);
+    }
+    50% {
+      text-shadow: 0 0 20px #F77F00, 0 0 40px #F77F00;
+      transform: scale(1.05);
+    }
+    100% {
+      text-shadow: 0 0 10px #F77F00, 0 0 20px #F77F00;
+      transform: scale(1);
+    }
+  }
+
+
     
 
     
@@ -412,7 +550,7 @@
 
   
 
- <!-- PAGE 1 : Au repos -->
+<!-- INTERFACE 1 : Au repos -->
 <div id="page-repos" class="page active">
   <div class="container">
     <div id="glb-viewer"></div>
@@ -420,7 +558,7 @@
   </div>
 </div>
 
-<!-- PAGE 2 : Interaction avec textarea et bouton envoyer -->
+<!-- INTERFACE 2 : Interaction avec textarea et bouton envoyer -->
 <div id="page-interaction" class="page">
   <header>
     <img src="static/img/aboya.png" class="img-left" alt="Image gauche" />
@@ -431,7 +569,14 @@
   <button id="send-button" aria-label="Envoyer la question">Envoyer</button>
 </div>
 
-<!-- PAGE 3 : CAROUSEL MEDIA -->
+<!-- INTERFACE 3 : Aboya parle normalement -->
+<div id="page-aboya" class="page">
+  <div class="container">
+    <p id="texte-parle" class="aboya-text"></p>
+  </div>
+</div>
+
+<!-- INTERFACE 4 : CAROUSEL MEDIA -->
 <div id="page-media" class="page">
   <!-- MASQUES -->
   <div id="cadre_medias_masques">
@@ -484,6 +629,49 @@
     }
   }
 
+  // --- PAGE 3 : Aboya parle normalement ---
+  const texteParle = document.getElementById('texte-parle');
+const aboyaMessage = "ABOYA PARLE";
+const aboyaSpeed = 150;
+
+function typeWriterLoop(text, element, speed) {
+  let i = 0;
+  let isDeleting = false;
+
+  function loop() {
+    if (!isDeleting) {
+      // écriture
+      element.textContent = text.substring(0, i + 1);
+      element.style.borderRight = "0.15em solid #F77F00"; // curseur visible
+      i++;
+      if (i === text.length) {
+        // texte fini d’écrire, on attend un peu puis on passe en effacement
+        setTimeout(() => {
+          isDeleting = true;
+          loop();
+        }, 1000); // pause 1s à la fin de la frappe
+        return;
+      }
+    } else {
+      // effacement
+      element.textContent = text.substring(0, i - 1);
+      i--;
+      if (i === 0) {
+        // texte effacé, on passe à nouveau à l’écriture
+        isDeleting = false;
+        setTimeout(loop, 500); // pause 0.5s avant de recommencer
+        return;
+      }
+    }
+    setTimeout(loop, speed);
+  }
+
+  loop();
+}
+
+
+
+
   // --- Auto resize de la textarea selon contenu ---
   function enableTextareaAutoResize() {
     const textarea = document.querySelector('#page-interaction textarea');
@@ -504,12 +692,22 @@
     enableTextareaAutoResize();
   }
 
-  // --- Gestion du passage de page 2 vers page 3 ---
-  function goToPageMedia() {
+  // --- Gestion du passage de page 2 vers page 3 (Aboya parle) ---
+  function goToPageAboya() {
     document.getElementById("page-interaction").classList.remove("active");
+    document.getElementById("page-aboya").classList.add("active");
+    // lancement de la boucle d’écriture magique
+    typeWriterLoop(aboyaMessage, texteParle, aboyaSpeed); 
+    setTimeout(goToPageMedia, 15000);
+  }
+
+  // --- Gestion du passage de page 3 vers page 4 (media carousel) ---
+  function goToPageMedia() {
+    document.getElementById("page-aboya").classList.remove("active");
     document.getElementById("page-media").classList.add("active");
     startCarousel();
     startSectionSwitcher();
+    setTimeout(goToPageMedia, 15000);
   }
 
   // --- Événement click bouton envoyer ---
@@ -520,8 +718,8 @@
     const message = textarea.value.trim();
     if (!message) return;
     // Ici tu peux traiter le message si besoin (ex: envoi serveur)
-    // Puis basculer vers la page média
-    goToPageMedia();
+    // Puis basculer vers la page aboya qui parle
+    goToPageAboya();
   }
 
   sendButton.addEventListener("click", handleUserMessage);
@@ -534,7 +732,7 @@
     }
   });
 
-  // --- PAGE 3 : CAROUSEL MASQUES ---
+  // --- PAGE 4 : CAROUSEL MASQUES ---
   const carouselContainer = document.getElementById("carousel-masques");
   const slides = carouselContainer.querySelectorAll("img");
   let currentSlide = 0;
@@ -602,6 +800,12 @@
     }
   });
 
+  // --- Lancement initial ---
+  window.onload = () => {
+    typeWriterRepos();
+  };
+
+
   // --- THREE.JS GLB Viewer ---
   let camera, renderer, container, scene, controls;
 
@@ -652,18 +856,22 @@
 
   // --- INITIALISATION AU CHARGEMENT ---
   window.onload = () => {
-    typeWriterRepos();
-    initGLBViewer();
+  typeWriterRepos();
+  initGLBViewer();
 
-    // Passage automatique page 1 -> page 2 après 10 secondes
-    setTimeout(goToPageInteraction, 10000);
-  };
-  // Après passage page 1 -> page 2, lancement du timer pour page 2 -> page 3
+  // Après 10 secondes → page 1 → page 2
   setTimeout(() => {
-    document.getElementById("page-interaction").classList.remove("active");
-    document.getElementById("page-media").classList.add("active");
-    startCarousel();  // démarre le carousel quand on arrive à la page 3
-  }, 15000); // 15 secondes
+    goToPageInteraction();
+
+    // Après 10 secondes supplémentaires → page 2 → page 3
+    setTimeout(() => {
+      goToPageAboya();
+    }, 15000);  // ← ici c’est 30 secondes après affichage de la page 2
+
+  }, 15000);
+};
+
+  
 
 
   // --- GESTION DU RESIZE ---
