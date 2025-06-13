@@ -15,6 +15,7 @@
     body {
       margin: 0;
       background-color: #f8f5f0;
+      
       font-family: 'Verdana', Tahoma, Geneva, sans-serif;
       overflow-x: hidden;
     }
@@ -143,6 +144,57 @@
 
     #send-button:hover {
       background-color: #cc6500;
+
+    }
+
+    #cadre_medias_masques,
+    #cadre_medias_danse {
+      width: 100%;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #fff;
+      overflow: hidden;
+    }
+
+    /* Cacher tous sauf masques au départ */
+    #cadre_medias_danse {
+      display: none;
+    }
+
+    .carousel-fade {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+    }
+
+    .carousel-fade img {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      height: 80vh;
+      width: auto;
+      object-fit: contain;
+      object-position: center center;
+      opacity: 0;
+      transition: opacity 1s ease-in-out;
+    }
+
+    .carousel-fade img.active {
+      opacity: 1;
+      z-index: 1;
+    }
+
+    #cadre_medias_danse video {
+      max-height: 88vh;
+      max-width: 200%;
+      object-fit: contain;
+      border-radius: 10px;
+      display: block;
+      margin: 0 auto;
     }
 
     
@@ -360,202 +412,268 @@
 
   
 
-  
-   <!-- PAGE 1 : Au repos -->
-  <div id="page-repos" class="page active">
-    <div class="container">
-      <div id="glb-viewer"></div>
-      <h1 id="typewriter"></h1>
+ <!-- PAGE 1 : Au repos -->
+<div id="page-repos" class="page active">
+  <div class="container">
+    <div id="glb-viewer"></div>
+    <h1 id="typewriter"></h1>
+  </div>
+</div>
+
+<!-- PAGE 2 : Interaction avec textarea et bouton envoyer -->
+<div id="page-interaction" class="page">
+  <header>
+    <img src="static/img/aboya.png" class="img-left" alt="Image gauche" />
+    <img src="static/img/aboya.png" class="img-right" alt="Image droite" />
+  </header>
+  <div id="animated-text"></div>
+  <textarea placeholder="Posez Votre Question..............."></textarea>
+  <button id="send-button" aria-label="Envoyer la question">Envoyer</button>
+</div>
+
+<!-- PAGE 3 : CAROUSEL MEDIA -->
+<div id="page-media" class="page">
+  <!-- MASQUES -->
+  <div id="cadre_medias_masques">
+    <div class="carousel-fade" id="carousel-masques">
+      <img src="/static/medias/masques/Masque_Blo.png" class="slide active" />
+      <img src="/static/medias/masques/Masque_Goli.png" />
+      <img src="/static/medias/masques/Masque_Goli_Glen.png" />
+      <img src="/static/medias/masques/Masque_kpan.png" />
+      <img src="/static/medias/masques/Masque_kple.png" />
     </div>
   </div>
 
-  <!-- PAGE 2 : Interaction avec textarea et bouton envoyer -->
-  <div id="page-interaction" class="page">
-    <header>
-      <img src="static/img/aboya.png" class="img-left" alt="Image gauche" />
-      <img src="static/img/aboya.png" class="img-right" alt="Image droite" />
-    </header>
-    <div id="animated-text"></div>
-    <textarea placeholder="Posez Votre Question..............."></textarea>
-    <button id="send-button" aria-label="Envoyer la question">Envoyer</button>
+  <!-- DANSE (vidéo) -->
+  <div id="cadre_medias_danse" style="display:none;">
+    <video id="video-danse" controls autoplay muted playsinline>
+      <source src="/static/medias/danses/Danse_Goli.mp4" type="video/mp4" />
+      Votre navigateur ne supporte pas la vidéo.
+    </video>
   </div>
+</div>
 
-  <!-- PAGE 3 : Carrousel d'images -->
-  <div id="page-pagne" class="page">
-    <div id="cadre_medias">
-      <div class="carousel-fade">
-        <img src="/static/img/pagne1.jpg" class="slide active" alt="Pagne 1" />
-        <img src="/static/img/pagne2.png" class="slide" alt="Pagne 2" />
-        <img src="/static/img/pagne3.jpg" class="slide" alt="Pagne 3" />
-      </div>
-    </div>
-  </div>
+<script>
+  // --- PAGE 1 : Texte animé "typewriter" ---
+  const typewriterEl = document.getElementById("typewriter");
+  const textRepos = "N'BOTUMBO INTERFACE";
 
-  <script>
-    /* --- PAGE 1 : Texte animé "typewriter" --- */
-    const typewriterEl = document.getElementById("typewriter");
-    const textRepos = "N'BOTUMBO INTERFACE";
+  async function typeWriterRepos() {
+    while (document.getElementById("page-repos").classList.contains("active")) {
+      typewriterEl.innerHTML = "";
+      for (let i = 0; i < textRepos.length; i++) {
+        typewriterEl.innerHTML += textRepos.charAt(i);
+        await new Promise(r => setTimeout(r, 150));
+      }
+      await new Promise(r => setTimeout(r, 2000));
+    }
+  }
 
-    async function typeWriterRepos() {
-      while (true) {
-        typewriterEl.innerHTML = "";
-        for (let i = 0; i < textRepos.length; i++) {
-          typewriterEl.innerHTML += textRepos.charAt(i);
-          await new Promise(r => setTimeout(r, 150)); // pause entre chaque lettre
+  // --- PAGE 2 : Texte animé dans header ---
+  const animatedTextEl = document.getElementById("animated-text");
+  const textInteraction = "Que souhaites-tu savoir sur moi ou sur la culture baoulé ?";
+
+  async function typeWriterInteraction() {
+    while (document.getElementById("page-interaction").classList.contains("active")) {
+      animatedTextEl.innerHTML = "";
+      for (let i = 0; i < textInteraction.length; i++) {
+        animatedTextEl.innerHTML += textInteraction.charAt(i);
+        await new Promise(r => setTimeout(r, 200));
+      }
+      await new Promise(r => setTimeout(r, 1500));
+    }
+  }
+
+  // --- Auto resize de la textarea selon contenu ---
+  function enableTextareaAutoResize() {
+    const textarea = document.querySelector('#page-interaction textarea');
+    if (!textarea) return;
+    const adjustHeight = () => {
+      textarea.style.height = 'auto';
+      textarea.style.height = textarea.scrollHeight + 'px';
+    };
+    textarea.addEventListener('input', adjustHeight);
+    adjustHeight();
+  }
+
+  // --- Gestion du passage de page 1 vers page 2 ---
+  function goToPageInteraction() {
+    document.getElementById("page-repos").classList.remove("active");
+    document.getElementById("page-interaction").classList.add("active");
+    typeWriterInteraction();
+    enableTextareaAutoResize();
+  }
+
+  // --- Gestion du passage de page 2 vers page 3 ---
+  function goToPageMedia() {
+    document.getElementById("page-interaction").classList.remove("active");
+    document.getElementById("page-media").classList.add("active");
+    startCarousel();
+    startSectionSwitcher();
+  }
+
+  // --- Événement click bouton envoyer ---
+  const sendButton = document.getElementById("send-button");
+  const textarea = document.querySelector('#page-interaction textarea');
+
+  function handleUserMessage() {
+    const message = textarea.value.trim();
+    if (!message) return;
+    // Ici tu peux traiter le message si besoin (ex: envoi serveur)
+    // Puis basculer vers la page média
+    goToPageMedia();
+  }
+
+  sendButton.addEventListener("click", handleUserMessage);
+
+  // Envoi aussi avec la touche Entrée sans saut de ligne
+  textarea.addEventListener('keypress', function(e) {
+    if (e.key === 'Enter') {
+      e.preventDefault();
+      handleUserMessage();
+    }
+  });
+
+  // --- PAGE 3 : CAROUSEL MASQUES ---
+  const carouselContainer = document.getElementById("carousel-masques");
+  const slides = carouselContainer.querySelectorAll("img");
+  let currentSlide = 0;
+  let carouselInterval;
+
+  function nextSlide() {
+    slides[currentSlide].classList.remove("active");
+    currentSlide = (currentSlide + 1) % slides.length;
+    slides[currentSlide].classList.add("active");
+  }
+
+  function startCarousel() {
+    if (carouselInterval) clearInterval(carouselInterval);
+    carouselInterval = setInterval(nextSlide, 3000);
+  }
+
+  function stopCarousel() {
+    if (carouselInterval) clearInterval(carouselInterval);
+  }
+
+  // --- SWITCHER ENTRE LES DEUX SECTIONS MEDIA ---
+  const sections = [
+    document.getElementById("cadre_medias_masques"),
+    document.getElementById("cadre_medias_danse")
+  ];
+  let currentIndex = 0;
+  let switcherInterval;
+
+  function switchSection() {
+    sections[currentIndex].style.display = "none";
+    currentIndex = (currentIndex + 1) % sections.length;
+    sections[currentIndex].style.display = "flex";
+
+    if (currentIndex === 0) {
+      startCarousel();
+      // Pause la vidéo si elle joue
+      video.pause();
+      video.currentTime = 0;
+    } else {
+      stopCarousel();
+      video.play();
+    }
+  }
+
+  function startSectionSwitcher() {
+    switcherInterval = setInterval(switchSection, 60000);
+  }
+
+  function stopSectionSwitcher() {
+    if (switcherInterval) clearInterval(switcherInterval);
+  }
+
+  // --- VIDEO ---
+  const video = document.getElementById("video-danse");
+  video.loop = false;
+
+  video.addEventListener("play", () => {
+    stopCarousel();
+  });
+
+  video.addEventListener("ended", () => {
+    // Quand la vidéo se termine, repasser à la section masques avec carousel
+    if (sections[0].style.display === "flex") {
+      startCarousel();
+    }
+  });
+
+  // --- THREE.JS GLB Viewer ---
+  let camera, renderer, container, scene, controls;
+
+  function initGLBViewer() {
+    container = document.getElementById('glb-viewer');
+    scene = new THREE.Scene();
+
+    camera = new THREE.PerspectiveCamera(50, container.clientWidth / container.clientHeight, 0.1, 1000);
+    camera.position.set(0, 1, 2.5);
+
+    renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
+    renderer.setSize(container.clientWidth, container.clientHeight);
+    renderer.setClearColor(0xf8f5f0, 1);
+    container.appendChild(renderer.domElement);
+
+    controls = new THREE.OrbitControls(camera, renderer.domElement);
+    controls.enableDamping = true;
+    controls.dampingFactor = 0.05;
+    controls.autoRotate = true;
+    controls.autoRotateSpeed = 5.0;
+
+    const loader = new THREE.GLTFLoader();
+
+    loader.load('/static/models/Statuette3D.glb', function(gltf) {
+      gltf.scene.traverse((child) => {
+        if (child.isMesh) {
+          child.material = new THREE.MeshBasicMaterial({ color: 0xF77F00 });
+          child.geometry.computeBoundingBox();
+          const box = child.geometry.boundingBox;
+          const center = new THREE.Vector3();
+          box.getCenter(center);
+          child.position.sub(center);
+          child.position.y -= 0.2;
         }
-        await new Promise(r => setTimeout(r, 2000)); // pause avant de recommencer
-      }
-    }
-
-    /* --- PAGE 2 : Texte animé dans header --- */
-    const animatedTextEl = document.getElementById("animated-text");
-    const textInteraction = "Que souhaites-tu savoir sur moi ou sur la culture baoulé ?";
-
-    async function typeWriterInteraction() {
-      while (true) {
-        animatedTextEl.innerHTML = "";
-        for (let i = 0; i < textInteraction.length; i++) {
-          animatedTextEl.innerHTML += textInteraction.charAt(i);
-          await new Promise(r => setTimeout(r, 200));
-        }
-        await new Promise(r => setTimeout(r, 1500));
-      }
-    }
-
-    /* --- Auto resize de la textarea selon contenu --- */
-    function enableTextareaAutoResize() {
-      const textarea = document.querySelector('textarea');
-      const adjustHeight = () => {
-        textarea.style.height = 'auto'; // reset pour recalculer la hauteur
-        textarea.style.height = textarea.scrollHeight + 'px';
-      };
-      textarea.addEventListener('input', adjustHeight);
-      adjustHeight(); // initial resize
-    }
-
-    /* --- Transition automatique de la page 1 vers page 2 au bout de 10 secondes --- */
-    setTimeout(() => {
-      document.getElementById("page-repos").classList.remove("active");
-      document.getElementById("page-interaction").classList.add("active");
-      typeWriterInteraction();  // lancement du texte animé page 2
-      enableTextareaAutoResize(); // active le redimensionnement auto de la textarea
-    }, 10000);
-
-    /* --- Lancement du texte animé page 1 au chargement --- */
-    window.onload = typeWriterRepos;
-
-    /* --- GESTION ENVOI MESSAGE & DETECTION DU MOT "pagne" --- */
-    const textarea = document.querySelector("textarea");
-    const sendButton = document.getElementById("send-button");
-
-    function handleUserMessage() {
-      const message = textarea.value.toLowerCase();
-      if (message.includes("pagne")) {
-        // On masque page interaction et on affiche page carrousel
-        document.getElementById("page-interaction").classList.remove("active");
-        document.getElementById("page-pagne").classList.add("active");
-        startCarousel();
-      }
-    }
-
-    sendButton.addEventListener("click", handleUserMessage);
-
-     
-
-    // Permet d'envoyer le message avec la touche Entrée (sans saut de ligne)
-    textarea.addEventListener('keypress', function (e) {
-      if (e.key === 'Enter') {
-        e.preventDefault(); // empêche saut de ligne
-        handleUserMessage();
-      }
-    });
-
-    /* --- CARROUSEL FADE --- */
-    let currentIndex = 0;
-    const slides = document.querySelectorAll('.carousel-fade .slide');
-    const slideDuration = 5000;
-    let carouselStarted = false;
-
-    function startCarousel() {
-      if (carouselStarted) return; // empêche plusieurs timers
-      carouselStarted = true;
-      setInterval(() => {
-        slides[currentIndex].classList.remove('active');
-        currentIndex = (currentIndex + 1) % slides.length;
-        slides[currentIndex].classList.add('active');
-      }, slideDuration);
-
-    }
-
-    // THREE.JS GLB Viewer
-    // Variables globales pour Three.js
-    let camera, renderer, container;
-
-    function initGLBViewer() {
-      container = document.getElementById('glb-viewer');
-      const scene = new THREE.Scene();
-
-      camera = new THREE.PerspectiveCamera(50, window.innerWidth / window.innerHeight, 0.1, 1000);
-      camera.position.set(0, 1, 2.5);
-
-      renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
-      renderer.setSize(container.clientWidth, container.clientHeight);
-      renderer.setClearColor(0xf8f5f0, 1);
-      container.appendChild(renderer.domElement);
-
-      const controls = new THREE.OrbitControls(camera, renderer.domElement);
-      controls.enableDamping = true;
-      controls.dampingFactor = 0.05;
-      controls.autoRotate = true;
-      controls.autoRotateSpeed = 5.0;
-
-      const loader = new THREE.GLTFLoader();
-
-      loader.load('/static/models/Statuette3D.glb', function(gltf) {
-        gltf.scene.traverse((child) => {
-          if (child.isMesh) {
-            child.material = new THREE.MeshBasicMaterial({
-              color: 0xF77F00
-            });
-
-            child.geometry.computeBoundingBox();
-            const box = child.geometry.boundingBox;
-            const center = new THREE.Vector3();
-            box.getCenter(center);
-
-            child.position.sub(center);
-            child.position.y -= 0.2;
-          }
-        });
-
-        scene.add(gltf.scene);
-        animate();
-      }, undefined, function(error) {
-        console.error('Erreur de chargement GLB :', error);
       });
-
-      function animate() {
-        requestAnimationFrame(animate);
-        controls.update();
-        renderer.render(scene, camera);
-      }
-    }
-
-    // Appelle la fonction d'initialisation au chargement
-    window.onload = () => {
-      typeWriterRepos();
-      initGLBViewer();  // Ajout de l'initialisation du viewer ici
-    }
-
-    // Gestion du resize
-    window.addEventListener('resize', () => {
-      if (!camera || !renderer || !container) return;
-      camera.aspect = container.clientWidth / container.clientHeight;
-      camera.updateProjectionMatrix();
-      renderer.setSize(container.clientWidth, container.clientHeight);
+      scene.add(gltf.scene);
+      animate();
+    }, undefined, function(error) {
+      console.error('Erreur de chargement GLB :', error);
     });
 
-  </script>
+    function animate() {
+      requestAnimationFrame(animate);
+      controls.update();
+      renderer.render(scene, camera);
+    }
+  }
+
+  // --- INITIALISATION AU CHARGEMENT ---
+  window.onload = () => {
+    typeWriterRepos();
+    initGLBViewer();
+
+    // Passage automatique page 1 -> page 2 après 10 secondes
+    setTimeout(goToPageInteraction, 10000);
+  };
+  // Après passage page 1 -> page 2, lancement du timer pour page 2 -> page 3
+  setTimeout(() => {
+    document.getElementById("page-interaction").classList.remove("active");
+    document.getElementById("page-media").classList.add("active");
+    startCarousel();  // démarre le carousel quand on arrive à la page 3
+  }, 15000); // 15 secondes
+
+
+  // --- GESTION DU RESIZE ---
+  window.addEventListener('resize', () => {
+    if (!camera || !renderer || !container) return;
+    camera.aspect = container.clientWidth / container.clientHeight;
+    camera.updateProjectionMatrix();
+    renderer.setSize(container.clientWidth, container.clientHeight);
+  });
+</script>
 
   
   <script>

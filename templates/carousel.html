@@ -11,14 +11,20 @@
       overflow-x: hidden;
     }
 
-    #cadre_medias_masques {
+    #cadre_medias_masques,
+    #cadre_medias_danse {
       width: 100%;
-      height: 100vh; /* Hauteur pleine */
+      height: 100vh;
       display: flex;
       align-items: center;
       justify-content: center;
       background: #fff;
       overflow: hidden;
+    }
+
+    /* Cacher tous sauf masques au départ */
+    #cadre_medias_danse {
+      display: none;
     }
 
     .carousel-fade {
@@ -33,54 +39,137 @@
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
-      height: 80vh; /* Taille grande */
+      height: 80vh;
       width: auto;
       object-fit: contain;
-      object-position: center center; /* centre l’image */
+      object-position: center center;
       opacity: 0;
       transition: opacity 1s ease-in-out;
-      border: none; /* enlever bord si tu en avais */
-      margin: 0;
-      padding: 0;
     }
 
     .carousel-fade img.active {
       opacity: 1;
       z-index: 1;
     }
+
+    #cadre_medias_danse video {
+      max-height: 88vh;
+      max-width: 200%;
+      object-fit: contain;
+      border-radius: 10px;
+      display: block;
+      margin: 0 auto;
+    }
+    @media screen and (min-width: 800px) and (max-width: 1300px) and (orientation: portrait) {
+ 
+    
+   #cadre_medias_danse video {
+      max-height: 86vh;
+      max-width: 100%;
+      border:1px solid red;
+      object-fit: contain;
+      border-radius: 10px;
+      display: block;
+      margin: 0 auto;
+    }
+
+    
+
+    
+
+   
+}
   </style>
 </head>
 <body>
   <div id="page-media" class="page">
+    <!-- MASQUES -->
     <div id="cadre_medias_masques">
-      <div class="carousel-fade">
+      <div class="carousel-fade" id="carousel-masques">
         <img src="/static/medias/masques/Masque_Blo.png" class="slide active" />
-        <img src="/static/medias/masques/Masque_Goli.png" class="slide1" />
-        <img src="/static/medias/masques/Masque_Goli_Glen.png" class="slide2" />
-        <img src="/static/medias/masques/Masque_kpan.png" class="slide3" />
-        <img src="/static/medias/masques/Masque_kple.png" class="slide4" />
+        <img src="/static/medias/masques/Masque_Goli.png" />
+        <img src="/static/medias/masques/Masque_Goli_Glen.png" />
+        <img src="/static/medias/masques/Masque_kpan.png" />
+        <img src="/static/medias/masques/Masque_kple.png" />
       </div>
     </div>
-    <div id="cadre_medias_nouritures">
-      <div class="carousel-fade">
-        <img src="/static/medias/nouritures/Masque_Blo.png" class="slide active" />
-        <img src="/static/medias/nouritures/" class="slide1" />
-        <img src="/static/medias/nouritures/Masque_Goli_Glen.png" class="slide2" />
-        <img src="/static/medias/nouritures/Masque_kpan.png" class="slide3" />
-        <img src="/static/medias/nouritures/Masque_kple.png" class="slide4" />
-      </div>
+
+    <!-- DANSE (vidéo) -->
+    <div id="cadre_medias_danse">
+      <video id="video-danse" controls autoplay muted playsinline>
+        <source src="/static/medias/danses/Danse_Goli.mp4" type="video/mp4">
+        Votre navigateur ne supporte pas la vidéo.
+      </video>
     </div>
   </div>
 
   <script>
-    // Carrousel simple
-    const slides = document.querySelectorAll(".carousel-fade img");
+    // Variables globales pour carousel
+    const carouselContainer = document.getElementById("carousel-masques");
+    const slides = carouselContainer.querySelectorAll("img");
     let currentSlide = 0;
-    setInterval(() => {
+    let carouselInterval;
+
+    // Fonction pour changer slide
+    function nextSlide() {
       slides[currentSlide].classList.remove("active");
       currentSlide = (currentSlide + 1) % slides.length;
       slides[currentSlide].classList.add("active");
-    }, 3000);
+    }
+
+    // Démarre le carousel
+    function startCarousel() {
+      carouselInterval = setInterval(nextSlide, 3000);
+    }
+
+    // Stoppe le carousel
+    function stopCarousel() {
+      clearInterval(carouselInterval);
+    }
+
+    // Lancer le carousel au départ
+    startCarousel();
+
+    // Gestion changement de section
+    const sections = [
+      document.getElementById("cadre_medias_masques"),
+      document.getElementById("cadre_medias_danse")
+    ];
+    let currentIndex = 0;
+
+    setInterval(() => {
+      // Masquer section actuelle
+      sections[currentIndex].style.display = "none";
+      currentIndex = (currentIndex + 1) % sections.length;
+      // Afficher nouvelle section
+      sections[currentIndex].style.display = "flex";
+
+      // Si on revient sur les masques, redémarre le carousel
+      if(currentIndex === 0){
+        startCarousel();
+      } else {
+        // Sinon on stoppe le carousel (au cas où)
+        stopCarousel();
+      }
+    }, 60000);
+
+    // Gestion vidéo
+    const video = document.getElementById("video-danse");
+    // Pas de boucle sur vidéo
+    video.loop = false;
+
+    // Quand la vidéo démarre, on stoppe le carousel
+    video.addEventListener("play", () => {
+      stopCarousel();
+    });
+
+    // Quand la vidéo se termine, on relance le carousel
+    video.addEventListener("ended", () => {
+      // Si on est sur la section masques, on démarre le carousel
+      if(sections[0].style.display === "flex"){
+        startCarousel();
+      }
+    });
   </script>
 </body>
 </html>
