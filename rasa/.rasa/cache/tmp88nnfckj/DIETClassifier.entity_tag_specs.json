@@ -1,0 +1,20 @@
+[
+  {
+    "tag_name": "entity",
+    "ids_to_tags": {
+      "1": "B-masque",
+      "2": "I-masque",
+      "3": "L-masque",
+      "4": "U-masque",
+      "0": "O"
+    },
+    "tags_to_ids": {
+      "B-masque": 1,
+      "I-masque": 2,
+      "L-masque": 3,
+      "U-masque": 4,
+      "O": 0
+    },
+    "num_tags": 5
+  }
+]

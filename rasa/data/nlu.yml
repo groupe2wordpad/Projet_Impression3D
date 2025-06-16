@@ -1,5 +1,6 @@
 version: "3.1"
 nlu:
+
   # Définition des synonymes
   - synonym: Statuette
     examples: |
@@ -21,17 +22,23 @@ nlu:
       - récit
       - conte
       - tradition
+      - Legende
+      - origine
+      - genèse
+      - parcours
       - mémoire
 
 
   - synonym: Culture
     examples: |
-      - croyance
-      - connaissance
-      - savoir-faire
-      - coutume
-      - civilisation
-      - mode de vie
+      - tradition
+      - héritage 
+      - identité 
+      - patrimoine 
+      - mode de vie 
+      - coutumes
+      - civilisation 
+      - société
 
   - synonym: Origine
     examples: |
@@ -46,8 +53,9 @@ nlu:
   - synonym: Peuple
     examples: |
       - habitant
-      - population
+      - population  
       - communauté
+      - ethnie
       - groupe
       - société
       - clan
@@ -137,6 +145,11 @@ nlu:
       - manifestations
       - solennités
       - rassemblements
+      - rituel festif
+      - moment de liesse
+      - occasion spéciale
+      - journée sacrée
+      - moment de commémoration
 
   - synonym: Croyance
     examples: |
@@ -168,6 +181,7 @@ nlu:
     examples: |
       - sens
       - message
+      - portée
       - but
       - valeur
       - utilité
@@ -231,7 +245,6 @@ nlu:
     examples: |
       - intelligence
       - connaissance
-      - esprit
       - maturité
       - réflexion
 
@@ -272,14 +285,6 @@ nlu:
       - sommet du crâne 
       - front 
       - haut du visage 
-
-
-  - synonym: Objet
-    examples: |
-    - élément
-    - ornement
-    - accessoire
-    - chose
   
   - synonym: Expression du visage
     examples: |
@@ -289,26 +294,360 @@ nlu:
       - regard
       - attitude faciale
       - figure
+  
+  - synonym: venir de
+    examples: |
+      - être originaire de
+      - avoir ses racines à
+      - provenir de
+      - être né à
+      - habiter à
+      - arriver de
+  
+  - synonym: rôle
+    examples: |
+      - fonction
+      - mission
+      - devoir
+      - place
+      - tâche
+      - responsabilité
+      - charge
+      - position
+  
+  - synonym: mission
+    examples: |
+      - tâche
+      - devoir
+      - fonction
+      - responsabilité
+  
+  - synonym: représentes
+    examples: |
+      - symbolises
+      - incarnes
+      - exprimes
+      - signifies
+      - veux dire
 
+  - synonym: importance
+    examples: |
+      - valeur
+      - poids
+      - rôle
+      - influence
 
+  - synonym: parcours
+    examples: |
+      - chemin
+      - trajet
+      - évolution
  
-    
-
+  - synonym: singulière
+    examples: |
+      - unique
+      - spéciale
+      - différente
+      - exceptionnelle
   
-
-
-
-
-
+  - synonym: différencier
+    examples: | 
+      - distinguer
+      - séparer
   
+  - synonym: esprit
+    examples: |   
+      - force invisible
+      - entité
+      - génie
+      - énergie spirituelle
+ 
+  - synonym: ancêtre
+    examples: |
+      - aïeul
+      - prédécesseur
+      - esprit ancien
+      - figure fondatrice
 
-  
-
-        
+  - synonym: être humain
+    examples: |
+      - homme
+      - femme
+      - individu
+      - personne
       
+  - synonym: genre (homme/femme)
+    examples: |
+      - sexe, , 
+      - identité
+      - apparence sexuelle
+
+  - synonym: migration
+    examples: |
+      - déplacement
+      - traversée
+      - exode
+      - mouvement
+      - voyage
+
+  - synonym: installation
+    examples: |
+      - établissement 
+      - arrivée
+      - implantation
+
+  - synonym: ancêtres
+    examples: |
+      - aïeux  
+      - anciens
+      - fondateurs
+      - prédécesseurs
+
+  - synonym: époque
+    examples: |
+      - période
+      - temps
+      - moment de l’histoire
+
+  - synonym: Ghana
+    examples: |
+      - ancien royaume Ashanti,
+      - territoire voisin
+
+  - synonym: Côte d’Ivoire
+    examples: |
+      - terre d’accueil
+      - destination
+      - région actuelle
+      - Cite
+      - mere patrie
+      
+  - synonym: legende
+    examples: |
+      - mythe 
+      - récit fondateur
+      - conte
+      - histoire ancienne
+
+  - synonym: reine Pokou
+    examples: |
+      - Abla Pokou
+      - fondatrice
+      - chef
+      - dirigeante historique
+
+  - synonym: Qu’est-ce qui fait que
+    examples: |
+      - pour quelle raison
+      - dans quel but
+      - À cause de quoi
+      - Pour quelle cause
+      - D’où vient que
+      - pourquoi
+      - Quelle est la raison pour laquelle
+
+  - synonym: Durant quelle période 
+    examples: |
+      - quand
+      - à quelle époque
+      - À quelle date
+      - À quel instant
+      - À quel point dans le temps
+      - à quel moment	
+
+  - synonym: de quelle manière
+    examples: |
+      - comment
+      - par quel moyen
+      - Selon quelle méthode
+      - De quelle façon
+      - À travers quoi
+      - De quelle technique
+      - Avec quelles étapes
+
+  - synonym: qui
+    examples: |
+      - quel peuple
+      - quelle ethnie
+      - quel groupe
+      - Quelle personne	
+      - L’identité de… 
+      - Le nom de qui… ?
+           
+  - synonym: est-ce que
+    examples: |
+      - est-ce vrai que
+      - dis-moi si
+      - peux-tu me dire si
+      - Sais-tu si
+      - peut-on dire que
+      - dirait-on que, 
+      - serait-il vrai que
+      - peut-on croire que
+
+  - synonym: vivre
+    examples: |
+      - habiter
+      - exister
+      - survivre
+      - résider
+      - cohabiter
+      - cohabiter
+      - mener leur vie
+      - se débrouiller
+      - subsister
+      - s'organiser
+      - passer leur quotidien
+      - vivre leur quotidien
+      - s’établir
+      - évoluer
+     
+  - synonym: travail
+    examples: |
+      - occupation
+      - tâche
+      - fonction
+      - métier
+      - rôle
+      - travail quotidien
+      - pratique
+      - spécialité
+      - emploi
+      - moyens de subsistance
+      - production
+      - contribution sociale
+
+  - synonym: artisanat
+    examples: |
+      - fabrication manuelle
+      - création d’objets
+      - œuvres artisanales
+      - art local
+      - métiers manuels
+      - pratiques culturelles
+      - expression artistique
+      
+  - synonym: agriculture
+    examples: |
+      - exploitation agricole
+      - travail des champs
+      - jardinage traditionnel
+
+  - synonym: réelle
+    examples: |
+      - vraie 
+      - authentique
+      - historique
+      - crédible
+      - prouvée
+      - vérifiable
+      - fondée
+
+  - synonym: organisation
+    examples: |
+      - Structure
+      - Fonctionnement
+      - Disposition
+      - Agencement
+      - Répartition
+      - Système
+      - Cadre
+
+  - synonym: politique
+    examples: |
+      - Gouvernance
+      - Administration
+      - Direction
+      - Pouvoir
+      - Autorité
+      
+  - synonym: économique
+    examples: |
+      - Financier
+      - Commercial
+      - Productif
+      - Industriel
+      - Monétaire
+      
+  - synonym: social
+    examples: |
+      - Sociétal
+      - Communautaire
+      - Culturel
+      - Relationnel
+      - Humain
+      
+  - synonym: citer
+    examples: | 
+      - énumérer
+      - nommer
+      - indiquer
+      - lister
+      - me parler de
+      - présenter
+      - évoquer
+      - donner des exemples de
+      - faire connaître
+      - mentionner
+      - décrire
+     
+  - synonym: croyances
+    examples: | 
+      - convictions
+      - foi
+      - religion
+      - pratiques spirituelles
+      - rites
+      - traditions religieuses
+
+  - synonym: spirituel
+    examples: | 
+      - religieuses
+      - mystiques
+      - ésotériques
+      - sacrées
+
+  - synonym: region
+    examples: | 
+      - zone
+      - territoire
+      - localisation
+      - aire
+      - secteur
+      - domaine
+
+  - synonym: assimiler
+    examples: | 
+      - comprendre 
+      - apprendre
+      - saisir
+      - noter
+      - retenir l’essentiel
+      - extraire
+      - tirer
+      
+  - synonym: être porté
+    examples: | 
+      - Être arboré
+      - Être enfilé
+      - Être revêtu
+      - Être habillé de
+      - Être vêtu de
+      - Être utilisé (pour un vêtement ou accessoire)
+      - Être orné de  
+      - Être mis (comme un vêtement)
+      - Être exhibé
+      - Être affiché (plus pour des accessoires ou signes visibles)
+      - Être exhibé
+      - Être adopté (pour un style ou une tenue)
+      - Être endossé
+      - Se parer de
+      - Se vêtir de
+ 
 
 
-  
+
+ # Questions Sur Divers
 
   - intent: salutation
     examples: |
@@ -373,7 +712,6 @@ nlu:
     examples: |
       - tu es qui ?
       - qui es-tu ?
-      - Qui t'a créé ?
       - Parle-moi de toi
       - qu'est-ce que je dois savoir de toi
       - que peux-tu me dire sur toi
@@ -384,6 +722,7 @@ nlu:
       - Quel est ton nom
       - C'est quoi ton nom
       - Comment tu t'appelles
+
 
 # Explication Gestuelle
   - intent: Aboya_Signification_Gestuelles_generale
@@ -471,9 +810,6 @@ nlu:
       - Ce que tu arboras sur ta tête, est-ce un emblème, un totem, ou une marque d’identité culturelle ?
       - Est-ce que l’objet qui orne ton crâne est un symbole d’autorité, de pouvoir ou de protection ?
       - Le motif que tu portes sur le sommet de ta tête, que symbolise-t-il dans la tradition baoulé ?
-
-  
-
   # Explication Expression du visage
   - intent: Aboya_Signification_Expression_Visage
     examples: |
@@ -503,10 +839,6 @@ nlu:
       - En quoi l’expression de ton visage est-elle significative dans ton rôle ?
       - Peut-on interpréter ton visage comme un signe de force, de sagesse ou de protection ?
       - Ton faciès sculpté contient-il un message caché destiné aux initiés ?
-
-
-
-
   # Origine de la statuette Aboya
   - intent: Aboya_Origin
     examples: |
@@ -522,7 +854,19 @@ nlu:
       - D'où viens-tu ?
       - Je veux des informations sur ta provenance
       - tu es de quelle origine
-
+      - Tu viens d’où ?
+      - D’où viens-tu ?
+      - Tu es d’où ?
+      - Qui t'a créé ?
+      - tu as été crée par qui ?
+      - qui est ton createur
+      - Tu habites où ?
+      - Quel est ton pays d’origine ?
+      - De quel endroit viens-tu ?
+      - Tu viens de quelle région ?
+      - D’où es-tu originaire ?
+      - Tu es né où ?
+      - Ton pays, c’est lequel ?
   # Rôle
   - intent: Aboya_Role
     examples: |
@@ -533,6 +877,16 @@ nlu:
       - Quelle est ta signification
       - Quelle signification peut-on te donner à la statuette
       - c'est quoi ton rôle dans la culture baoulé
+      - Quel est ton rôle chez les Baoulé ?
+      - Quelle fonction remplis-tu dans la culture Baoulé ?
+      - Que fais-tu dans la culture Baoulé ?
+      - Quelle est ta mission dans la tradition Baoulé ?
+      - À quoi sers-tu dans la culture Baoulé ?
+      - Quel rôle joues-tu chez les Baoulé ?
+      - Quelle place occupes-tu dans la culture Baoulé ?
+      - Quel est ton devoir dans la culture Baoulé ?
+      - Comment contribues-tu à la culture Baoulé ?
+      - Quelle est ta responsabilité chez les Baoulé ?
 
   # Importance et utilité de la statuette Aboya
   - intent: Aboya_Importance
@@ -546,6 +900,16 @@ nlu:
       - Tu incarnes quoi dans la culture Baoulé
       - Qu'est-ce que tu décris dans la culture baoulé
       - Tu symbolises quoi dans la culture baoulé
+      - Que symbolises-tu pour le peuple Baoulé ?
+      - Quelle est ta signification pour les Baoulé ?
+      - Quelle place occupes-tu pour le peuple Baoulé ?
+      - Quel est ton sens dans la culture Baoulé ?
+      - Que veux-tu dire pour les Baoulé ?
+      - Quel message portes-tu pour le peuple Baoulé ?
+      - Quelle importance as-tu pour les Baoulé ?
+      - Que représentes-tu dans la tradition Baoulé ?
+      - Quel rôle symbolises-tu pour les Baoulé ?
+      - Quelle est ta valeur pour le peuple Baoulé ?
 
   # Histoire de création d'Aboya
   - intent: Aboya_Histoire
@@ -557,6 +921,16 @@ nlu:
       - Quelle est la dévotion que les Baoulé ont envers toi et d'où vient son origine
       - Quelle est l'inspiration culturelle de cette invention humaine ?
       - Aboya qu’est-ce qui a inspiré ta création ?
+      - Quelle est ton histoire ?
+      - D’où viens-tu ?
+      - Quelle est ton origine ?
+      - Peux-tu raconter ton histoire ?
+      - Quelle est ta légende ?
+      - Quelle est ta naissance ?
+      - Raconte-moi ton passé.
+      - Quel est ton parcours ?
+      - Quelle est ta genèse ?
+      - Quelle est ton récit ?
 
   # Particularité d'Aboya
   - intent: Aboya_Particularite
@@ -567,6 +941,16 @@ nlu:
       - En quoi es-tu différente des autres statues
       - Qu'est-ce qui te différencie des autres statues
       - Quelle est ta singularité
+      - Quelle est ta particularité ?
+      - Qu’est-ce qui te rend unique ?
+      - Qu’est-ce qui te différencie des autres ?
+      - Quelle est ta spécificité ?
+      - Qu’est-ce qui te distingue ?
+      - Qu’est-ce qui fait que tu es spéciale ?
+      - En quoi es-tu différente ?
+      - Quelle est ta caractéristique principale ?
+      - Qu’est-ce qui te rend singulière ?
+      - Qu’est-ce qui te rend exceptionnelle ?
 
   # Description et Signification attribut physique et position
 
@@ -577,21 +961,95 @@ nlu:
       - Es-tu une représentation d’un esprit, d’un ancêtre ou d’un être humain ?
       - Représentes-tu un homme ou une femme ? Et pourquoi ?
       - Qu'est-ce que la statuette incarne
-
+      - Est-ce que tu symbolises quelque chose ?
+      - Que représentes-tu exactement ?
+      - As-tu une signification particulière ?
+      - Quel est ton symbole ?
+      - Que veux-tu dire ou montrer à travers ta forme ?
+      - Es-tu l’image de quelque chose de spécial ?
+      - As-tu une signification précise ?
+      - Que veux-tu représenter ?
+      - Es-tu un signe ou un symbole pour quelque chose ?
+      - Quelle est ta signification ?
+      - Représentes-tu un esprit ?
+      - Es-tu l’image d’un ancêtre ?
+      - Es-tu un être humain ?
+      - Es-tu un symbole d’un esprit ?
+      - tu la figure d’un ancêtre ?
+      - Es-tu une incarnation spirituelle ou humaine ?
+      - Es-tu la représentation d’une force invisible ?
+      - Es-tu un portrait d’un humain ou d’un esprit ?
+      - Es-tu une figure humaine ou spirituelle ?
+      - Quelle entité représentes-tu ?
+      - Es-tu la représentation d’un homme ou d’une femme ?
+      - Ton image est-elle masculine ou féminine ?
+      - Es-tu un homme ou une femme ?
+      - Quel est ton genre ?
+      - Pourquoi as-tu cette apparence ?
+      - Pourquoi es-tu un homme (ou une femme) ?
+      - Est-ce que ton genre a une signification ?
+      - Pourquoi représentes-tu ce genre ?
+      - Es-tu un symbole masculin ou féminin ?
+      - Que symbolise la statuette ?
+      - Que représente la statuette ?
+      - Quelle est la signification de la statuette ?
+      - Que veut dire cette statuette ?
+      - Quelle idée porte cette statuette ?
+      - Que traduit la statuette ?
+      - Quelle est la valeur symbolique de la statuette ?
+      - Que signifie la statuette ?
+      - Quelle est la force ou le message de cette statuette ?
+      - Que raconte cette statuette ?
   
-
   # Utilisation dans les rituels et rites
   - intent: Aboya_Rite
     examples: |
       - Dans quel rite es-tu utilisée
       - As-tu été utilisée dans des rituels ? Si oui, lesquels ?
+      - À quelle cérémonie sers-tu ?
+      - Dans quel rituel es-tu utilisée ?
+      - Pour quel usage rituel es-tu faite ?
+      - Quand est-ce qu’on fait appel à toi ?
+      - Dans quelles occasions les gens t’utilisent-ils ?
+      - À quel moment les Baoulé ont-ils besoin de toi ?
+      - Quel type de pratique t’utilise ?
+      - Es-tu utilisée pendant un rite spécial ?
+      - Dans quelles fêtes ou rites apparaîs-tu ?
+      - Es-tu liée à un culte ou une cérémonie particulière ?
+      - Quand est-ce qu’on t’utilise dans la tradition ?
+      - Quel est le moment sacré où tu es appelée ?
+      - Pour quels rituels les gens te consultent-ils ?
+      - Es-tu utilisée dans la vie de tous les jours ou seulement dans les rituels ?
+      - Quel est le moment précis où on t’honore ?
 
   # Localisation de ABOYA
   - intent: Aboya_Village
     examples: |
       - Quelles sont les villages où on te trouve ?
       - Tu es issue de quel village ?
-
+      - Dans quels villages es-tu présent ?
+      - Où peut-on te trouver ?
+      - Dans quelles régions ou quels endroits te trouve-t-on ?
+      - Tu es visible dans quels villages ?
+      - Dans quels lieux les gens te gardent ?
+      - Dans quel coin de la Côte d’Ivoire on te connaît ?
+      - Où est-ce que les gens te vénèrent ?
+      - Quels sont les villages où les Baoulé te gardent ?
+      - Tu appartiens à quel village ?
+      - Où vit ton culte ?
+      - Dans quels endroits on pratique tes rituels ?
+      - Où est-ce qu’on peut te voir ou te prier ?
+      - Es-tu lié à un village précis ?
+      - Dans quel village les anciens t’ont placé ?
+      -Où est-ce que ton esprit est présent ?
+  # Aboya Divinité
+  - intent: Aboya_Divinité
+    examples: |
+      - tu es une divinité
+      - est tu une divinité
+      - est tu Dieu
+      - tu es Dieu
+      -
 
 
 
@@ -611,46 +1069,247 @@ nlu:
       - D'où viennent le peuple baoulé ? 
       - En quel année il s'installe en côte d'ivoire et par quel moyen ? 
       - Qui sont les Baoulé et d’où viennent-ils ?
+      - Quelle est l’origine des Baoulés ?
+      - D’où viennent les Baoulés ?
+      - Qui sont les Baoulés ?
+      - Les Baoulés sont originaires d’où ?
+      - C’est quoi l’histoire du peuple Baoulé ?
+      - Quelle est l’histoire des Baoulés ?
+      - Comment les Baoulés sont arrivés en Côte d’Ivoire ?
+      - En quelle année les Baoulés sont-ils arrivés en Côte d’Ivoire ?
+      - À quelle époque les Baoulés se sont-ils installés en Côte d’Ivoire ?
+      - Par quel chemin ou territoire les Baoulés sont-ils venus ?
+      - Comment s’est faite la migration des Baoulés ?
+      - D’où les Baoulés sont-ils partis avant d’arriver en Côte d’Ivoire ?
+      - Le peuple Baoulé vient-il du Ghana ?
+      - J’aimerais en savoir plus sur l’origine du peuple Baoulé.
+      - Peux-tu me raconter l’histoire du peuple Baoulé et de sa culture ?
+      - Quelle est la culture du peuple Baoulé à l’origine ?
+      - D’où vient le nom “Baoulé” ?
+      - Quelles sont les légendes liées à la naissance du peuple Baoulé ?
+      - Est-ce vrai que les Baoulés sont liés à la reine Pokou ?
+      - Tu peux me raconter comment les Baoulés sont arrivés ici ?
+      - Dis-moi l’histoire des Baoulés, s’il te plaît.
+      - Et les Baoulés, ils viennent d’où ?
+      - Qui sont vraiment les Baoulés ?
+      - Je veux comprendre l’origine des Baoulés.
+      - Parle-moi de la migration des Baoulés.
+      - Quelle est la légende fondatrice des Baoulés ?
+      - Est-ce que les Baoulés ont fui un autre royaume ?
+      - Y a-t-il un personnage historique important dans leur origine ?
+      - Que raconte la tradition orale sur l’origine des Baoulés ?
 
 # Histoire des traditions
-  - intent: Baoule_Tradition
+  - intent: Baoule_Mode_de_Vie
     examples: |
       - Comment ce peuple vivait avant
       - Quelle était leur activité
+      - Comment vivaient les Baoulé autrefois ?
+      - Quel était leur mode de vie traditionnel ?
+      - De quoi les Baoulé vivaient-ils ?
+      - À quoi ressemblait leur quotidien ?
+      - Quelles étaient leurs habitudes de vie ?
+      - Comment s’organisait leur société ?
+      - Est-ce qu’ils vivaient en ville ou en village ?
+      - Quelle était leur structure sociale ?
+      - Est-ce qu’ils vivaient en famille élargie ?
+      - Quelle place occupait la royauté dans leur vie ?
+      - Quels étaient leurs rites et traditions au quotidien ?
+      - Comment les Baoulé vivaient-ils dans les temps anciens ?
+      - Quel genre de maisons construisaient-ils ?
+      - Comment était organisée la vie dans les villages baoulé ?
+      - Leur vie était-elle centrée sur la religion ?
+      - Quelle était la relation entre les Baoulé et la nature ?
+      - Quelle était leur alimentation ?
+      - Comment géraient-ils les conflits ou la justice ?
+      - Quelles étaient les activités principales des Baoulé ?
+      - Quelle était leur activité économique ?
+      - Qu’est-ce qu’ils faisaient pour survivre ?
+      - Est-ce qu’ils cultivaient la terre ?
+      - De quoi vivaient-ils exactement ?
+      - Est-ce que c’était un peuple d’agriculteurs ?
+      - Quels métiers pratiquaient-ils ?
+      - Est-ce qu’ils faisaient du commerce ?
+      - Quelles étaient leurs productions artisanales ?
+      - Est-ce qu’ils faisaient de la poterie, du tissage ou de la sculpture ?
+      - Ils vivaient de quoi exactement ?
+      - Leur économie reposait sur quoi ?
+      - Quelles plantes ou cultures faisaient-ils pousser ?
+      - Est-ce qu’ils élevaient des animaux ?
 
 # Veracité Legende Abla Pokou 
   - intent: Baoule_Veracité_Legende
     examples: |
-      - La légende de Abla pokou est tellement réelle?
+      - La légende de Abla pokou est t'elle réelle?
+      - Est-ce que la légende d’Abla Pokou est vraie ?
+      - La légende d’Abla Pokou, est-ce qu’elle s’est vraiment passée ?
+      - Est-ce que ce que raconte l’histoire d’Abla Pokou est réel ?
+      - Est-ce que l’histoire d’Abla Pokou est basée sur des faits ?
+      - C’est une histoire vraie ou une invention ?
+      - Est-ce que ce mythe correspond à la réalité historique ?
+      - Est-ce que c’est une vraie histoire ?
+      - La reine Pokou a-t-elle vraiment existé ?
+      - Est-ce qu’elle a vraiment sacrifié son fils ?
+      - Est-ce qu’on a des preuves que cette histoire a eu lieu ?
+      - Est-ce que c’est un mythe ou une réalité ?
+      - Peut-on croire à cette histoire ?
+      - Est-ce que ce n’est pas juste une légende ?
+      - Est-ce que ce récit est symbolique ou réel ?
+      - Jusqu’à quel point cette histoire est vraie ?
+      - Est-ce que cette histoire a une base historique ?
+      - Est-ce qu’on considère ça comme un fait ou une tradition orale ?
+      - À quel point cette légende est crédible ?
+      - Est-ce qu’on a des sources historiques à ce sujet ?
+      - Cette légende est-elle documentée ou seulement transmise oralement ?
+
+
+  # Organisation generale des Baoulés
+  - intent: Baoule_Organisation_generale
+    examples: |
+      - Quelle est leur organisation politique, économique et sociale ? 
+      - qu'elle est l'organisation generale des baoulés
+      - Quelle est l'organisation politique ,economique et social des baoulé
+      - C'est quoi l'organisation politique, economique et social des baoulé
+      - Parle moi de l'organisation politique economique et social des baoulé
+      - Quelle est l’organisation politique, économique et sociale des Baoulé ?
+      - Comment sont organisés les Baoulé politiquement, économiquement et socialement ?
+      - Peux-tu me décrire la structure politique, économique et sociale des Baoulé ?
+      - Comment fonctionne la société Baoulé au niveau politique, économique et social ?
+      - Quelle est la structure sociale, économique et politique des Baoulé ?
+      - Comment les Baoulé s’organisent-ils dans les domaines politique, économique et social ?
+      - Peux-tu expliquer l’organisation politique, économique et sociale chez les Baoulé ?
+      - Quelles sont les caractéristiques politiques, économiques et sociales du peuple Baoulé ?
+      - Comment est gérée la politique, l’économie et la société chez les Baoulé ?
+      - Quelle est la répartition des rôles politiques, économiques et sociaux chez les Baoulé ?
 
   # Organisation Politique des Baoulés
   - intent: Baoule_Organisation_Politique
     examples: |
-      - Quelle est leur organisation politique, économique et sociale ? 
-      - Quelle est l'organisation politique ,economique et social des baoulé
-      - C'est quoi l'organisation politique, economique et social des baoulé
-      - Parle moi de l'organisation politique economique et social des baoulé
+      - Quelle est leur organisation politique
+      - Quelle est l'organisation politique des Baoulés
+      - C'est quoi l'organisation politique des Baoulés
+      - Parle moi de l'organisation politique
+      - Comment sont organisés les Baoulé politiquement
+      - Peux-tu me décrire la structure politique des Baoulés 
+      - Comment fonctionne la société Baoulé au niveau politique
+      - Quelle est la structure sociale des baoulés 
+      - Comment les Baoulé s’organisent-ils dans le domaine politiques
+      - Peux-tu expliquer l’organisation politique des baoulés
+      - Quelles sont les caractéristiques politiques des baoules
+      - Comment est gérée la politique chez les baoules
+      - Quelle est la répartition des rôles politiques chez les baoulés
+
+
+  # Organisation Economique des Baoulés
+  - intent: Baoule_Organisation_Economique
+    examples: |
+      - Quelle est leur organisation Economique
+      - Quelle est l'organisation Economique des Baoulés
+      - C'est quoi l'organisation Economique des Baoulés
+      - Parle moi de l'organisation Economique
+      - Comment sont organisés les Baoulé Economiquement
+      - Peux-tu me décrire la structure economique des Baoulés 
+      - Comment fonctionne la société Baoulé au niveau economique
+      - Quelle est la structure economique des baoulés 
+      - Comment les Baoulé s’organisent-ils dans le domaine economiques
+      - Peux-tu expliquer l’organisation economique des baoulés
+      - Quelles sont les caractéristiques economiques des baoules
+      - Comment est gérée la economique chez les baoules
+      - Quelle est la répartition des rôles economiques chez les baoulés
+
+# Organisation Social des Baoulés
+  - intent: Baoule_Organisation_Social
+    examples: |
+      - Quelle est leur organisation Social
+      - Quelle est l'organisation Social des Baoulés
+      - C'est quoi l'organisation Social des Baoulés
+      - Parle moi de l'organisation Social
+      - Comment sont organisés les Baoulé socialmement parlant
+      - Peux-tu me décrire la structure social des Baoulés 
+      - Comment fonctionne la société Baoulé au niveau social
+      - Quelle est la structure sociale des baoulés 
+      - Comment les Baoulé s’organisent-ils dans le domaine social
+      - Peux-tu expliquer l’organisation social des baoulés
+      - Quelles sont les caractéristiques social des baoules
+      - Comment est gérée le volet social chez les baoules
+      - Quelle est la répartition des rôles social chez les baoulés
 
   # Evenement et célébration
   - intent: Baoule_Fete_rejouissance
     examples: |
       - Cite Moi les différentes fêtes de réjouissances du peuple baoulé ? 
       - quelles sont les differentes fetes de rejouissances chez les baoulés
+      - Quelles sont les fêtes traditionnelles chez les Baoulé ?
+      - Peux-tu me dire les fêtes célébrées par les Baoulé ?
+      - Cite-moi les différentes fêtes baoulé.
+      - Quels types de réjouissances organise le peuple Baoulé ?
+      - Les Baoulé fêtent quoi dans leur culture ?
+      - Dis-moi les principales fêtes chez les Baoulé.
+      - Est-ce qu’il y a des fêtes importantes chez les Baoulé ?
+      - Quelles fêtes marquent la culture des Baoulé ?
+      - Donne-moi une liste des fêtes de réjouissance des Baoulé.
+      - Que célèbrent les Baoulé dans l’année ?
+      - Les Baoulé ont-ils des fêtes traditionnelles ?
+      - Quelles sont les grandes célébrations du peuple Baoulé ?
+      - Tu connais les fêtes qu’ils célèbrent chez les Baoulé ?
+      - Et au niveau des fêtes, ils font quoi les Baoulé ?
+      - Est-ce que les Baoulé ont des moments de fête ?
+      - C’est quoi les moments de réjouissance chez les Baoulé ?
+      - Ils font quoi pour célébrer les choses importantes ?
+      - Tu peux me parler de leurs fêtes ?
+      - Est-ce qu’il y a des événements festifs typiques chez les Baoulé ?
+      - C’est quand qu’ils font la fête dans leur culture ?
+      - Tu peux m’expliquer leurs fêtes traditionnelles ?
+      - Il existe des fêtes spécifiques aux Baoulé ?
+      - C’est quoi les fêtes propres au peuple Baoulé ?
 
   # Croyance religieuse 
   - intent: Baoule_Croyance_Religieuse
     examples: |
       - Quel est leur croyance ?
       - Quelles sont les croyances spirituelles des Baoulé ?
+      - Quelles sont les croyances des Baoulés ?
+      - En quoi croient les Baoulés ?
+      - Quelle est la spiritualité du peuple Baoulé ?
+      - Quelle est la religion traditionnelle des Baoulés ?
+      - C’est quoi les croyances religieuses des Baoulés ?
+      - Les Baoulés croient en quoi ?
+      - Quelles sont les pratiques spirituelles des Baoulés ?
+      - C’est quoi la vie spirituelle chez les Baoulés ?
+      - Quelle est la dimension spirituelle dans la culture baoulé ?
+      - Quels sont les fondements spirituels du peuple Baoulé ?
+      - La spiritualité baoulé repose sur quoi ?
+      - Est-ce que les Baoulés ont une spiritualité particulière ?
+      - Quels sont les rituels sacrés chez les Baoulés ?
+      - Quels dieux ou esprits les Baoulés vénèrent-ils ?
+      - Est-ce que les Baoulés croient aux ancêtres ?
+      - Quels sont les liens entre les Baoulés et les esprits ?
+      - Quel rôle joue la religion dans la culture baoulé ?
+      - Quelle est la place de la tradition dans la foi baoulé ?
+      - Tu peux m’expliquer la religion des Baoulés ?
+      - Comment les Baoulés pratiquent leur spiritualité ?
+      - Est-ce que les Baoulés ont des croyances religieuses particulières ?
+      - Est-ce qu’ils font des prières ou des offrandes ?
+      - Comment ça se passe la religion chez les Baoulés ?
+      - Est-ce que leur spiritualité est liée aux ancêtres ou à la nature ?
+      -
       
   # Localisation des baoulés
-  - intent: Baoule_Croyance_Religieuse
+  - intent: Baoule_Localisation_geographique
     examples: |
       - Où vivent les baoulés
       - Dans quelle region trouve t'on les baoulés
       - Dans quelle localité trouve t'on les baoulés 
-      - 
-      -
+      - Dans quelle région vivent les Baoulés ?
+      - Où sont situés les Baoulés en Côte d’Ivoire ?
+      - Quelle est la localisation géographique du peuple Baoulé ?
+      - Où se trouve la région d’habitation des Baoulés ?
+      - Dans quelle zone géographique peut-on trouver les Baoulés ?
+      - Quelle est la territorialité des Baoulés ?
+      - Où est implantée la communauté Baoulé ?
+      - Où est établie l’ethnie Baoulé ?
+      - Quel est le lieu d’habitation des Baoulés ?
+      - Où résident les Baoulés ? 
 
   # Culture baoulé 
   - intent: Baoule_Culture
@@ -658,101 +1317,311 @@ nlu:
       - Détaille moi un peu la culture Baoulé
       - Qu'est ce qu'on peut retenir de cette culture 
       - Parle moi de la culture Baoulé
+      - Que peut-on retenir de cette culture ?
+      - Quels sont les points clés de cette culture ?
+      - Que faut-il savoir sur cette culture ?
+      - Quelles sont les caractéristiques principales de cette culture ?
+      - Quelles leçons tirer de cette culture ?
+      - Qu’est-ce qui définit cette culture ?
+      - Quels aspects essentiels représentent cette culture ?
+      - Quelle est l’essence de cette culture ?
+      - Que pouvons-nous apprendre de cette culture ?
+      - Que révèle cette culture ?
 
   # Tenues Baoulé
   - intent: Baoule_Tenue
     examples: |
       - Quelles sont les tenues que porte les BAOULES 
+      - Quelles tenues portent les Baoulés ?
+      - Quels vêtements arborent les Baoulés ?
+      - Comment s’habillent les Baoulés ?
+      - Quelles sont les habitudes vestimentaires des Baoulés ?
+      - Quel est le style vestimentaire des Baoulés ?
+      - Quelles tenues traditionnelles portent les Baoulés ?
+      - Quels habits les Baoulés portent-ils ?
+      - De quoi se composent les vêtements traditionnels des Baoulés ?
+      - Comment sont les costumes des Baoulés ?
+      - Quelle est la tenue typique des Baoulés ?
+      - Quelles sont les robes ou vêtements caractéristiques des Baoulés ?
+      - Comment s’habillent traditionnellement les Baoulés ?
+      - Quelles sont les parures vestimentaires des Baoulés ?
+      - Quels habits traditionnels sont portés par les Baoulés ?
+      - Quelle tenue vestimentaire distingue les Baoulés ?
 
   # Masque Baoulé
   - intent: Baoule_Masque
     examples: |
       - Quelles sont les differents type de Masque Baoulé 
-      - Quelle est la signification du masque [Goli](masque) chez les Baoulé ?
-
+      - Quels sont les différents types de masques chez les Baoulé ?
+      - Quels types de masques Baoulé existe-t-il ?
+      - Quels sont les styles variés de masques Baoulé ?
+      - Quels sont les masques traditionnels utilisés par les Baoulé ?
+      - Quelles catégories de masques retrouve-t-on chez les Baoulé ?
+      - Quelles formes et types de masques sont propres aux Baoulé ?
+      - Quels sont les différents modèles de masques Baoulé ?
+      - Quelles sortes de masques Baoulé peut-on identifier ?
+      - Quels types de masques sont portés ou utilisés par les Baoulé ?
+      - Quelles sont les principales variétés de masques chez les Baoulé ?
+      - Quels masques sont typiques de la culture Baoulé ?
+      - Quelles différentes sortes de masques traditionnels Baoulé existe-t-il ?
+      
   # Danse Baoulé
   - intent: Baoule_Danse
     examples: |
       - Quelles sont les differents type de danses  chez les baoulés
+      - Quels sont les différents types de danses chez les Baoulés ?
+      - Quelles sont les danses traditionnelles pratiquées par les Baoulés ?
+      - Quelles danses retrouve-t-on dans la culture baoulé ?
+      - Quelles sont les principales danses du peuple baoulé ?
+      - Quels genres de danses sont typiques des Baoulés ?
+      - Citez les différentes danses traditionnelles baoulé.
+      - Quelles danses rythment la vie culturelle des Baoulés ?
+      - Quelles danses sont utilisées dans les rituels chez les Baoulés ?
+      - Quelles sont les danses liées aux cérémonies chez les Baoulés ?
+      - Quelles formes de danse sont caractéristiques du peuple baoulé ?
+      - Est-ce que tu connais les danses traditionnelles des Baoulés ?
+      - Les Baoulés dansent comment pendant les cérémonies ?
+      - Quels types de danses font les Baoulés ?
+      - Comment les Baoulés expriment leur culture à travers la danse ?
+      - il y a combien de types de danses chez les Baoulés ?
 
   #Habitude Culinaire
   - intent: Baoule_Habitude_Culinaire
     examples: |
       - L'habitude culinaire des baoulés ?
       - Les baoulés mangent quoi 
-
+      - Quelles sont les habitudes culinaires des Baoulés ?
+      - Quelle est la cuisine traditionnelle des Baoulés ?
+      - Que mangent les Baoulés traditionnellement ?
+      - Quels sont les plats typiques chez les Baoulés ?
+      - Comment se caractérise la gastronomie baoulé ?
+      - En quoi consiste l’alimentation traditionnelle des Baoulés ?
+      - Quels sont les mets les plus consommés chez les Baoulés ?
+      - Quelle est la particularité de la cuisine baoulé ?
+      - Quels aliments sont privilégiés dans la culture baoulé ?
+      - Quelle place occupe la nourriture dans la culture baoulé ?
+      - Peux-tu me parler des pratiques alimentaires chez les Baoulés ?
+      - Quelle est la tradition culinaire du peuple baoulé ?
+      - Quelles spécialités culinaires distingue-t-on chez les Baoulés ?
+      - De quoi est composé un repas typique baoulé ?
+      - Quels sont les ingrédients de base dans la cuisine baoulé ?
+      - Quelle importance la nourriture a-t-elle dans la vie des Baoulés ?
+      - À quoi ressemble un menu traditionnel baoulé ?
+      - Quels sont les plats emblématiques des Baoulés ?
+      - Quels types de repas prépare-t-on lors des fêtes chez les Baoulés ?
+     
   # Rites des baoulés 
-  - intent: Baoule_Tradition1
+  - intent: Baoule_Tradition
     examples: | 
       - Pourquoi lave-t'on les jeunes filles à la puberté?
-
+      - Pourquoi lave-t-on les jeunes filles à la puberté ?
+      - Pourquoi procède-t-on au lavage des jeunes filles à la puberté ?
+      - Quelle est la raison du bain rituel des jeunes filles pubères ?
+      - Pourquoi réalise-t-on un bain rituel à la puberté chez les jeunes filles ?
+      - Quel est le but du lavage des jeunes filles à l’entrée dans la puberté ?
+      - À quoi sert le rituel de purification des filles à la puberté ?
+      - Pourquoi les jeunes filles sont-elles lavées lorsqu’elles atteignent la puberté ?
+      - Pour quelles raisons culturelles ou spirituelles lave-t-on les filles à la puberté ?
+      - Quelle est la signification du lavage des filles à l’âge pubère ?
+      - Pourquoi un tel rituel est-il effectué au moment de la puberté chez les filles ?
+      - Que symbolise le bain rituel des jeunes filles à la puberté ?
+      - Quelle est la symbolique du lavage à la puberté chez les jeunes filles ?
+      - En quoi consiste le rituel de lavage à la puberté chez les filles, et pourquoi est-il pratiqué ?
+      - Quelles croyances sont associées au lavage des filles à la puberté ?
+      - Quelles sont les raisons traditionnelles derrière le bain rituel des filles à la puberté ?
+    
   - intent: Baoule_Rite
     examples: | 
       - Quelles sont les differents rites qui existent chez les baoulés
+      - Quels sont les rites traditionnels pratiqués par les Baoulés ?
+      - Quelles sont les différentes cérémonies rituelles chez les Baoulés ?
+      - Quels types de rites les Baoulés observent-ils dans leur culture ?
+      - Quels sont les principaux rites présents dans la société baoulé ?
+      - Quelles sont les diverses pratiques rituelles chez les Baoulés ?
+      - Quels rites traditionnels peut-on trouver chez les Baoulés ?
+      - Quels sont les rites culturels caractéristiques des Baoulés ?
+      - Quelles cérémonies rituelles les Baoulés célèbrent-ils ?
+      - Quels rites ancestraux sont pratiqués par le peuple Baoulé ?
+      - Quelles sont les différentes formes de rites chez les Baoulés ?
 
   # Importance de la culture baoulé
   - intent: Baoule_Importance 
     examples: | 
       - Quelle est l'importance de la culture baoulé dans ce pays, où il existe une multitude de langue et de culture
+      - Quelle est la place de la culture baoulé dans un pays aux nombreuses langues et cultures ?
+      - Quelle importance revêt la culture baoulé dans un pays plurilingue et multiculturel ?
+      - Quel rôle joue la culture baoulé dans un pays marqué par la diversité linguistique et culturelle ?
+      - Comment la culture baoulé s’inscrit-elle dans un pays riche en langues et traditions variées ?
+      - Quelle est la contribution de la culture baoulé à la diversité culturelle d’un pays multilingue ?
+      - En quoi la culture baoulé est-elle importante dans un pays où coexistent plusieurs langues et cultures ?
+      - Quelle est l’influence de la culture baoulé dans un contexte national de diversité linguistique et culturelle ?
+      - Quel est l’impact de la culture baoulé dans un pays caractérisé par une multitude de langues et d’identités culturelles ?
+      - Quelle place occupe la culture baoulé dans le paysage culturel d’un pays pluriculturel ?
+      - Comment la culture baoulé contribue-t-elle à l’identité d’un pays à la fois multilingue et multiculturel ?
 
   # Symbolisme de la statue chez les baoulé
   - intent: Baoule_Symbolique_Statuette
     examples: | 
       - Pourquoi l'instauration de statuettes dans votre culture ?
       - Quel est le rôle des statuettes dans la tradition Baoulé ?
+      - Quel rôle jouent les statuettes dans la tradition baoulé ?
+      - À quoi servent les statuettes dans la culture baoulé ?
+      - Quelle est l’importance des statuettes dans les traditions baoulé ?
+      - Quelle fonction ont les statuettes dans le contexte traditionnel baoulé ?
+      - Quel est le sens des statuettes dans la tradition des Baoulé ?
+      - Comment les statuettes sont-elles utilisées dans la culture baoulé ?
+      - Quel rôle symbolique occupent les statuettes chez les Baoulé ?
+      - En quoi les statuettes sont-elles essentielles dans la tradition baoulé ?
+      - Que représentent les statuettes dans la tradition baoulé ?
+      - Quel usage fait-on des statuettes dans les pratiques traditionnelles baoulé ?
 
   # Actualité Statuette
   - intent: Baoule_Statuette_Actualité 
     examples: | 
       - Les Baoulé utilisent-ils toujours ces statuettes aujourd’hui ?
+      - Est-ce que les Baoulé utilisent encore ces statuettes de nos jours ?
+      - Les Baoulé font-ils encore usage des statuettes aujourd’hui ?
+      - Les statuettes baoulé sont-elles encore utilisées dans la culture actuelle ?
+      - Ces statuettes ont-elles encore un rôle dans la vie des Baoulé aujourd’hui ?
+      - L’usage des statuettes est-il toujours pratiqué chez les Baoulé ?
+      - Ces objets rituels sont-ils encore employés par les Baoulé ?
+      - Les traditions liées aux statuettes perdurent-elles chez les Baoulé ?
+      - Les Baoulé se servent-ils encore des statuettes dans leurs pratiques culturelles actuelles ?
+      - Le peuple baoulé conserve-t-il encore l’usage traditionnel des statuettes ?
+      - Est-ce que les statuettes font encore partie intégrante de la culture baoulé contemporaine ?
 
   # Symbole important dans la culture baoulé
   - intent: Baoule_Symbole_Important 
     examples: | 
       - Quels sont les symboles les plus importants dans la culture Baoulé ?
+      - Quels sont les symboles les plus importants dans la culture baoulé ?
+      - Quels sont les grands symboles de la culture baoulé ?
+      - Quels symboles sont au cœur de la culture baoulé ?
+      - Quels sont les symboles qui définissent l’identité baoulé ?
+      - Quels éléments symboliques marquent la culture baoulé ?
+      - Quels sont les symboles traditionnels chez les Baoulé ?
+      - Quels sont les emblèmes de la culture baoulé ?
 
   # Celebration des ancetres 
   - intent: Baoule_Hommage_ancetre
     examples: | 
       - Comment les Baoulé célèbrent-ils leurs ancêtres ?
+      - De quelle manière les Baoulé rendent-ils hommage à leurs ancêtres ?
+      - Comment les ancêtres sont-ils honorés dans la tradition baoulé ?
+      - Quelles pratiques les Baoulé utilisent-ils pour vénérer leurs ancêtres ?
+      - Comment les Baoulé célèbrent-ils la mémoire de leurs ancêtres ?
+      - Quel rôle jouent les ancêtres dans les rituels baoulés ?
+      - Quelles sont les cérémonies baoulées liées au culte des ancêtres ?
+      - Quels types de rites les Baoulé organisent-ils en l’honneur de leurs ancêtres ?
+      - Comment le culte des ancêtres s’exprime-t-il chez les Baoulé ?
+      - Quelle est l’importance des ancêtres dans la culture baoulé ?
+      - En quoi consistent les rites funéraires et commémoratifs chez les Baoulé ?
+      - Quelles pratiques spirituelles les Baoulé mettent-ils en œuvre pour rester en lien avec leurs ancêtres ?
+      - Les Baoulé communiquent-ils avec les esprits de leurs ancêtres ? Si oui, comment ?
+      - Comment les traditions baoulées intègrent-elles les ancêtres dans la vie quotidienne ?
+      - Comment les Baoulé perpétuent-ils la mémoire des anciens dans leurs rituels ?
 
   # Role Femme  
   - intent: Baoule_Role_Femme
     examples: | 
       - Quel est le rôle de la femme dans la société Baoulé 
+      - Quel est le rôle de la femme chez les Baoulé ?
+      - Quelle place occupe la femme dans la société baoulé ?
+      - Quelle est l’importance de la femme dans la culture baoulé ?
+      - Quel est le statut de la femme dans la communauté baoulé ?
+      - Quel est le rôle social et culturel des femmes baoulé ?
+      - Comment la femme est-elle perçue dans la société baoulé ?
+      - En quoi consiste le rôle de la femme chez les Baoulé ?
+      - Quel est l’impact des femmes dans l’organisation sociale baoulé ?
+      - De quelle manière les femmes contribuent-elles à la société baoulé ?
+      - Quelle est la contribution des femmes dans la culture et l’économie baoulé ?
+      - Que fait la femme dans la société baoulé ?
+      - Quelle est la fonction de la femme chez les Baoulé ?
+      - Quel rôle les femmes jouent-elles dans la vie communautaire baoulé ?
+      - À quoi sert la femme dans la culture traditionnelle baoulé ?
+      - Quelles responsabilités reviennent aux femmes dans la société baoulé ?
 
   # Coiffure travaillé statuette baoulé
   - intent: Baoule_Coiffure_Statuette
     examples: | 
       - Pourquoi la coiffure est-elle si travaillée sur les statuettes Baoulé ?
+      - Pourquoi les coiffures des statuettes Baoulé sont-elles si élaborées ?
+      - Quelle est la raison de la coiffure très travaillée sur les statuettes Baoulé ?
+      - Pour quelle raison les statuettes Baoulé ont-elles des coiffures complexes ?
+      - Pourquoi accorde-t-on autant d’importance à la coiffure sur les statuettes Baoulé ?
+      - Quelle signification a la coiffure détaillée sur les statuettes Baoulé ?
+      - Pourquoi les artistes baoulé sculptent-ils des coiffures si précises sur leurs statuettes ?
+      - Quel est le rôle de la coiffure travaillée dans la représentation des statuettes Baoulé ?
+      - Pourquoi la coiffure des statuettes Baoulé est-elle si soigneusement réalisée ?
+      - En quoi la coiffure des statuettes Baoulé est-elle importante ?
+      - Pourquoi la coiffure occupe-t-elle une place centrale dans la sculpture des statuettes Baoulé ?
+      - Pourquoi les coiffures des statuettes Baoulé sont-elles si finement détaillées ?
+      - Quelle est l’importance de la coiffure dans les statuettes Baoulé ?
+      - Pourquoi met-on autant d’efforts dans la coiffure des statuettes Baoulé ?
+      - Quelle signification culturelle a la coiffure sur les statuettes Baoulé ?
+      - Pour quelle raison la coiffure est-elle si mise en valeur sur les statuettes Baoulé ?
 
   # Baoule Transmission Culture
   - intent: Baoule_Transmission_Culture
     examples: | 
       - Comment la culture Baoulé est-elle transmise aux jeunes générations ?
+      - De quelle manière la culture Baoulé est-elle transmise aux jeunes générations ?
+      - Comment fait-on pour transmettre la culture Baoulé aux enfants et adolescents ?
+      - Par quels moyens la culture Baoulé est-elle transmise aux jeunes ?
+      - Comment la tradition Baoulé est-elle enseignée aux nouvelles générations ?
+      - Quelles sont les façons dont la culture Baoulé est transmise aux jeunes ?
+      - Comment les jeunes générations apprennent-elles la culture Baoulé ?
+      - De quelle façon la culture Baoulé est-elle perpétuée auprès des jeunes ?
+      - Comment la culture Baoulé est-elle préservée et transmise aux jeunes ?
+      - Par quels procédés la culture Baoulé est-elle partagée avec les jeunes générations ?
+      - Comment se fait la transmission de la culture Baoulé aux jeunes ?
+      - Quelles méthodes sont utilisées pour transmettre la culture Baoulé aux enfants et adolescents ?
+      - Comment la culture Baoulé est-elle communiquée aux jeunes générations ?
+      - Quels sont les moyens de transmission de la culture Baoulé auprès des jeunes ?
+      - Comment les traditions Baoulé sont-elles inculquées aux jeunes ?
+      - Comment la culture Baoulé est-elle transmise de génération en génération ?
     
-
   # Alliance ethnique
-  - intent: Baoule_Transmission_Culture
+  - intent: Baoule_Allié
     examples: | 
       - Les Baoulé sont les alliés de quel peuple
       - Quelles sont les alliés des baoulé
-      -
-      -
-      - 
-
-  # Alliance Baoulé  
-  - intent: Baoule_Alliance
-    examples: | 
-      - Les Baoulé sont les alliés de quel peuple
+      - Avec quel peuple les Baoulé sont-ils alliés ?
+      - Qui sont les alliés traditionnels des Baoulé ?
+      - Les Baoulé entretiennent-ils des alliances avec d’autres peuples ?
+      - Quels peuples sont historiquement alliés aux Baoulé ?
+      - Quels sont les peuples proches ou alliés des Baoulé ?
+      - À quels groupes ethniques les Baoulé sont-ils culturellement liés ?
+      - Les Baoulé partagent-ils des alliances avec d'autres ethnies ?
+      - Existe-t-il un peuple allié ou ami des Baoulé dans la tradition ?
+      - Quelle est la relation des Baoulé avec les autres peuples de Côte d’Ivoire ?
+      - Les Baoulé ont-ils des affinités historiques ou culturelles avec d’autres peuples ?
+      - Y a-t-il un peuple qui partage une alliance coutumière avec les Baoulé ?
+      - Quels sont les peuples considérés comme « frères » ou proches des Baoulé ?
+      - Peut-on identifier un peuple historiquement lié aux Baoulé par des pactes ou alliances ?
+      - Avec quels peuples les Baoulé ont-ils tissé des relations de solidarité ?
+      - Les Baoulé sont-ils associés à un autre groupe dans les alliances traditionnelles ?
 
   # Celebration 
   - intent: Baoule_Celebration
     examples: | 
       - Les Baoulé observent quelle fête de plus après paquinou ?
-
-    
- 
+      - Quelle autre fête les Baoulé célèbrent-ils après Paquinou ?
+      - Mis à part Paquinou, quelles fêtes sont célébrées chez les Baoulé ?
+      - En dehors de Paquinou, quelle est l’autre grande fête observée par les Baoulé ?
+      - Quelles sont les fêtes que les Baoulé célèbrent en plus de Paquinou ?
+      - Les Baoulé fêtent-ils autre chose que Paquinou ? Si oui, quoi ?
+      - Y a-t-il d'autres célébrations importantes chez les Baoulé après Paquinou ?
+      - Que célèbrent les Baoulé après Paquinou ?
+      - Après Paquinou, quelle autre fête marque la culture Baoulé ?
+      - Quelles sont les traditions festives des Baoulé en dehors de Paquinou ?
+      - Quelle fête complète le calendrier culturel des Baoulé après Paquinou ?
+      - Outre Paquinou, quelles manifestations culturelles sont importantes chez les Baoulé ?
+      - Quels sont les autres moments festifs chez les Baoulé à part Paquinou ?
+      - À part Paquinou, ils fêtent quoi d’autre, les Baoulé ?
+      - C’est quoi les autres fêtes chez les Baoulé après Paquinou ?
+      - Est-ce qu’il y a d’autres fêtes baoulé après Paquinou ?
+      - Ils ont quoi comme fête après Paquinou, les Baoulé ?
 
 
 

@@ -12,17 +12,36 @@
     /* RESET & BASE */
     * { box-sizing: border-box; }
 
-    body {
-      margin: 0;
-      background-color: #f8f5f0;
-      
-      font-family: 'Verdana', Tahoma, Geneva, sans-serif;
-      overflow-x: hidden;
-    }
-   #glb-viewer {
-    width: 100%;
-    height: 100vh; /* ou 100vh pour plein écran */
-  }
+body {
+  margin: 0;
+  background-color: #fefaf6;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-image:
+    repeating-linear-gradient(45deg, #4b2e15, #4b2e15 4px, transparent 4px, transparent 12px),
+    repeating-linear-gradient(-45deg, #4b2e15, #4b2e15 4px, transparent 4px, transparent 12px);
+  background-size: 40px 40px;
+  background-position: center;
+}
+
+.cadre {
+  position: relative;
+  width: 93%;
+  height: 85vh; /* au lieu de 90% */
+  max-height: 95vh; /* éviter tout débordement */
+  background: #f8f5f0;
+  box-shadow: 0 0 0 20px  #f8f5f0;
+  border-radius: 2px;
+  overflow: hidden; /* pour éviter les débordements internes */
+}
+
+  #glb-viewer {
+  width: 100%;
+  height: 100%; /* évite 100vh qui est parfois trop long */
+}
 
 
     /* GESTION DES PAGES : positionnement & visibilité */
@@ -48,8 +67,9 @@
       flex-direction: column;
       justify-content: flex-end;
       align-items: center;
+      background-color:white;
       width: 100%;
-      height: 100%;
+      height: 99%;
       padding: 40px;
       text-align: center;
     }
@@ -60,7 +80,7 @@
       font-family: 'Courier New', monospace;
       letter-spacing: 3px;
     
-      color: #4b2e15;
+      color: #F77F00;
       
       
     }
@@ -144,7 +164,7 @@
 
     #cadre_medias_masques {
       width: 100%;
-      height: 100vh;
+      height: 90vh;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -229,20 +249,63 @@
       transform: scale(1);
     }
   }
-    
-
-    
-
     /* -------- TABLETTE DEBOUT -------- */
 @media screen and (max-width: 768px) {
   #typewriter {
     font-size: 2em;
     font-weight:bold;
+    color:#F77F00;
   }
 
-  .container {
-    padding: 20px;
+  
+   .container {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      align-items: center;
+      background-color:white;
+      width: 100%;
+      height: 100%;
+      padding: 40px;
+      text-align: center;
+    }
+
+  #page-interaction{
+    background-color: white;
   }
+
+  
+  body {
+  margin: 0;
+  background-color: #fefaf6;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-image:
+    repeating-linear-gradient(45deg, #4b2e15, #4b2e15 4px, transparent 4px, transparent 12px),
+    repeating-linear-gradient(-45deg, #4b2e15, #4b2e15 4px, transparent 4px, transparent 12px);
+  background-size: 40px 40px;
+  background-position: center;
+}
+
+.cadre {
+  position: relative;
+  width: 88%;
+  height: 85vh; /* au lieu de 90% */
+  max-height: 95vh; /* éviter tout débordement */
+  background: #fefaf6;
+  box-shadow: 0 0 0 20px #4b2e15;
+  border-radius: 1px;
+  margin-top:-4em;
+  overflow: hidden; /* pour éviter les débordements internes */
+}
+
+  #glb-viewer {
+  width: 100%;
+  height: 100%; /* évite 100vh qui est parfois trop long */
+}
   #page-aboya .container {
   display: flex;
   flex-direction: column;
@@ -252,13 +315,13 @@
   padding: 0;
 }
    #texte-parle {
-    font-size: 3rem;
+    font-size: 2rem;
     text-shadow: 0 0 10px #4b2e15, 0 0 20px #4b2e15;
     letter-spacing: 4px;
     white-space: nowrap;
     overflow: hidden;
     font-weight:bold;
-    
+    margin-top:-3.5em;
     border-right: 0.15em solid #4b2e15;
     box-sizing: border-box;
     animation: glowPulse 1.5s infinite alternate;
@@ -285,7 +348,7 @@
     margin-top:2em;
     align-items: center;
     text-align: center;
-    gap: 25em;
+    gap: 24.5em;
   }
 
   .img-left,.img-right {
@@ -295,7 +358,7 @@
   }
 
   .img-left{
-    margin-left:-2em;
+    margin-left:-3em;
   }
 
   /* Texte animé au centre */
@@ -315,26 +378,29 @@
     }
   textarea {
     min-height: 280px;
+    width: 97%;
     margin: 2em auto 1em auto;
   }
 
   #send-button {
     margin: 1em auto 3em auto;
-    width: 30%;
+    width: 27%;
     max-width: 170px;
-    margin-left: 20.5em;
-    margin-top: 4.5em;
+    margin-left: 19.5em;
+    margin-top: 4.7em;
     font-size: 1.2rem;
   }
 
   .carousel-fade {
     height: auto;
     aspect-ratio: 4 / 3;
+    margin-top:-13em;
+    height:50%;
   }
 
   #cadre_medias_masques {
       width: 100%;
-      height: 105vh;
+      height: 110vh;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -403,9 +469,56 @@
 
 /* --- TABLETTE RETOURNE --- */
 @media screen and (min-width: 800px) and (max-width: 2000px) and (orientation: landscape) {
+  
   .container {
-    padding: 20px 40px 40px 40px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      align-items: center;
+      background-color:white;
+      width: 100%;
+      height: 100%;
+      padding: 40px;
+      text-align: center;
+    }
+
+  
+  body {
+  margin: 0;
+  background-color: #fefaf6;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-image:
+    repeating-linear-gradient(45deg, #4b2e15, #4b2e15 4px, transparent 4px, transparent 12px),
+    repeating-linear-gradient(-45deg, #4b2e15, #4b2e15 4px, transparent 4px, transparent 12px);
+  background-size: 40px 40px;
+  background-position: center;
+}
+
+.cadre {
+  position: relative;
+  width: 93%;
+  height: 75vh; /* au lieu de 90% */
+  max-height: 95vh; /* éviter tout débordement */
+  background: #f8f5f0;
+  box-shadow: 0 0 0 20px #4b2e15;
+  border-radius: 2px;
+  margin-top:-4em;
+  overflow: hidden; /* pour éviter les débordements internes */
+}
+
+  #glb-viewer {
+  width: 100%;
+  height: 100%; /* évite 100vh qui est parfois trop long */
+}
+ #page-interaction{
+    background-color: white;
   }
+
+  
     /* --- PAGE 2 : INTERACTION --- */
     header {
       width: 100%;
@@ -413,14 +526,17 @@
       justify-content: space-between;
       align-items: flex-start;
       max-width: 1000px;
-      margin: 40px auto auto 1em;
-      gap: 52.5em;
+      margin: 35px auto auto 1em;
+      gap: 49em;
       padding: 0 20px;
     }
+    
+
      #glb-viewer {
       width: 100%;
       height: 400%;
-      
+      background-color:white;
+     
     }
     
     /* Images animées à gauche et droite */
@@ -451,7 +567,7 @@
     /* Zone de saisie */
     textarea {
       width: 100%;
-      max-width: 940px;
+      max-width: 885px;
       min-height: 170px;
       margin: 0em auto 1em 1.5em;
       font-size: 1.1rem;
@@ -468,11 +584,11 @@
     /* Bouton Envoyer */
     #send-button {
       display: block;
-      margin: 1.6em auto 50px 36.5em;
+      margin: 0.6em auto 50px 35.3em;
       font-weight: bold;
       padding: 10px 20px;
       font-size: 1.3rem;
-      width: 10em;
+      width: 8.5em;
       background-color: #F77F00;
       color: white;
       border: none;
@@ -481,13 +597,13 @@
       transition: background-color 0.3s ease;
     }
   #typewriter {
-      font-size: 3em;
+      font-size: 2em;
       font-weight: bold;
       font-family: 'Courier New', monospace;
       letter-spacing: 3px;
     
-      color: #4b2e15;
-      margin-top: 2em;
+      color: #F77F00;
+      margin-top: 3em;
       
     }
 
@@ -502,17 +618,42 @@
 
 #texte-parle {
   font-size: 3rem;
-  text-shadow: 0 0 10px #4b2e15, 0 0 20px #4b2e15;
+
   letter-spacing: 4px;
   white-space: nowrap;
   overflow: hidden;
   font-weight: bold;
-  border-right: 0.15em solid #4b2e15;
+  margin-top:-1.2em;
+  border-right: 0.15em solid #F77F00;
   box-sizing: border-box;
   animation: glowPulse 1.5s infinite alternate;
   
 }
+ .carousel-fade {
+      position: relative;
+      width: 90%;
+      height: 90%;
+      margin-top:-2em;
+      overflow: hidden;
+    }
 
+    .carousel-fade img {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      height: 70vh;
+      width: auto;
+      object-fit: contain;
+      object-position: center center;
+      opacity: 0;
+      transition: opacity 1s ease-in-out;
+    }
+
+    .carousel-fade img.active {
+      opacity: 1;
+      z-index: 1;
+    }
 
 
   @keyframes glowPulse {
@@ -529,7 +670,38 @@
       transform: scale(1);
     }
   }
+#cadre_medias_masques {
+      width: 100%;
+      height: 80vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #fff;
+      overflow: hidden;
+    }
 
+    #cadre_medias_danse {
+    display: none;              /* caché par défaut */
+    width: 100%;
+    height: 100%;
+    padding: 1rem;
+    box-sizing: border-box;
+
+    display: flex;              /* affichage flex pour centrer */
+    justify-content: center;
+    align-items: center;
+
+    background-color: #f8f5f0;  /* optionnel : fond neutre */
+  }
+
+  #cadre_medias_danse video {
+    max-width: 100%;
+    max-height: 80vh;
+    object-fit: contain;
+    border-radius: 10px;
+    display: block;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.2); /* optionnel pour style */
+  }
 
     
 
@@ -547,54 +719,55 @@
 
 </head>
 <body>
+<div class="cadre">
+  <div class="background-pattern"></div>
 
-  
-
-<!-- INTERFACE 1 : Au repos -->
-<div id="page-repos" class="page active">
-  <div class="container">
-    <div id="glb-viewer"></div>
-    <h1 id="typewriter"></h1>
-  </div>
-</div>
-
-<!-- INTERFACE 2 : Interaction avec textarea et bouton envoyer -->
-<div id="page-interaction" class="page">
-  <header>
-    <img src="static/img/aboya.png" class="img-left" alt="Image gauche" />
-    <img src="static/img/aboya.png" class="img-right" alt="Image droite" />
-  </header>
-  <div id="animated-text"></div>
-  <textarea placeholder="Posez Votre Question..............."></textarea>
-  <button id="send-button" aria-label="Envoyer la question">Envoyer</button>
-</div>
-
-<!-- INTERFACE 3 : Aboya parle normalement -->
-<div id="page-aboya" class="page">
-  <div class="container">
-    <p id="texte-parle" class="aboya-text"></p>
-  </div>
-</div>
-
-<!-- INTERFACE 4 : CAROUSEL MEDIA -->
-<div id="page-media" class="page">
-  <!-- MASQUES -->
-  <div id="cadre_medias_masques">
-    <div class="carousel-fade" id="carousel-masques">
-      <img src="/static/medias/masques/Masque_Blo.png" class="slide active" />
-      <img src="/static/medias/masques/Masque_Goli.png" />
-      <img src="/static/medias/masques/Masque_Goli_Glen.png" />
-      <img src="/static/medias/masques/Masque_kpan.png" />
-      <img src="/static/medias/masques/Masque_kple.png" />
+  <!-- INTERFACE 1 : Au repos -->
+  <div id="page-repos" class="page active">
+    <div class="container">
+      <div id="glb-viewer"></div>
+      <h1 id="typewriter"></h1>
     </div>
   </div>
 
-  <!-- DANSE (vidéo) -->
-  <div id="cadre_medias_danse" style="display:none;">
-    <video id="video-danse" controls autoplay muted playsinline>
-      <source src="/static/medias/danses/Danse_Goli.mp4" type="video/mp4" />
-      Votre navigateur ne supporte pas la vidéo.
-    </video>
+  <!-- INTERFACE 2 : Interaction avec textarea et bouton envoyer -->
+  <div id="page-interaction" class="page">
+    <header>
+      <img src="static/img/aboya.png" class="img-left" alt="Image gauche" />
+      <img src="static/img/aboya.png" class="img-right" alt="Image droite" />
+    </header>
+    <div id="animated-text"></div>
+    <textarea placeholder="Posez Votre Question..............."></textarea>
+    <button id="send-button" aria-label="Envoyer la question">Envoyer</button>
+  </div>
+
+  <!-- INTERFACE 3 : Aboya parle normalement -->
+  <div id="page-aboya" class="page">
+    <div class="container">
+      <p id="texte-parle" class="aboya-text"></p>
+    </div>
+  </div>
+
+  <!-- INTERFACE 4 : CAROUSEL MEDIA -->
+  <div id="page-media" class="page">
+    <!-- MASQUES -->
+    <div id="cadre_medias_masques">
+      <div class="carousel-fade" id="carousel-masques">
+        <img src="/static/medias/masques/Masque_Blo.png" class="slide active" />
+        <img src="/static/medias/masques/Masque_Goli.png" />
+        <img src="/static/medias/masques/Masque_Goli_Glen.png" />
+        <img src="/static/medias/masques/Masque_kpan.png" />
+        <img src="/static/medias/masques/Masque_kple.png" />
+      </div>
+    </div>
+
+    <!-- DANSE (vidéo) -->
+    <div id="cadre_medias_danse" style="display:none;">
+      <video id="video-danse" controls autoplay muted playsinline>
+        <source src="/static/medias/danses/Danse_Goli.mp4" type="video/mp4" />
+        Votre navigateur ne supporte pas la vidéo.
+      </video>
+    </div>
   </div>
 </div>
 
@@ -838,7 +1011,7 @@ function typeWriterLoop(text, element, speed) {
 
     renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
     renderer.setSize(container.clientWidth, container.clientHeight);
-    renderer.setClearColor(0xf8f5f0, 1);
+    renderer.setClearColor(0xffffff, 1);
     container.appendChild(renderer.domElement);
 
     controls = new THREE.OrbitControls(camera, renderer.domElement);
@@ -886,7 +1059,7 @@ function typeWriterLoop(text, element, speed) {
     // Après 10 secondes supplémentaires → page 2 → page 3
     setTimeout(() => {
       goToPageAboya();
-    }, 15000);  // ← ici c’est 30 secondes après affichage de la page 2
+    }, 60000);  // ← ici c’est 30 secondes après affichage de la page 2
 
   }, 15000);
 };

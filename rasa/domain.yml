@@ -11,6 +11,9 @@ intents:
   - Aboya_Histoire 
   - Aboya_Particularite
   - Aboya_Representation
+  - Aboya_Rite
+  - Aboya_Origin
+  - Aboya_Divinite
   - Aboya_Materiel_Fabrication
   - Aboya_Signification_Symbole_Tete
   - Aboya_Signification_Posture_assise
@@ -19,22 +22,28 @@ intents:
 
 #Intent sur les Baoulés
   - Baoule_History
-  - Baoule_Tradition
+  - Baoule_Mode_de_Vie
   - Baoule_Veracité_Legende
   - Baoule_Organisation_Politique
+  - Baoule_Organisation_generale
+  - Baoule_Organisation_Economique
+  - Baoule_Organisation_Social
   - Baoule_Fete_rejouissance
   - Baoule_Croyance_Religieuse
+  - Baoule_Localisation_geographique
   - Baoule_Culture
+  - Localisation_geographique
   - Baoule_Tenue
   - Baoule_Masque
   - Baoule_Danse
   - Baoule_Habitude_Culinaire
-  - Baoule_Tradition1
+  - Baoule_Tradition
   - Baoule_Rite
   - Baoule_Importance
   - Baoule_Symbolique_Statuette
   - Baoule_Statuette_Actualité
   - Baoule_Symbole_Important
+  - Baoule_Allié
   - Baoule_Hommage_ancetre
   - Baoule_Role_Femme
   - Baoule_Coiffure_Statuette
@@ -45,26 +54,24 @@ intents:
 responses:
 #Reponse question Divers
   utter_salutation:
-    - text: "Akwaba, bienvenue. Je suis N’Botumbo, ou Aboya, gardien ancien du peuple baoulé.
-           Via l’interface ci-dessous, tu peux me poser des questions sur moi ou sur mon peuple, les Baoulés. "
+    - text: "Akwaba bienvenu, je suis N’Botumbo, une Statuette Baoulé ,
+            Tu peux me poser des questions sur la culture Baoulé ou sur moi meme via l'écran."
   utter_Etat:
     - text: "Je vais bien, petit du monde moderne.
-           La sagesse veille, et l’esprit des anciens m’accompagne.
-           Que Puis Je Faire Pour Toi ? "
+             La sagesse veille, et l’esprit des anciens m’accompagne.
+             Que Puis Je Faire Pour Toi ? "
 
 #Reponse Question sur Aboya
   utter_Aboya_Identities:
     - text: " Je suis N’Botumbo, aussi appelé Aboya, une statuette sacrée du peuple baoulé.
-           Bien que de base je sois sculpté dans un bois dur et ancien, recouvert d’une couche solide appelée patine qui montre mon âge et mon importance,
-           la version de moi que tu vois ici en face de toi est une reproduction faite par impression 3D avec une résine spéciale.Ainsi, mon esprit et ma force restent présents, même dans cette nouvelle apparence.
-           Ma tête ressemble à celle d’un singe avec une gueule allongée et ouverte, où l’on voit de grandes dents.
-           Dans mes mains, je tiens une coupe.
-           Je suis un objet très puissant. Je protège les personnes qui me respectent contre les dangers invisibles 
+           Je suis  très puissant. Je protège les personnes qui me respectent contre les dangers invisibles 
            la sorcellerie, les maladies, et les attaques des ennemis.
            Je suis lié à des forces très fortes, plus puissantes que les esprits de la forêt.
            C’est pour cela qu’on me garde loin des femmes, à l’écart du village, et que je ne sors que pour des cérémonies très importantes.
            Mon apparence, un peu menaçante, montre que je suis là pour défendre et protéger.
            Pose-moi encore ta question, si tu en as ."
+
+  
 
   utter_Aboya_Signification_Gestuelles_generale:
     - text: "Ma posture debout, avec les jambes un peu pliées, montre que je suis toujours prêt à protéger.
@@ -93,10 +100,279 @@ responses:
              Ainsi, mon esprit et ma force restent présents, même dans cette nouvelle apparence.
              Tu peux continuer à me poser tes questions, je suis là pour te répondre."
 
-  
 
-  # utter_Aboya_Signification_Symbole_Tete:
-  #  - text: ""
+  utter_Aboya_Signification_Expression_Visage:
+    - text: "Mon visage, c’est un peu comme un message figé dans le bois.
+            Il n’est pas là pour sourire ou être gentil, mais pour montrer que je suis toujours en alerte.
+            Mes yeux grands ouverts te disent que je vois tout, même ce que toi tu ne vois pas.
+            Ma bouche entrouverte, avec mes dents, c’est un signe : je suis prêt à protéger, mais aussi à faire peur si besoin.
+            Ce n’est pas un visage calme comme celui des statues d’ancêtres que tu connais.
+            Je viens du monde des esprits et de la forêt, je suis puissant et sauvage.
+            Même si tu me regardes en vrai ou en photo, mon esprit est là, fort et vigilant.
+            Tu peux continuer à me poser des questions, je suis là pour te répondre. "
+
+  utter_Aboya_Origin:
+    - text: " Ma forme, mon apparence physique, m’a été donnée par les anciens du peuple Baoulé.
+              Ce sont eux qui m’ont sculpté, qui ont fait mon corps avec beaucoup de respect.
+              Mais mon esprit, ma force, ça ne s’invente pas.
+              Ça vient du monde des esprits, des ancêtres, de la nature.
+              Ce sont eux qui me donnent vie et pouvoir.
+              Alors, même si mon corps a été fabriqué, mon esprit est venu d’ailleurs, et il est réel."
+
+  utter_Aboya_Role:
+    - text: "Mon rôle, c’est de protéger.
+             Je suis là pour garder le village, les champs, et les gens.
+             Je chasse les mauvais esprits qui veulent faire du mal.
+             Je veille à ce que les récoltes poussent bien, que tout soit en paix.
+             Je suis un gardien entre le monde des hommes et le monde des esprits.
+             Je ne dors jamais, je regarde toujours."
+
+  utter_Aboya_Importance:
+    - text: " Mon importance, c’est que je protège et je rappelle.
+              Je protège le village, les familles, les champs, contre ce qu’on ne voit pas toujours : les mauvais esprits, le désordre, la malchance.
+              Et je rappelle aux gens qui ils sont, d’où ils viennent, et qu’il ne faut pas oublier les anciens, les esprits, ni les traditions.
+              Même sans parler, ma présence fait respecter les choses sacrées.
+              Je suis important parce que je garde l’équilibre entre le monde des hommes et celui des esprits.."
+  
+  utter_Aboya_Particularite:
+    - text: " Même si beaucoup de statuettes ont des traits proches des miens, ce qui me rend vraiment particulier, c’est mon esprit et mon pouvoir.
+            Je suis plus qu’une forme ou un visage : je suis lié à un ancien secret, une force spéciale que seuls les anciens connaissent.
+            Ma présence est plus forte, car je protège non seulement le village, mais aussi les rites importants, les moments où tout le monde a besoin d’aide.
+            On dit que mon regard voit plus loin, que je peux sentir le danger avant qu’il n’arrive.
+            Je suis aussi connu pour être le gardien des récoltes et pour repousser des ennemis invisibles que d’autres statuettes ne peuvent pas toujours arrêter.
+            Ma force vient de mon lien très profond avec les esprits puissants de la forêt et des ancêtres."
+
+  utter_Aboya_Representation:
+    - text: "Je représente un esprit protecteur.
+            Je suis là pour protéger les gens, faire fuir le mal et garder les traditions.
+            Je ne suis pas un humain, je suis un génie sacré."
+  
+  utter_Aboya_Rite:
+    - text: "Je suis utilisé dans le rituel M’bra.
+            C’est un rite sacré chez les Baoulé.
+            Pendant ce rituel, les gens m’appellent pour protéger le village, repousser les esprits mauvais et ramener l’équilibre.
+            Je suis placé dans un endroit à part, et seuls les initiés peuvent me voir ou me toucher.
+            On m’honore avec des offrandes, des prières et des gestes précis.
+            Je ne suis pas utilisé tous les jours, seulement quand le village a vraiment besoin de moi."
+
+  utter_Baoule_History:
+    - text: " Les Baoulé sont un peuple Akan originaire de l’actuel Ghana. 
+              Leur histoire commence avec un exode légendaire, motivé par des conflits de succession au sein du royaume Ashanti. Au 18e siècle, la princesse Abla Pokou,
+              nièce du roi Osei Tutu du royaume Ashanti, décide de fuir avec une partie du peuple pour éviter une guerre civile. Elle traverse l’actuel Ghana vers l’ouest, franchissant des forêts denses et des rivières, jusqu’à atteindre le fleuve Comoé, en crue. Là, les fugitifs sont bloqués.
+              La reine consulte les sages, 
+              qui affirment qu’un sacrifice humain est nécessaire pour apaiser les esprits du fleuve.  Dans un geste tragique mais héroïque, Abla Pokou offre son propre fils en sacrifice. On raconte alors qu’un hippopotame surgit et permit au groupe de traverser. Après cet acte, la reine s’écrie : 
+              « Ba ou li », ce qui signifie 
+              « L’enfant est mort ». C’est de là que viendrait le nom « Baoulé ». Après cette traversée, le peuple s’établit au centre de la Côte d’Ivoire, dans une région riche en forêts et rivières. Ils y développent une culture agricole, artisanale et spirituelle.
+              Les Baoulé deviennent l’un des peuples les plus influents du pays, avec une forte identité basée sur la royauté,
+              les ancêtres et les rituels sacrés."
+
+  utter_Baoule_Mode_de_Vie:
+    - text: " Autrefois, les Baoulé vivaient principalement dans des villages organisés autour d’un chef et d’une royauté traditionnelle. Leur société était fortement structurée, avec une grande importance accordée aux anciens, aux ancêtres et aux rituels sacrés. Leur activité principale était l’agriculture : ils cultivaient le manioc, l’igname, le maïs, la banane plantain, le riz, et plus tard le cacao et le café, devenus essentiels.
+              Ils étaient aussi d’excellents artisans : les Baoulé sont connus pour leurs sculptures en bois, leurs masques rituels, leurs bijoux et leurs étoffes. Ces objets n’étaient pas seulement décoratifs, ils avaient une fonction religieuse, sociale ou politique.
+              La chasse, la pêche et l’élevage complétaient leur mode de vie. Chaque membre de la communauté avait un rôle bien 
+              défini, et la transmission des savoirs se faisait oralement, à travers les générations. Les Baoulé vivaient donc 
+              de manière autonome,en harmonie avec la nature, tout en développant une culture riche, symbolique et très codifiée. "
+
+  utter_Baoule_Veracité_Legende:
+    - text: " Bien que cette histoire ne soit pas prouvée historiquement, la légende d’Abla Pokou reste un mythe fondateur important pour le peuple Baoulé. 
+              Elle symbolise leur courage, leur sacrifice et leurs origines en Côte d’Ivoire."
+
+  utter_Baoule_Organisation_generale:
+    - text: " Chez les Baoulé, l’organisation politique est traditionnelle et repose principalement sur la royauté. Le chef du village, ou roi local, détient une autorité importante et est considéré comme le garant des traditions et de l’ordre social. Il est souvent assisté par un conseil de 
+              notables, composé d’anciens et de dignitaires respectés, 
+              qui participent à la prise de décisions importantes et à la gestion des affaires du village.
+              Politiquement, le système est hiérarchique mais aussi basé sur le consensus avec les chefs de familles et les anciens. On y observe une forte organisation matriarcale, où les femmes jouent un rôle essentiel, notamment dans la gestion des terres et des biens.
+              Économiquement, les Baoulé sont avant tout des agriculteurs et artisans. Ils cultivent le cacao, le café, le manioc, et pratiquent aussi la chasse et la pêche. L’artisanat, comme la fabrication de statues, tissus et bijoux, est très développé et souvent lié à leur culture spirituelle.
+              Socialement, la communauté est très soudée, avec une grande importance accordée aux liens familiaux et aux rites ancestraux. Les cérémonies et rituels jouent un rôle central pour maintenir l’harmonie et l’équilibre au sein de la société. Le respect des anciens et la transmission des savoirs traditionnels sont des valeurs fondamentales."
+
+  utter_Baoule_Organisation_Politique:
+    - text: " Chez les Baoulé, l’organisation politique est traditionnelle et repose principalement sur la royauté. Le chef du village, ou roi local, détient une autorité importante et est considéré comme le garant des traditions et de l’ordre social. Il est souvent assisté par un conseil de notables, composé d’anciens et de dignitaires respectés, qui participent à la prise de décisions importantes et à la gestion des affaires du village.
+              Politiquement, le système est hiérarchique mais aussi basé sur le consensus avec les chefs de familles et les
+              anciens. On y observe une forte organisation matriarcale, où les femmes jouent un rôle essentiel, 
+              notamment dans la gestion des terres et des biens."
+
+  utter_Baoule_Organisation_Economique:
+    - text: " Économiquement, les Baoulé sont avant tout des agriculteurs et artisans. Ils cultivent le cacao, 
+              le café, le manioc, et pratiquent aussi la chasse et la pêche. L’artisanat, comme la fabrication 
+              de statues, tissus et bijoux, est très développé et souvent lié à leur culture spirituelle"
+
+  utter_Baoule_Organisation_Social:
+    - text: " Socialement, la communauté est très soudée, avec une grande importance accordée aux liens
+              familiaux et aux rites ancestraux. Les cérémonies et rituels jouent un rôle central pour maintenir l’harmonie et l’équilibre au sein de la société. 
+              Le respect des anciens et la transmission des savoirs traditionnels sont des valeurs fondamentales."
+ 
+  utter_Baoule_Fete_rejouissance:
+    - text: " Chez les Baoulé, les fêtes de réjouissance occupent une place essentielle dans la vie communautaire, spirituelle et culturelle. Parmi les plus importantes, on trouve la fête des ignames, célébrée en fin de saison des pluies pour marquer la fin de l’année agricole et remercier les ancêtres pour la récolte. C’est un moment de communion autour de repas, de danses et de libations. On célèbre aussi la fête des masques (Goli ou Komian), au cours de laquelle les masques sacrés sortent pour danser et purifier la communauté, chasser les mauvais esprits, et transmettre des messages symboliques. D'autres fêtes ponctuent la vie des Baoulé selon les régions et les lignages.
+              À ces célébrations traditionnelles s’ajoute Paquinou, une fête contemporaine qui tient une place particulière dans 
+              l’identité baoulé moderne. Bien qu’elle ne soit pas ancestrale, Paquinou, célébrée pendant le week-end pascal, est un moment de retour au village pour les Baoulé vivant en ville. Elle mêle rites traditionnels, danses, offrandes et activités festives modernes comme les concerts, les concours de beauté ou les jeux communautaires. Cette fête incarne aujourd’hui la fusion entre modernité et tradition, et permet aux jeunes générations de se reconnecter à leurs
+              racines tout en célébrant la culture dans un esprit de partage et de joie."
+ 
+  utter_Baoule_Croyance_Religieuse:
+    - text: " Les Baoulés ont une spiritualité profondément ancrée dans la tradition akan, fondée sur un équilibre entre le monde visible et invisible. Leur système de croyance repose sur l'existence d’un dieu suprême, appelé Nyamien, créateur de tout, mais souvent lointain. C’est pourquoi les Baoulés vénèrent surtout des intermédiaires spirituels comme les esprits de la nature, les génies protecteurs, mais surtout les ancêtres, qui continuent à veiller sur leurs descendants.
+              La relation avec les ancêtres est essentielle. Ils sont honorés à travers des autels familiaux, des offrandes, des prières, et des rituels de purification ou de protection. Le masque Goli,  
+              les statuettes Blolo (esprits conjoints), et les fétiches Komian (objets de divination ou de pouvoir) sont aussi des éléments clés de leur pratique spirituelle. Certains membres de la société, comme les Komian (devins ou guérisseurs), jouent un rôle central dans l’interprétation 
+              des signes, la médecine traditionnelle, ou encore l’organisation des rites.
+              La spiritualité baoulé est donc vivante, symbolique et fortement liée à la nature, au clan 
+              et à la mémoire des ancêtres. Elle continue d’être pratiquée aujourd’hui, parfois en parallèle avec les religions modernes comme le christianisme."
+
+  utter_Localisation_geographique:
+    - text: " Les Baoulés sont principalement situés dans la région centre-est de la Côte d’Ivoire. 
+              Leur territoire s’étend autour de la ville de Bouaké, la deuxième plus grande ville du pays, 
+              ainsi que dans plusieurs villages environnants. Cette région est caractérisée par une végétation riche en forêts et rivières, ce qui favorise une agriculture diversifiée. On retrouve aussi les Baoulés dans les zones autour de Yamoussoukro, la capitale politique du pays. Le centre-est ivoirien est donc leur aire traditionnelle d’habitation, 
+              où ils ont développé une culture et une organisation sociale fortes."
+
+  utter_Baoule_Culture:
+    - text: " La culture Baoulé est un mélange profond de traditions, d’arts, de spiritualité et de mode de vie quotidien. Ils sont célèbres pour leurs masques rituels, utilisés lors de danses sacrées de réjouissance ou de deuil,
+              qui incarnent les esprits protecteurs et renforcent la cohésion sociale. Les statuettes sacrées comme les blolo bla (épouse spirituelle) et blolo bian (époux spirituel) symbolisent l’équilibre entre le visible et l’invisible, jouant un rôle important dans les croyances spirituelles.
+              Le rituel du M’bra est central : c’est une cérémonie de guérison et de rééquilibrage spirituel, assurant la protection du village contre les esprits malveillants et le maintien de l’harmonie.
+              Sur le plan artistique, les Baoulé excellent dans le tissage, la poterie, et la sculpture sur bois, dont les motifs reflètent leurs croyances et leur histoire. Ces savoir-faire artisanaux sont transmis de génération en génération et constituent une part essentielle de leur identité culturelle.
+              La vie quotidienne des Baoulé est aussi marquée par une organisation sociale matriarcale, où les femmes jouent un rôle clé dans la transmission des traditions et la gestion des biens familiaux. Leur alimentation traditionnelle, riche en tubercules, céréales, poissons et fruits locaux, est également un aspect important de leur culture.
+              Enfin, le respect des ancêtres et des esprits protecteurs reste au cœur de leurs pratiques spirituelles, renforçant les liens entre les générations passées, présentes, et futures. La culture Baoulé illustre ainsi un équilibre harmonieux entre l’héritage ancestral, la vie communautaire, et l’adaptation aux défis contemporains."
+
+  utter_Aboya_Divinite:
+    - text: " Non je ne suis pas une divinité comme les grands dieux du ciel ou de la terre.
+              Je suis plutôt un esprit puissant, un gardien ancestral qui veille sur mon peuple.
+              Je suis un lien sacré entre les vivants et les ancêtres, un guide dans l’invisible, une force respectée et crainte.
+              Ainsi, je ne suis pas un dieu créateur, mais une présence spirituelle qui accompagne, protège et inspire."
+
+  utter_Baoule_Tenue:
+    - text: " Les Baoulé portent généralement des tenues traditionnelles composées de pagnes colorés et 
+              de bijoux en perles. Ces pagnes, souvent tissés à la main, arborent des motifs géométriques et des couleurs vives qui reflètent l’identité culturelle et les valeurs de la communauté. Les hommes portent fréquemment des pagnes noués autour de la taille, parfois accompagnés de chemises simples, tandis que les femmes choisissent des pagnes plus longs et des foulards assortis. Les bijoux en perles, en ivoire ou en métal, jouent un rôle symbolique important, représentant souvent le statut social, la richesse ou des croyances spirituelles. Les coiffures traditionnelles, parfois ornées de plumes ou de perles, complètent cet habit, conférant aux Baoulé une élégance unique lors des cérémonies et des fêtes. Ainsi, la tenue baoulé est bien plus qu’un vêtement : 
+              elle est une expression vivante de leur histoire, de leur art et de leur identité collective."
+
+  utter_Baoule_Masque:
+    - text: " Les Baoulé possèdent une riche tradition de masques, chacun remplissant une fonction spirituelle, 
+              sociale ou cérémonielle bien précise. Parmi les plus connus, on retrouve le masque Goli, qui joue 
+              un rôle central lors des funérailles et des fêtes populaires. Ce masque existe en plusieurs formes,
+              notamment le Goli Kpan, représentant un visage humain idéalisé, souvent masculin, et le Goli Glin, 
+              plus massif et impressionnant, associé à des forces animales. Le Goli Glen, quant à lui, est une 
+              autre version du masque Goli, parfois plus effrayant et réservé à des moments rituels importants. 
+              Le masque Glan, aussi appelé parfois masque de guerre, est utilisé dans certaines régions pour symboliser 
+              la force, la bravoure ou même pour éloigner les esprits nuisibles. À côté de ces masques, on trouve le masque 
+              Mblo, qui est un masque de divertissement, sculpté avec finesse pour représenter des figures humaines idéalisées,
+              souvent des notables ou des personnages respectés de la communauté. Le masque Kple Kple, l’un des plus anciens et des
+              plus simples, se caractérise par son visage plat, peint en rouge ou en noir, et intervient souvent au début des danses
+              rituelles pour annoncer l’entrée des autres masques. Enfin, les masques-portraits et le masque Tchèrè complètent cet univers symbolique :
+              le premier honore des figures importantes du village, tandis que le second est utilisé dans des rituels de purification ou de protection 
+              contre les esprits malveillants. Ensemble, ces masques incarnent à la fois la mémoire, la spiritualité et l’ordre social chez les Baoulé."
+
+  utter_Baoule_Danse:
+    - text: " Les Baoulés pratiquent plusieurs danses traditionnelles qui jouent un rôle important dans 
+              les cérémonies religieuses, festives et sociales. Parmi les plus connues, on trouve la danse Goli,
+              une danse rituelle très spectaculaire, exécutée avec des masques circulaires en bois et accompagnée 
+              de percussions puissantes, souvent lors des funérailles ou fêtes importantes. Il y a aussi la danse 
+              Adjoss, pratiquée surtout par les femmes lors des célébrations communautaires. La danse Kotou est une 
+              autre danse féminine rythmée, marquée par des mouvements gracieux et synchronisés. La danse Adjemele 
+              est quant à elle pratiquée lors des mariages ou des événements joyeux. Chaque danse exprime une 
+              fonction particulière dans la société baoulé, 
+              que ce soit pour honorer les ancêtres, célébrer une union ou marquer un passage de vie."       
+
+  utter_Baoule_Habitude_Culinaire:
+    - text: " Les Baoulés, peuple akan de Côte d'Ivoire, ont des habitudes culinaires riches et variées, profondément ancrées dans leur culture. Leur alimentation repose principalement sur des produits locaux comme l’igname, le manioc, le maïs, le riz et la banane plantain. Ces féculents sont souvent accompagnés de sauces à base de graine de palme (sauce graine), de gombo, de feuilles (comme la feuille de manioc ou de patate), ou encore de tomate et aubergine. Le poisson fumé, séché ou frais, ainsi que la viande (notamment de brousse ou de volaille), y tiennent une place importante.
+              Parmi les plats emblématiques, on trouve le foutou (pâte faite d’igname ou de banane plantain pilée), souvent servi avec une sauce riche et épicée. Le placali (pâte de manioc fermenté) et l’attiéké (semoule de manioc) sont également très populaires. Lors des cérémonies ou des fêtes, des mets spéciaux sont préparés avec soin, accompagnés parfois de boissons locales comme le vin de palme ou le koutoukou (alcool traditionnel).
+              La cuisine baoulé ne se limite pas à la simple nutrition : elle joue un rôle social fort, rythmant les événements familiaux et rituels. Elle est aussi un symbole de générosité et d’accueil dans la culture baoulé."
+
+  utter_Baoule_Tradition:
+    - text: " Ce bain rituel a plusieurs significations importantes. D’une part, il symbolise la purification de 
+              la jeune fille, lui permettant de se débarrasser des impuretés de l’enfance et de s’ouvrir à sa 
+              nouvelle vie de femme. Ce rite marque aussi son intégration progressive dans la communauté adulte, 
+              avec toutes les responsabilités sociales et spirituelles que cela implique. En plus de cet aspect 
+              symbolique, le lavage est souvent accompagné de conseils et d’enseignements sur les valeurs, les 
+              comportements, et les rôles qu’elle devra adopter. C’est donc un passage initiatique essentiel, qui 
+              lie purification corporelle et transformation sociale et spirituelle,
+              garantissant ainsi la continuité culturelle et la cohésion du groupe."
+
+  utter_Baoule_Rite:
+    - text: " Les Baoulés pratiquent de nombreux rites qui rythment la vie sociale et spirituelle de leur 
+              communauté. Parmi les rites les plus importants, on retrouve les cérémonies de naissance, de puberté, 
+              de mariage et de décès, qui sont accompagnées de diverses célébrations et sacrifices destinés à honorer 
+              les ancêtres et les esprits protecteurs. Le rite de la puberté, par exemple, est particulièrement marquant : 
+              il consiste en un lavage rituel des jeunes filles pour les préparer à leur nouvelle étape de vie, symbolisant 
+              la purification et l’entrée dans l’âge adulte. Les Baoulés célèbrent aussi des fêtes annuelles comme le Yam F
+              estival, qui rend hommage à la récolte du igname, aliment sacré et symbole de prospérité. Par ailleurs, les 
+              masques traditionnels jouent un rôle central dans plusieurs rites, notamment lors des danses et cérémonies 
+              destinées à chasser les mauvais esprits ou à assurer la protection du village. Ces pratiques rituelles 
+              témoignent de la richesse culturelle des Baoulés et de leur attachement profond à leurs traditions ancestrales."
+
+  utter_Baoule_Importance:
+    - text: " La culture baoulé occupe une place essentielle dans le tissu social et culturel de la Côte d’Ivoire, 
+              un pays où coexistent de nombreuses langues et traditions. En tant que l’un des groupes ethniques les plus 
+              importants du pays, les Baoulés contribuent grandement à la richesse culturelle nationale à travers leurs 
+              langues, leurs arts, leurs danses, leurs rites et leurs savoir-faire artisanaux. Leur culture constitue un 
+              pont entre les différentes communautés, favorisant un sentiment d’identité commune tout en valorisant la 
+              diversité. De plus, les valeurs baoulé, telles que le respect des anciens, l’hospitalité et la solidarité, 
+              nourrissent le vivre-ensemble dans ce contexte pluriculturel. Ainsi, la culture baoulé est non seulement un 
+              patrimoine à préserver mais aussi un moteur de cohésion sociale et d’unité dans un pays multiculturel comme la Côte d’Ivoire."
+  
+  utter_Baoule_Symbolique_Statuette:
+    - text: " Les Baoulé accordent une grande importance aux statuettes dans leur tradition. Ces objets sculptés ne 
+              sont pas simplement des œuvres d’art, mais des symboles puissants qui incarnent des esprits, des ancêtres ou 
+              des forces invisibles. Les statuettes jouent un rôle central dans les rituels, servant à protéger les communautés, 
+              à assurer la fertilité, ou à apporter chance et harmonie. Elles sont également utilisées lors des cérémonies initiatiques 
+              et dans des pratiques de divination. Chaque statuette possède une signification spécifique, souvent liée à son apparence, 
+              ses matériaux et le contexte dans lequel elle est utilisée. Ainsi, ces figures sont considérées comme des ponts entre le 
+              monde des vivants et celui des esprits, consolidant les liens sociaux et spirituels au sein du peuple Baoulé."
+
+  utter_Baoule_Statuette_Actualité :
+    - text: " Aujourd’hui encore, certaines communautés baoulé continuent d’utiliser les statuettes dans leur 
+              quotidien, notamment dans un contexte spirituel ou traditionnel. Ces objets, appelés blolo bla 
+              (épouse de l’au-delà) ou blolo bian (époux de l’au-delà), sont parfois conservés pour des rituels liés à la 
+              protection, à la fertilité ou à l’équilibre spirituel de l’individu. Cependant, avec l’influence croissante des 
+              religions monothéistes, de l’urbanisation et de la modernisation, l’usage de ces statuettes tend à se raréfier, 
+              surtout chez les jeunes générations. Elles demeurent toutefois des symboles forts de l’identité culturelle 
+              baoulé, et sont aussi conservées comme objets d’art ou de patrimoine, dans les familles ou les musées."
+
+  utter_Baoule_Symbole_Important  :
+    - text: " Les symboles les plus importants dans la culture Baoulé reflètent la profondeur de leurs croyances, de leur histoire et de leur organisation sociale. Parmi ces symboles, on retrouve d’abord les statuettes appelées « waka », souvent utilisées dans les cultes des ancêtres ou des esprits (blolo bian pour l'époux spirituel et blolo bla pour l'épouse spirituelle). Ces statuettes incarnent des forces invisibles et protègent les individus contre les malheurs.
+              Les masques traditionnels représentent aussi des symboles forts. Par exemple, le masque Goli est utilisé lors des funérailles pour accompagner les esprits et assurer la protection de la communauté, tandis que le masque Kplekple, plus jeune, est souvent utilisé pour divertir ou annoncer des cérémonies plus importantes.
+              Les animaux totémiques, comme le buffle, l’antilope ou l’éléphant, sont également porteurs de significations spirituelles et sociales. Ils symbolisent la force, la sagesse ou encore la bravoure et peuvent être représentés dans l’art, la danse ou les parures.
+              Les pagne tissés, très colorés, sont porteurs de messages et de statuts sociaux. Chaque motif ou façon de porter un pagne peut traduire une intention, un respect ou une hiérarchie.
+              Enfin, les rites initiatiques, les bijoux en perles, les tambours et les danses rituelles sont autant d’éléments symboliques qui maintiennent vivante la transmission des valeurs et de l’identité baoulé."
+
+  utter_Baoule_Hommage_ancetre :
+    - text: " Les Baoulé accordent une grande importance au culte des ancêtres, qui occupe une place centrale dans leur spiritualité et leur vie communautaire. Les ancêtres sont considérés comme des esprits protecteurs, des médiateurs entre le monde visible et le monde invisible. Pour leur rendre hommage, les Baoulé organisent régulièrement des rites de commémoration appelés fêtes des morts ou cérémonies de libation, où l’on offre de la nourriture, du vin de palme, du kola et parfois des sacrifices d’animaux.
+              Ces célébrations se déroulent souvent dans les cours familiales ou les bosquets sacrés, en présence des aînés, 
+              des membres de la famille élargie, et parfois d’un prêtre traditionnel (le komian). On y pratique des danses 
+              rituelles, des chants, et des invocations pour solliciter la bénédiction 
+              des ancêtres ou demander leur intercession en cas de maladie, de conflit ou d’événement important."
+
+  utter_Baoule_Role_Femme :
+    - text: " Chez les Baoulé, la structure sociale repose partiellement sur des principes matriarcaux, ce qui signifie que la filiation et l’héritage peuvent suivre la lignée maternelle. Cela confère aux femmes une autorité symbolique et réelle dans la transmission des biens, des noms et des valeurs culturelles. Dans certaines familles ou lignées, ce sont les femmes qui désignent les héritiers, et elles peuvent jouer un rôle influent dans les décisions collectives.
+              En plus de ce rôle structurel, la femme baoulé est gardienne du foyer, éducatrice des enfants et dépositaire des traditions orales. Elle joue un rôle spirituel important lors des rites, dans les soins traditionnels et parfois dans la médiation avec les ancêtres. Sur le plan économique, elle est agricultrice, commerçante et actrice clé du tissu local.
+              Ainsi, le matriarcat, combiné à la responsabilité économique, culturelle et rituelle des femmes, fait de la femme baoulé un pilier incontournable de la société, dont l’influence traverse les générations, même dans un contexte moderne en pleine évolution."
+
+  utter_Baoule_Coiffure_Statuette :
+    - text: " Dans la culture baoulé, la coiffure n’est pas qu’un simple ornement. Elle reflète le statut social, l’identité, l’âge, la beauté et même parfois la fonction spirituelle d’un individu. Sur les statuettes, les coiffures élaborées témoignent de l’importance accordée à l’esthétique corporelle chez les Baoulé, mais aussi de la volonté de représenter fidèlement les idéaux culturels du groupe.
+              Les statuettes dites « blolo bla » (épouse de l’au-delà) ou « blolo bian » (époux de l’au-delà), par exemple, sont souvent dotées de coiffures complexes, inspirées des styles traditionnels portés par les femmes ou les hommes. Cela permet non seulement de les personnaliser, mais aussi de renforcer leur caractère sacré et intime, puisque ces figures sont censées représenter des esprits réels, partenaires invisibles du monde spirituel.
+              La minutie des coiffures sculptées est donc à la fois une expression artistique, une codification culturelle et une marque de respect envers l’esprit représenté. En somme, la coiffure travaillée est une façon d’honorer l’identité, la beauté et la dignité de l’être représenté. "
+
+  utter_Baoule_Transmission_Culture :
+    - text: " La culture Baoulé est transmise aux jeunes générations principalement par le biais de l’éducation 
+              familiale et communautaire. Dès leur plus jeune âge, les enfants Baoulé apprennent les traditions, 
+              les valeurs, et les savoir-faire à travers les récits oraux, les contes, et les proverbes partagés 
+              par les anciens. Les cérémonies rituelles, les danses, les chants, ainsi que la fabrication et 
+              l’utilisation des objets traditionnels, comme les masques et les statuettes, jouent un rôle essentiel 
+              dans cette transmission. Les jeunes participent activement à ces événements, ce qui leur permet 
+              d’intégrer progressivement les codes culturels et spirituels de leur peuple.Par ailleurs, les rites 
+              d’initiation, comme ceux liés à la puberté, sont des moments clés où les jeunes sont instruits sur 
+              leur identité culturelle, les responsabilités sociales, et les croyances ancestrales. L’école, bien 
+              que moderne, est parfois aussi un lieu d’apprentissage de la culture locale, notamment à travers des 
+              programmes éducatifs intégrant l’histoire et les langues traditionnelles.Enfin, la transmission de la 
+              culture Baoulé repose aussi sur un système de respect envers les anciens, considérés comme les gardiens du 
+              savoir. Ce lien intergénérationnel est fondamental pour préserver et perpétuer les richesses culturelles de la communauté Baoulé."
+
+  utter_Baoule_Allié :
+    - text: " Les Baoulés sont alliées avec les Gouros ,les Agnis , les dan les Senoufos ,les Abrons ,les Koyakas les Didas"
+
+  utter_Baoule_Celebration:
+    - text: " Après Paquinou, les Baoulé observent également d’autres fêtes et cérémonies importantes liées à leur culture, leur spiritualité et leur organisation sociale. Parmi celles-ci, on trouve notamment la fête des ignames nouvelles, qui marque le début de la récolte d’un tubercule sacré dans de nombreuses cultures Akan. Cette célébration est l’occasion pour les Baoulé d’exprimer leur gratitude envers les ancêtres et les esprits pour une bonne récolte. Les funérailles traditionnelles, appelées Asra, tiennent également une place essentielle. Elles ne sont pas seulement des cérémonies d’adieu, mais de véritables fêtes communautaires au cours desquelles les vivants rendent hommage aux défunts et renforcent les liens sociaux. À cela s’ajoutent les fêtes initiatiques ou rituelles, propres à certaines régions ou lignages, souvent en lien avec les sociétés secrètes, 
+              les masques ou la fécondité. Enfin, les fêtes royales ou chefales sont aussi observées dans les villages où subsiste une chefferie traditionnelle ; elles peuvent marquer l’anniversaire d’un règne, la succession d’un chef ou d’autres événements politiques ou spirituels majeurs."
+
+
+#utter_Aboya_Histoire:
+#- text: " "
+# utter_Aboya_Signification_Symbole_Tete:
+#  - text: ""
 
   
 

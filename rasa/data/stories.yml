@@ -3,7 +3,6 @@ version: "3.1"
 stories:
 
 #Scenario 1 Salutation phrase introductive ,etat et reponse a l'etat
-
 - story:  Salutation et Phrase Introductive
   steps:
   - intent: salutation
@@ -18,7 +17,7 @@ stories:
   - action: utter_Aboya_Identities
 
 
-#Scenario 3 S demande explication gestuelle
+#Scenario 3  demande explication gestuelle
 - story:  Demande Signification gestuelle
   steps:
   - intent: Aboya_Signification_Gestuelles_generale
@@ -32,14 +31,232 @@ stories:
   - action: utter_Aboya_Materiel_Fabrication
 
 
-#Scenario 5 demande materiaux de fabrication
+#Scenario 5 signification posture assise
 - story: Signification Posture assise
   steps:
   - intent: Aboya_Signification_Posture_assise
   - action: utter_Aboya_Signification_Posture_assise
 
 
-#Scenario 6 Demande signe sur la tete
+#Scenario 6 signification expression du visage
+- story: Signification Expression du Visage
+  steps:
+  - intent: Aboya_Signification_Expression_Visage
+  - action: utter_Aboya_Signification_Expression_Visage
+
+#Scenario 7 demande origine d'Aboya
+- story: Demande origine
+  steps:
+  - intent: Aboya_Origin
+  - action: utter_Aboya_Origin
+
+#Scenario 8 demande role
+- story: Demande role
+  steps:
+  - intent: Aboya_Role
+  - action: utter_Aboya_Role
+
+#Scenario 8 demande important
+- story: Demande Importance
+  steps:
+  - intent: Aboya_Importance
+  - action: utter_Aboya_Importance
+
+#Scenario 9 demande particularité
+- story: Demande Particularité
+  steps:
+  - intent: Aboya_Particularite
+  - action: utter_Aboya_Particularite
+
+#Scenario 10 demande representation
+- story: Demande representation
+  steps:
+  - intent: Aboya_Representation
+  - action: utter_Aboya_Representation
+
+#Scenario 11 demande rite
+- story: Demande rite
+  steps:
+  - intent: Aboya_Rite
+  - action: utter_Aboya_Rite
+
+#Scenario 23 Aboya Divinité
+- story: Aboya Divinité
+  steps:
+  - intent: Aboya_Divinite
+  - action: utter_Aboya_Divinite
+
+#Scenario 12 Histoire Baoulé
+- story: Histoire Baoulé
+  steps:
+  - intent: Baoule_History
+  - action: utter_Baoule_History
+
+#Scenario 13 Baoulé Mode de vie
+- story: Mode de vie des baoulés
+  steps:
+  - intent: Baoule_Mode_de_Vie
+  - action: utter_Baoule_Mode_de_Vie
+
+#Scenario 14 Veracité legende 
+- story: Veracité legende
+  steps:
+  - intent: Baoule_Veracité_Legende
+  - action: utter_Baoule_Veracité_Legende
+
+#Scenario 15 Organisation generale
+- story: Baoulé Organisation
+  steps:
+  - intent: Baoule_Organisation_generale
+  - action: utter_Baoule_Organisation_generale
+
+#Scenario 16 Organisation Politique
+- story: Baoulé Organisation Politique
+  steps:
+  - intent: Baoule_Organisation_Politique
+  - action: utter_Baoule_Organisation_Politique
+
+#Scenario 17 Organisation Economique
+- story: Baoulé Organisation Economique
+  steps:
+  - intent: Baoule_Organisation_Economique
+  - action: utter_Baoule_Organisation_Economique
+
+#Scenario 18 Organisation Social
+- story: Baoulé Organisation Social
+  steps:
+  - intent: Baoule_Organisation_Social
+  - action: utter_Baoule_Organisation_Social
+
+#Scenario 19 Baoule Fete rejouissance
+- story: Baoule Fete rejouissance
+  steps:
+  - intent: Baoule_Fete_rejouissance
+  - action: utter_Baoule_Fete_rejouissance
+
+#Scenario 20 Baoule Croyance Religieuse
+- story: Baoule Croyance Religieuse
+  steps:
+  - intent: Baoule_Croyance_Religieuse
+  - action: utter_Baoule_Croyance_Religieuse
+
+#Scenario 21 Baoule Localisation Geographique
+- story: Localisation geographique
+  steps:
+  - intent: Localisation_geographique
+  - action: utter_Localisation_geographique
+
+#Scenario 22 Baoule Culture
+- story: Culture des Baoulé
+  steps:
+  - intent: Baoule_Culture
+  - action: utter_Baoule_Culture
+
+#Scenario 25 tenue des baoulé
+- story: Tenue des Baoulé
+  steps:
+  - intent: Baoule_Tenue
+  - action: utter_Baoule_Tenue
+
+#Scenario 26 Masque des baoulé
+- story: Masque des Baoulés
+  steps:
+  - intent: Baoule_Masque
+  - action: utter_Baoule_Masque
+
+#Scenario 27 Danse des baoulé
+- story: Danse des Baoulés
+  steps:
+  - intent: Baoule_Danse
+  - action: utter_Baoule_Danse
+
+#Scenario 28 Baoulé Habitude culinaire
+- story: Baoulé Habitude Culinaire
+  steps:
+  - intent: Baoule_Habitude_Culinaire
+  - action: utter_Baoule_Habitude_Culinaire
+
+#Scenario 29 Baoulé Tradition
+- story: Baoule Tradition
+  steps:
+  - intent: Baoule_Tradition
+  - action: utter_Baoule_Tradition 
+
+#Scenario 30 Baoule Rite
+- story: Baoule Rite
+  steps:
+  - intent: Baoule_Rite
+  - action: utter_Baoule_Rite
+
+#Scenario 31 Baoule Importance
+- story: Baoule Importance
+  steps:
+  - intent: Baoule_Importance
+  - action: utter_Baoule_Importance
+
+#Scenario 32 Symboliques statuettes
+- story: Symbolique Statuette
+  steps:
+  - intent: Baoule_Symbolique_Statuette
+  - action: utter_Baoule_Symbolique_Statuette
+
+#Scenario 33 Baoule Statuette Actualité
+- story: Baoule Statuette Actualité
+  steps:
+  - intent: Baoule_Statuette_Actualité
+  - action: utter_Baoule_Statuette_Actualité
+
+#Scenario 34 Baoule Symbole Important
+- story: Baoule Symbole Important
+  steps:
+  - intent: Baoule_Symbole_Important
+  - action: utter_Baoule_Symbole_Important
+
+#Scenario 35 Baoule Hommage ancetre
+- story: Baoule Hommage ancetre
+  steps:
+  - intent: Baoule_Hommage_ancetre
+  - action: utter_Baoule_Hommage_ancetre
+
+#Scenario 36 Baoule Role Femme
+- story: Baoule Role Femme
+  steps:
+  - intent: Baoule_Role_Femme
+  - action: utter_Baoule_Role_Femme
+
+#Scenario 37 Baoule Coiffure Statuette
+- story: Baoule Coiffure Statuette
+  steps:
+  - intent: Baoule_Coiffure_Statuette
+  - action: utter_Baoule_Coiffure_Statuette
+
+#Scenario 38 Baoule Coiffure Statuette
+- story: Baoule Coiffure Statuette
+  steps:
+  - intent: Baoule_Coiffure_Statuette
+  - action: utter_Baoule_Coiffure_Statuette
+
+#Scenario 39 Baoule Transmission Culture
+- story: Baoule Transmission Culture
+  steps:
+  - intent: Baoule_Transmission_Culture
+  - action: utter_Baoule_Transmission_Culture
+
+#Scenario 40 Baoules Alliés
+- story: Baoules Alliés
+  steps:
+  - intent: Baoule_Allié 
+  - action: utter_Baoule_Allié 
+
+#Scenario 41 Baoules Celebration
+- story: Baoule Celebration
+  steps:
+  - intent: Baoule_Celebration 
+  - action: utter_Baoule_Celebration
+
+
+
+#Scenario 7 Demande signe sur la tete
 #- story: Signification signe sur la tete
 #  steps:
 #  - intent: Aboya_Aboya_Signification_Symbole_Tete
