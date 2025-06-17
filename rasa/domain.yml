@@ -4,6 +4,9 @@ intents:
 #Intent Divers
   - salutation
   - Etat
+  - User_Demande_Aide
+  - User_Non_Abandonne
+  - User_Oui_Redirige
 # Intent sur Aboya
   - Aboya_Identities
   - Aboya_Role
@@ -16,6 +19,17 @@ intents:
   - Aboya_Divinite
   - Aboya_Materiel_Fabrication
   - Aboya_Signification_Symbole_Tete
+  - Aboya_Utilisation_Actuelle
+  - Aboya_Lieu_Exposition
+  - Aboya_Transmission_Savoir
+  - Aboya_Evolution_Stylistique
+  - Aboya_Sculpteurs_Célèbres
+  - Aboya_Technique_Sculpture
+  - Aboya_Signification_Couleurs
+  - Aboya_Restauration
+  - Aboya_Utilisation_Rituelle
+  - Aboya_Comparaison_Autres_Statuettes
+  - utter_Aboya_Transmission_Savoir
   - Aboya_Signification_Posture_assise
   - Aboya_Signification_Expression_Visage
   - Aboya_Signification_Gestuelles_generale
@@ -35,6 +49,16 @@ intents:
   - Localisation_geographique
   - Baoule_Tenue
   - Baoule_Masque
+  - Baoule_Musique_Traditionnelle
+  - Baoule_Savoir_Oral
+  - Baoule_Mythologie
+  - Baoule_Artisanat
+  - Baoule_Education_Traditionnelle
+  - Baoule_Rapports_Animaux
+  - Baoule_Architecture_Traditionnelle
+  - Baoule_Jeux_Enfance
+  - Baoule_Evolution_Moderne
+  - Baoule_Influence_Extérieure
   - Baoule_Danse
   - Baoule_Habitude_Culinaire
   - Baoule_Tradition
@@ -57,9 +81,11 @@ responses:
     - text: "Akwaba bienvenu, je suis N’Botumbo, une Statuette Baoulé ,
             Tu peux me poser des questions sur la culture Baoulé ou sur moi meme via l'écran."
   utter_Etat:
-    - text: "Je vais bien, petit du monde moderne.
-             La sagesse veille, et l’esprit des anciens m’accompagne.
+    - text: "Je vais bien,merci.
              Que Puis Je Faire Pour Toi ? "
+  utter_default:
+    - text: "Je suis désolé, cette question n'es parmis celle a laquelle je peux repondre. Veux-tu reformuler ou poser une autre question sur Aboya ou la culture baoulé ?"
+
 
 #Reponse Question sur Aboya
   utter_Aboya_Identities:
@@ -155,6 +181,67 @@ responses:
             On m’honore avec des offrandes, des prières et des gestes précis.
             Je ne suis pas utilisé tous les jours, seulement quand le village a vraiment besoin de moi."
 
+  
+  utter_Aboya_Utilisation_Actuelle:
+    - text: "Aujourd'hui, la statuette Aboya est principalement utilisée à des fins culturelles, éducatives ou muséales, mais elle conserve une portée symbolique importante dans certaines cérémonies traditionnelles baoulées."
+
+  utter_Aboya_Lieu_Exposition:
+    - text: "La statuette Aboya peut être observée dans des musées ethnographiques, notamment en Côte d'Ivoire, ainsi que dans certaines maisons sacrées des villages baoulés."
+
+  utter_Aboya_Evolution_Stylistique:
+    - text: "Avec le temps, la forme d'Aboya a pu légèrement varier selon les sculpteurs, mais son symbolisme fondamental reste fidèle aux traditions baoulées."
+
+  utter_Aboya_Sculpteurs_Célèbres:
+    - text: "Il n’existe pas de noms connus mondialement, mais certaines familles baoulées sont réputées pour leur savoir-faire ancestral dans la sculpture d’Aboya."
+
+  utter_Aboya_Technique_Sculpture:
+    - text: "La statuette est généralement sculptée à la main dans du bois, à l’aide d’outils traditionnels. Le processus inclut souvent des prières et des gestes rituels."
+
+  utter_Aboya_Signification_Couleurs:
+    - text: "Les couleurs appliquées sur Aboya peuvent représenter la vie, la force, la pureté ou des états spirituels selon le pigment utilisé."
+
+  utter_Aboya_Restauration:
+    - text: "La restauration d'une statuette Aboya se fait avec prudence, parfois par des artisans spécialisés ou dans le cadre de rituels pour préserver son énergie spirituelle."
+
+  utter_Aboya_Utilisation_Rituelle:
+    - text: "Aboya est utilisée dans certains rites de protection, de fertilité ou d’hommage aux ancêtres. Elle sert de lien entre le monde visible et l’invisible."
+
+  utter_Aboya_Comparaison_Autres_Statuettes:
+    - text: "Contrairement à d'autres statuettes africaines, Aboya se distingue par sa posture assise, sa gestuelle expressive et sa forte charge spirituelle liée à la culture baoulé."
+
+  utter_Aboya_Transmission_Savoir:
+    - text: "Le savoir autour d’Aboya est transmis oralement, de génération en génération, par les anciens, les sculpteurs et les gardiens de la tradition."
+  
+
+  utter_suggestion_sujets:
+    - text: "Voici quelques sujets auxquels je peux répondre :
+        - Le rôle et la signification de la statuette Aboya
+        - Les traditions et croyances des Baoulés
+        - L’histoire de la reine Pokou
+        - Les danses, les masques, les tenues baoulées
+        Tu veux parler de quoi ?"
+
+  utter_fin_conversation:
+    - text: "D'accord, je reste là si tu as d'autres questions plus tard."
+
+  utter_remerciement:
+    - text: "Parfait ! Pose ta question, je t'écoute."
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
   utter_Baoule_History:
     - text: " Les Baoulé sont un peuple Akan originaire de l’actuel Ghana. 
               Leur histoire commence avec un exode légendaire, motivé par des conflits de succession au sein du royaume Ashanti. Au 18e siècle, la princesse Abla Pokou,
@@ -368,15 +455,63 @@ responses:
     - text: " Après Paquinou, les Baoulé observent également d’autres fêtes et cérémonies importantes liées à leur culture, leur spiritualité et leur organisation sociale. Parmi celles-ci, on trouve notamment la fête des ignames nouvelles, qui marque le début de la récolte d’un tubercule sacré dans de nombreuses cultures Akan. Cette célébration est l’occasion pour les Baoulé d’exprimer leur gratitude envers les ancêtres et les esprits pour une bonne récolte. Les funérailles traditionnelles, appelées Asra, tiennent également une place essentielle. Elles ne sont pas seulement des cérémonies d’adieu, mais de véritables fêtes communautaires au cours desquelles les vivants rendent hommage aux défunts et renforcent les liens sociaux. À cela s’ajoutent les fêtes initiatiques ou rituelles, propres à certaines régions ou lignages, souvent en lien avec les sociétés secrètes, 
               les masques ou la fécondité. Enfin, les fêtes royales ou chefales sont aussi observées dans les villages où subsiste une chefferie traditionnelle ; elles peuvent marquer l’anniversaire d’un règne, la succession d’un chef ou d’autres événements politiques ou spirituels majeurs."
 
+  utter_Baoule_Musique_Traditionnelle:
+    - text: "La musique baoulé utilise des tambours, balafons, flûtes et chants. Elle accompagne les cérémonies, danses et récits oraux traditionnels."
+
+  utter_Baoule_Savoir_Oral:
+    - text: "La culture baoulé est riche en traditions orales, transmises par les anciens, les conteurs et les griots, qui jouent un rôle fondamental dans la mémoire collective."
+
+  utter_Baoule_Mythologie:
+    - text: "La mythologie baoulé comprend des récits d’origine, des esprits de la nature et des légendes sur des héros fondateurs comme la reine Pokou."
+
+  utter_Baoule_Artisanat:
+    - text: "Les Baoulés excellent dans la sculpture sur bois, le tissage, la poterie et la fabrication de bijoux et de masques, tous chargés de symbolisme."
+
+  utter_Baoule_Education_Traditionnelle:
+    - text: "L’éducation traditionnelle baoulé passe par la famille, les rites d’initiation et l’apprentissage communautaire, intégrant savoir-faire et valeurs morales."
+
+  utter_Baoule_Rapports_Animaux:
+    - text: "Certains animaux comme le crocodile ou l’éléphant ont une valeur symbolique forte dans la culture baoulé, représentant souvent la force ou la sagesse."
+
+  utter_Baoule_Architecture_Traditionnelle:
+    - text: "Les maisons traditionnelles baoulées sont souvent en banco (terre battue), disposées autour d’une cour centrale, avec des toits en paille ou en tôle."
+
+  utter_Baoule_Jeux_Enfance:
+    - text: "Les enfants baoulés jouent à des jeux traditionnels comme le 'wari' ou des courses, souvent associés à des chants et à l’apprentissage culturel."
+
+  utter_Baoule_Evolution_Moderne:
+    - text: "La culture baoulé évolue avec la modernité tout en conservant des rituels et traditions dans les zones rurales et au sein de familles attachées à leur héritage."
+
+  utter_Baoule_Influence_Extérieure:
+    - text: "La culture baoulé a été influencée par la colonisation, les religions extérieures et la mondialisation, mais elle conserve une forte identité culturelle."
+
+
+
+
+
+
+
 
 #utter_Aboya_Histoire:
 #- text: " "
 # utter_Aboya_Signification_Symbole_Tete:
 #  - text: ""
 
-  
 
-  
+
 session_config:
   session_expiration_time: 60
   carry_over_slots_to_new_session: true
+
+
+policies:
+  - name: RulePolicy
+    core_fallback_threshold: 0.3
+    core_fallback_action_name: "action_default_fallback"
+    enable_fallback_prediction: true
+  - name: MemoizationPolicy
+  - name: TEDPolicy
+    max_history: 5
+    epochs: 100
+actions:
+  - utter_default

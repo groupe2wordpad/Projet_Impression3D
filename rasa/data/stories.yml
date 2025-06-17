@@ -255,6 +255,127 @@ stories:
   - action: utter_Baoule_Celebration
 
 
+- story: Utilisation actuelle d’Aboya
+  steps:
+  - intent: Aboya_Utilisation_Actuelle
+  - action: utter_Aboya_Utilisation_Actuelle
+
+
+- story: Lieux d’exposition d’Aboya
+  steps:
+  - intent: Aboya_Lieu_Exposition
+  - action: utter_Aboya_Lieu_Exposition
+
+
+- story: Évolution stylistique d’Aboya
+  steps:
+  - intent: Aboya_Evolution_Stylistique
+  - action: utter_Aboya_Evolution_Stylistique
+
+- story: Sculpteurs célèbres d’Aboya
+  steps:
+  - intent: Aboya_Sculpteurs_Célèbres
+  - action: utter_Aboya_Sculpteurs_Célèbres
+
+- story: Technique de sculpture d’Aboya
+  steps:
+  - intent: Aboya_Technique_Sculpture
+  - action: utter_Aboya_Technique_Sculpture
+
+- story: Signification des couleurs sur Aboya
+  steps:
+  - intent: Aboya_Signification_Couleurs
+  - action: utter_Aboya_Signification_Couleurs
+
+- story: Restauration de la statuette Aboya
+  steps:
+  - intent: Aboya_Restauration
+  - action: utter_Aboya_Restauration
+
+- story: Utilisation rituelle d’Aboya
+  steps:
+  - intent: Aboya_Utilisation_Rituelle
+  - action: utter_Aboya_Utilisation_Rituelle
+
+- story: Comparaison avec d'autres statuettes
+  steps:
+  - intent: Aboya_Comparaison_Autres_Statuettes
+  - action: utter_Aboya_Comparaison_Autres_Statuettes
+
+- story: Transmission du savoir autour d’Aboya
+  steps:
+  - intent: Aboya_Transmission_Savoir
+  - action: utter_Aboya_Transmission_Savoir
+
+- story: Musique traditionnelle baoulé
+  steps:
+  - intent: Baoule_Musique_Traditionnelle
+  - action: utter_Baoule_Musique_Traditionnelle
+
+- story: Savoir oral baoulé
+  steps:
+  - intent: Baoule_Savoir_Oral
+  - action: utter_Baoule_Savoir_Oral
+
+- story: Mythologie baoulé
+  steps:
+  - intent: Baoule_Mythologie
+  - action: utter_Baoule_Mythologie
+
+- story: Artisanat baoulé
+  steps:
+  - intent: Baoule_Artisanat
+  - action: utter_Baoule_Artisanat
+
+- story: Éducation traditionnelle baoulé
+  steps:
+  - intent: Baoule_Education_Traditionnelle
+  - action: utter_Baoule_Education_Traditionnelle
+
+- story: Rapports aux animaux
+  steps:
+  - intent: Baoule_Rapports_Animaux
+  - action: utter_Baoule_Rapports_Animaux
+
+- story: Architecture traditionnelle
+  steps:
+  - intent: Baoule_Architecture_Traditionnelle
+  - action: utter_Baoule_Architecture_Traditionnelle
+
+- story: Jeux d’enfance baoulés
+  steps:
+  - intent: Baoule_Jeux_Enfance
+  - action: utter_Baoule_Jeux_Enfance
+
+- story: Évolution moderne de la culture baoulé
+  steps:
+  - intent: Baoule_Evolution_Moderne
+  - action: utter_Baoule_Evolution_Moderne
+
+- story: Influences extérieures sur la culture baoulé
+  steps:
+  - intent: Baoule_Influence_Extérieure
+  - action: utter_Baoule_Influence_Extérieure
+
+- story: Accepte de reformuler
+  steps:
+  - intent: User_Oui_Redirige
+  - action: utter_remerciement
+
+- story: Refuse de continuer
+  steps:
+  - intent: User_Non_Abandonne
+  - action: utter_fin_conversation
+
+- story: Demande aide pour formuler
+  steps:
+  - intent: User_Demande_Aide
+  - action: utter_suggestion_sujets
+
+
+
+
+
 
 #Scenario 7 Demande signe sur la tete
 #- story: Signification signe sur la tete

@@ -644,7 +644,19 @@ nlu:
       - Se parer de
       - Se vêtir de
  
-
+  - synonym: Transmission
+    examples: | 
+      - éducation 
+      - apprentissage
+      - héritage
+      
+  - synonym: Utilisation
+    examples: |
+      - usage
+      - emploi
+      - fonction
+      - finalité
+      
 
 
  # Questions Sur Divers
@@ -702,6 +714,34 @@ nlu:
       - Plutôt bien, merci.
       - Bof, et toi ?
 
+  - intent: User_Oui_Redirige
+    examples: |
+      - Oui
+      - D’accord
+      - OK
+      - Je veux bien
+      - Pas de souci
+      - Ça me va
+
+  - intent: User_Non_Abandonne
+    examples: |
+      - Non, laisse tomber
+      - Tant pis
+      - Ce n’est pas grave
+      - Je vais chercher ailleurs
+      - C’est pas ce que je cherchais
+      - Laisse tomber
+
+  - intent: User_Demande_Aide
+    examples: |
+      - Que puis-je te demander ?
+      - Tu peux répondre à quoi ?
+      - Donne-moi des exemples de questions
+      - Quels sont les sujets que tu connais ?
+      - Quelles questions puis-je poser ?
+      - Aide-moi à formuler une question
+
+
 
   # Questions Sur Aboya
 
@@ -722,7 +762,6 @@ nlu:
       - Quel est ton nom
       - C'est quoi ton nom
       - Comment tu t'appelles
-
 
 # Explication Gestuelle
   - intent: Aboya_Signification_Gestuelles_generale
@@ -1049,7 +1088,94 @@ nlu:
       - est tu une divinité
       - est tu Dieu
       - tu es Dieu
+      
+
+# Aboya Utilisation Actuelle
+  - intent: Aboya_Utilisation_Actuelle
+    examples: |
+      - A quoi sert la statuette Aboya aujourd'hui ?
+      - Est-ce qu’on utilise encore Aboya actuellement ?
+      - Quel est l’usage moderne de la statuette Aboya ?
+      - La statuette Aboya est-elle encore utilisée ?
+      - Dans quels contextes utilise-t-on Aboya aujourd’hui ?
       -
+      -
+      -
+
+  - intent: Aboya_Lieu_Exposition
+    examples: |
+      - Où peut-on voir la statuette Aboya ?
+      - La statuette Aboya est-elle exposée dans un musée ?
+      - Existe-t-il des lieux dédiés à Aboya ?
+      - Où peut-on observer la statuette ?
+      - Est-elle conservée quelque part ?
+
+  - intent: Aboya_Evolution_Stylistique
+    examples: |
+      - Le style d'Aboya a-t-il changé avec le temps ?
+      - Comment la représentation d'Aboya a-t-elle évolué ?
+      - Y a-t-il eu des évolutions stylistiques ?
+      - L’apparence d’Aboya est-elle restée la même ?
+      - Aboya a-t-elle toujours eu le même aspect ?
+
+  - intent: Aboya_Sculpteurs_Célèbres
+    examples: |
+      - Y a-t-il des sculpteurs connus d’Aboya ?
+      - Qui fabrique les statuettes Aboya ?
+      - Peut-on nommer des artistes traditionnels d’Aboya ?
+      - Existe-t-il des maîtres artisans baoulés d’Aboya ?
+      - Quels sont les créateurs célèbres de cette statuette ?
+
+  - intent: Aboya_Technique_Sculpture
+    examples: |
+      - Comment sculpte-t-on la statuette Aboya ?
+      - Quelles techniques sont utilisées ?
+      - Quelle est la méthode de fabrication ?
+      - Est-ce taillée à la main ?
+      - Y a-t-il une technique spéciale pour Aboya ?
+
+  - intent: Aboya_Signification_Couleurs
+    examples: |
+      - Que signifient les couleurs sur Aboya ?
+      - Les couleurs ont-elles une symbolique ?
+      - Pourquoi certaines parties sont colorées ?
+      - Les pigments ont-ils un sens ?
+      - Quelle est la signification des teintes ?
+
+  - intent: Aboya_Restauration
+    examples: |
+      - Peut-on restaurer une statuette Aboya ?
+      - Que fait-on si une statuette est abîmée ?
+      - Existe-t-il des spécialistes de la réparation ?
+      - Comment préserver une statuette ancienne ?
+      - Y a-t-il des techniques de restauration traditionnelles ?
+
+  - intent: Aboya_Utilisation_Rituelle
+    examples: |
+      - Aboya est-elle utilisée dans les rites ?
+      - Quels rituels impliquent la statuette Aboya ?
+      - La statuette a-t-elle un rôle spirituel ?
+      - Dans quelles cérémonies trouve-t-on Aboya ?
+      - Est-ce un objet sacré ?
+
+  - intent: Aboya_Comparaison_Autres_Statuettes
+    examples: |
+      - En quoi Aboya est-elle différente des autres statuettes ?
+      - Quelle est la particularité d’Aboya ?
+      - Comment comparer Aboya aux autres œuvres africaines ?
+      - Aboya ressemble-t-elle aux statuettes Akan ?
+      - Quelle est la spécificité artistique d’Aboya ?
+
+  - intent: Aboya_Transmission_Savoir
+    examples: |
+      - Comment apprend-on à fabriquer une statuette Aboya ?
+      - Qui transmet le savoir autour d’Aboya ?
+      - Existe-t-il une tradition orale liée à Aboya ?
+      - Comment les jeunes Baoulés apprennent-ils à la sculpter ?
+      - Le savoir-faire autour d’Aboya est-il protégé ?
+
+
+ 
 
 
 
@@ -1234,7 +1360,7 @@ nlu:
       - Comment est gérée le volet social chez les baoules
       - Quelle est la répartition des rôles social chez les baoulés
 
-  # Evenement et célébration
+# Evenement et célébration
   - intent: Baoule_Fete_rejouissance
     examples: |
       - Cite Moi les différentes fêtes de réjouissances du peuple baoulé ? 
@@ -1624,9 +1750,95 @@ nlu:
       - Ils ont quoi comme fête après Paquinou, les Baoulé ?
 
 
+ #  Baoule_Musique_Traditionnelle
+  - intent: Baoule_Musique_Traditionnelle
+    examples: |
+      - Quels instruments jouent les Baoulés ?
+      - Quelle est la musique traditionnelle baoulé ?
+      - Est-ce qu’ils ont des chants spécifiques ?
+      - Les Baoulés ont-ils des tambours rituels ?
+      - À quoi ressemble la musique chez les Baoulés ?
 
+#  Baoule_Savoir_Oral
+  - intent: Baoule_Savoir_Oral
+    examples: |
+      - Comment les Baoulés transmettent leur histoire ?
+      - Y a-t-il des conteurs traditionnels ?
+      - Quelle est la place des griots ?
+      - L’oralité est-elle importante chez les Baoulés ?
+      - Les Baoulés ont-ils une tradition orale ?
 
+#  Baoule Mythologie
+  - intent: Baoule_Mythologie
+    examples: |
+      - Quels sont les mythes baoulés ?
+      - Y a-t-il des légendes célèbres ?
+      - Quelle est leur mythologie ?
+      - Les Baoulés croient-ils à des esprits ?
+      - Quels sont leurs récits fondateurs ?
 
+#  Baoule Artisanat
+  - intent: Baoule_Artisanat
+    examples: |
+      - Que fabriquent les artisans baoulés ?
+      - Quels objets artisanaux sont courants ?
+      - Est-ce qu’ils font du tissage ?
+      - L’artisanat est-il développé chez les Baoulés ?
+      - Quels sont leurs savoir-faire traditionnels ?
+
+#  Baoule Education Traditionnelle
+  - intent: Baoule_Education_Traditionnelle
+    examples: |
+      - Comment éduquait-on les enfants baoulés ?
+      - Quelle est la place de l’initiation ?
+      - Existe-t-il une école traditionnelle ?
+      - Comment les enfants apprennent-ils leur culture ?
+      - L’éducation est-elle communautaire ?
+
+#  Baoule Rapports Animaux
+  - intent: Baoule_Rapports_Animaux
+    examples: |
+      - Y a-t-il des animaux sacrés ?
+      - Les Baoulés respectent-ils certains animaux ?
+      - Ont-ils des totems animaux ?
+      - Le lion ou l’éléphant ont-ils une place ?
+      - Quelle est leur relation avec la nature ?
+
+#  Baoule Architecture Traditionnelle
+  - intent: Baoule_Architecture_Traditionnelle
+    examples: |
+      - À quoi ressemblent leurs maisons ?
+      - Comment sont construites les habitations ?
+      - Ont-ils une architecture spécifique ?
+      - Les cases baoulées sont-elles décorées ?
+      - Quel est le style architectural traditionnel ?
+
+#  Baoule Jeux Enfance
+  - intent: Baoule_Jeux_Enfance
+    examples: |
+      - Quels jeux jouent les enfants baoulés ?
+      - Ont-ils des jeux traditionnels ?
+      - À quoi s’amusent les jeunes Baoulés ?
+      - Existe-t-il des jeux initiatiques ?
+      - Comment jouent-ils en communauté ?
+
+#  Baoule Evolution Moderne
+  - intent: Baoule_Evolution_Moderne
+    examples: |
+      - Comment la culture baoulé évolue-t-elle ?
+      - Est-ce qu’ils vivent encore selon les traditions ?
+      - La modernité a-t-elle changé leur mode de vie ?
+      - Qu’est-ce qui a été transformé dans leur culture ?
+      - Comment s’adaptent-ils au monde d’aujourd’hui ?
+
+#  Baoule Influence Extérieure
+  - intent: Baoule_Influence_Extérieure
+    examples: |
+      - La colonisation a-t-elle influencé la culture baoulé ?
+      - Y a-t-il eu des influences étrangères ?
+      - Ont-ils gardé toutes leurs traditions ?
+      - Quel impact a eu le contact avec l’Europe ?
+      - L’islam ou le christianisme ont-ils influencé les Baoulés ?
 
 
     
