@@ -14,7 +14,7 @@ def manifest():
 # Route pour servir le service-worker.js depuis /
 @app.route('/service-worker.js')
 def service_worker():
-    return send_from_directory('.', 'service-worker.js')  # Le point signifie "le dossier courant"
+    return send_from_directory('.', 'service-worker.js', mimetype='application/javascript')  # Le point signifie "le dossier courant"
 
 @app.route('/offline.html')
 def offline():

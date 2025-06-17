@@ -802,49 +802,6 @@ body {
     }
   }
 
-  // --- PAGE 3 : Aboya parle normalement ---
-  const texteParle = document.getElementById('texte-parle');
-const aboyaMessage = "N'BOTUMBO PARLE";
-const aboyaSpeed = 150;
-
-function typeWriterLoop(text, element, speed) {
-  let i = 0;
-  let isDeleting = false;
-
-  function loop() {
-    if (!isDeleting) {
-      // écriture
-      element.textContent = text.substring(0, i + 1);
-      element.style.borderRight = "0.15em solid #F77F00"; // curseur visible
-      i++;
-      if (i === text.length) {
-        // texte fini d’écrire, on attend un peu puis on passe en effacement
-        setTimeout(() => {
-          isDeleting = true;
-          loop();
-        }, 1000); // pause 1s à la fin de la frappe
-        return;
-      }
-    } else {
-      // effacement
-      element.textContent = text.substring(0, i - 1);
-      i--;
-      if (i === 0) {
-        // texte effacé, on passe à nouveau à l’écriture
-        isDeleting = false;
-        setTimeout(loop, 500); // pause 0.5s avant de recommencer
-        return;
-      }
-    }
-    setTimeout(loop, speed);
-  }
-
-  loop();
-}
-
-
-
-
   // --- Auto resize de la textarea selon contenu ---
   function enableTextareaAutoResize() {
     const textarea = document.querySelector('#page-interaction textarea');
@@ -865,24 +822,6 @@ function typeWriterLoop(text, element, speed) {
     enableTextareaAutoResize();
   }
 
-  // --- Gestion du passage de page 2 vers page 3 (Aboya parle) ---
-  function goToPageAboya() {
-    document.getElementById("page-interaction").classList.remove("active");
-    document.getElementById("page-aboya").classList.add("active");
-    // lancement de la boucle d’écriture magique
-    typeWriterLoop(aboyaMessage, texteParle, aboyaSpeed); 
-    setTimeout(goToPageMedia, 15000);
-  }
-
-  // --- Gestion du passage de page 3 vers page 4 (media carousel) ---
-  function goToPageMedia() {
-    document.getElementById("page-aboya").classList.remove("active");
-    document.getElementById("page-media").classList.add("active");
-    startCarousel();
-    startSectionSwitcher();
-    setTimeout(goToPageMedia, 15000);
-  }
-
   // --- Événement click bouton envoyer ---
   const sendButton = document.getElementById("send-button");
   const textarea = document.querySelector('#page-interaction textarea');
@@ -890,9 +829,8 @@ function typeWriterLoop(text, element, speed) {
   function handleUserMessage() {
     const message = textarea.value.trim();
     if (!message) return;
-    // Ici tu peux traiter le message si besoin (ex: envoi serveur)
-    // Puis basculer vers la page aboya qui parle
-    goToPageAboya();
+    // Suppression du passage automatique à la page 3 ici
+    // Le passage vers la page 3 devra être géré par backend ou autre logique
   }
 
   sendButton.addEventListener("click", handleUserMessage);
@@ -905,9 +843,23 @@ function typeWriterLoop(text, element, speed) {
     }
   });
 
+  // --- VIDEO ---
+  const video = document.getElementById("video-danse");
+  video.loop = false;
+
+  video.addEventListener("play", () => {
+    stopCarousel();
+  });
+
+  video.addEventListener("ended", () => {
+    stopCarousel();
+    stopSectionSwitcher();
+    goToPageRepos();
+  });
+
   // --- PAGE 4 : CAROUSEL MASQUES ---
   const carouselContainer = document.getElementById("carousel-masques");
-  const slides = carouselContainer.querySelectorAll("img");
+  const slides = carouselContainer ? carouselContainer.querySelectorAll("img") : [];
   let currentSlide = 0;
   let carouselInterval;
 
@@ -940,22 +892,21 @@ function typeWriterLoop(text, element, speed) {
     sections[currentIndex].style.display = "flex";
 
     if (currentIndex === 0) {
-  startCarousel();
+      startCarousel();
 
-  // Pause la vidéo de manière sécurisée
-  if (!video.paused && !video.ended) {
-    video.pause();
-  }
-  video.currentTime = 0;
-} else {
-  stopCarousel();
+      // Pause la vidéo si elle est lancée
+      if (!video.paused && !video.ended) {
+        video.pause();
+      }
+      video.currentTime = 0;
+    } else {
+      stopCarousel();
 
-  // Lancer la vidéo sans provoquer d'erreur
-  video.play().catch((error) => {
-    console.warn("Erreur lors du lancement de la vidéo :", error);
-  });
-}
-
+      // Lance la vidéo, sans erreur si impossible
+      video.play().catch((error) => {
+        console.warn("Erreur lors du lancement de la vidéo :", error);
+      });
+    }
   }
 
   function startSectionSwitcher() {
@@ -966,38 +917,12 @@ function typeWriterLoop(text, element, speed) {
     if (switcherInterval) clearInterval(switcherInterval);
   }
 
+  // --- Retour à page repos (page 1) ---
   function goToPageRepos() {
-  // Masquer toutes les pages
-  document.querySelectorAll('.page').forEach(p => p.classList.remove("active"));
-
-  // Activer uniquement la page de repos
-  document.getElementById("page-interaction").classList.add("active");
-
-  // Redémarrer l'animation de texte
-  typeWriterRepos();
-}
-
-
-  // --- VIDEO ---
-  const video = document.getElementById("video-danse");
-  video.loop = false;
-
-  video.addEventListener("play", () => {
-    stopCarousel();
-  });
-
-  video.addEventListener("ended", () => {
-  stopCarousel();
-  stopSectionSwitcher();
-  goToPageRepos();
-  });
-
-
-  // --- Lancement initial ---
-  window.onload = () => {
+    document.querySelectorAll('.page').forEach(p => p.classList.remove("active"));
+    document.getElementById("page-repos").classList.add("active");
     typeWriterRepos();
-  };
-
+  }
 
   // --- THREE.JS GLB Viewer ---
   let camera, renderer, container, scene, controls;
@@ -1049,23 +974,9 @@ function typeWriterLoop(text, element, speed) {
 
   // --- INITIALISATION AU CHARGEMENT ---
   window.onload = () => {
-  typeWriterRepos();
-  initGLBViewer();
-
-  // Après 10 secondes → page 1 → page 2
-  setTimeout(() => {
-    goToPageInteraction();
-
-    // Après 10 secondes supplémentaires → page 2 → page 3
-    setTimeout(() => {
-      goToPageAboya();
-    }, 60000);  // ← ici c’est 30 secondes après affichage de la page 2
-
-  }, 15000);
-};
-
-  
-
+    typeWriterRepos();
+    initGLBViewer();
+  };
 
   // --- GESTION DU RESIZE ---
   window.addEventListener('resize', () => {
@@ -1074,6 +985,34 @@ function typeWriterLoop(text, element, speed) {
     camera.updateProjectionMatrix();
     renderer.setSize(container.clientWidth, container.clientHeight);
   });
+
+  // --- VERIFICATION DU CHANGEMENT DE PAGE CÔTÉ BACKEND ---
+  let currentPageState = "repos"; // Valeur initiale
+
+  async function verifierPageState() {
+    try {
+      const response = await fetch('/static/page_state.txt', { cache: 'no-store' });
+      const nouvellePage = await response.text();
+      const page = nouvellePage.trim();
+
+      if (page !== currentPageState) {
+        currentPageState = page;
+
+        if (page === "interaction") {
+          goToPageInteraction();
+          console.log("[JS] 🌀 Passage détecté : page 1 → page 2");
+        } else {
+          // Ignorer les autres états (page 3 et 4 ne sont pas gérés ici)
+          console.log("[JS] 🌀 Changement détecté mais ignoré :", page);
+        }
+      }
+    } catch (err) {
+      console.error("❌ Erreur lecture page_state.txt :", err);
+    }
+  }
+
+  // Vérification toutes les 2 secondes
+  setInterval(verifierPageState, 2000);
 </script>
 
   
