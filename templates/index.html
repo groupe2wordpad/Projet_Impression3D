@@ -328,19 +328,29 @@ body {
   }
 
   @keyframes glowPulse {
-    0% {
-      text-shadow: 0 0 10px #F77F00, 0 0 20px #F77F00;
-      transform: scale(1);
-    }
-    50% {
-      text-shadow: 0 0 20px #F77F00, 0 0 40px #F77F00;
-      transform: scale(1.05);
-    }
-    100% {
-      text-shadow: 0 0 10px #F77F00, 0 0 20px #F77F00;
-      transform: scale(1);
-    }
+  0% {
+    text-shadow: 0 0 10px #4b2e15, 0 0 20px #4b2e15;
+    transform: scale(1);
   }
+  50% {
+    text-shadow: 0 0 20px #4b2e15, 0 0 40px #4b2e15;
+    transform: scale(1.05);
+  }
+  100% {
+    text-shadow: 0 0 10px #4b2e15, 0 0 20px #4b2e15;
+    transform: scale(1);
+  }
+}
+
+.aboya-text {
+  font-size: 2rem;
+  color: #4b2e15;
+  text-align: center;
+  animation: glowPulse 2s infinite;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
 
   
   header {
@@ -439,6 +449,30 @@ body {
       word-wrap: break-word;
       flex-grow: 1;
     }
+    @keyframes glowPulse {
+  0% {
+    text-shadow: 0 0 10px #4b2e15, 0 0 20px #4b2e15;
+    transform: scale(1);
+  }
+  50% {
+    text-shadow: 0 0 20px #4b2e15, 0 0 40px #4b2e15;
+    transform: scale(1.05);
+  }
+  100% {
+    text-shadow: 0 0 10px #4b2e15, 0 0 20px #4b2e15;
+    transform: scale(1);
+  }
+}
+
+.aboya-text {
+  font-size: 2rem;
+  color: #4b2e15;
+  text-align: center;
+  animation: glowPulse 2s infinite;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
   
   #animated-text {
     font-size: 1.3rem;
@@ -657,19 +691,29 @@ body {
 
 
   @keyframes glowPulse {
-    0% {
-      text-shadow: 0 0 10px #F77F00, 0 0 20px #F77F00;
-      transform: scale(1);
-    }
-    50% {
-      text-shadow: 0 0 20px #F77F00, 0 0 40px #F77F00;
-      transform: scale(1.05);
-    }
-    100% {
-      text-shadow: 0 0 10px #F77F00, 0 0 20px #F77F00;
-      transform: scale(1);
-    }
+  0% {
+    text-shadow: 0 0 10px #4b2e15, 0 0 20px #4b2e15;
+    transform: scale(1);
   }
+  50% {
+    text-shadow: 0 0 20px #4b2e15, 0 0 40px #4b2e15;
+    transform: scale(1.05);
+  }
+  100% {
+    text-shadow: 0 0 10px #4b2e15, 0 0 20px #4b2e15;
+    transform: scale(1);
+  }
+}
+
+.aboya-text {
+  font-size: 2rem;
+  color: #4b2e15;
+  text-align: center;
+  animation: glowPulse 2s infinite;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
 #cadre_medias_masques {
       width: 100%;
       height: 80vh;
@@ -733,8 +777,8 @@ body {
   <!-- INTERFACE 2 : Interaction avec textarea et bouton envoyer -->
   <div id="page-interaction" class="page">
     <header>
-      <img src="static/img/aboya.png" class="img-left" alt="Image gauche" />
-      <img src="static/img/aboya.png" class="img-right" alt="Image droite" />
+      <img src="static/img/Aboya.png" class="img-left" alt="Image gauche" />
+      <img src="static/img/Aboya.png" class="img-right" alt="Image droite" />
     </header>
     <div id="animated-text"></div>
     <textarea placeholder="Posez Votre Question..............."></textarea>
@@ -744,7 +788,7 @@ body {
   <!-- INTERFACE 3 : Aboya parle normalement -->
   <div id="page-aboya" class="page">
     <div class="container">
-      <p id="texte-parle" class="aboya-text"></p>
+      <p id="texte-parle" class="aboya-text">N'BOTUMBO PARLE</p>
     </div>
   </div>
 
@@ -772,247 +816,317 @@ body {
 </div>
 
 <script>
-  // --- PAGE 1 : Texte animé "typewriter" ---
-  const typewriterEl = document.getElementById("typewriter");
-  const textRepos = "N'BOTUMBO INTERFACE";
+  document.addEventListener("DOMContentLoaded", function () {
+    // --- PAGE 1 : Texte animé "typewriter" ---
+    const typewriterEl = document.getElementById("typewriter");
+    const textRepos = "N'BOTUMBO INTERFACE";
 
-  async function typeWriterRepos() {
-    while (document.getElementById("page-repos").classList.contains("active")) {
-      typewriterEl.innerHTML = "";
-      for (let i = 0; i < textRepos.length; i++) {
-        typewriterEl.innerHTML += textRepos.charAt(i);
-        await new Promise(r => setTimeout(r, 150));
+    async function typeWriterRepos() {
+      while (document.getElementById("page-repos").classList.contains("active")) {
+        typewriterEl.innerHTML = "";
+        for (let i = 0; i < textRepos.length; i++) {
+          typewriterEl.innerHTML += textRepos.charAt(i);
+          await new Promise(r => setTimeout(r, 150));
+        }
+        await new Promise(r => setTimeout(r, 2000));
       }
-      await new Promise(r => setTimeout(r, 2000));
+    }
+    function startAboyaMagicTyping() {
+  const el = document.getElementById("texte-parle");
+  if (!el) return;
+
+  const text = "N'BOTUMBO PARLE";
+  let i = 0;
+  let isDeleting = false;
+
+  function type() {
+    if (!document.getElementById("page-aboya").classList.contains("active")) {
+      setTimeout(type, 100);
+      return;
+    }
+
+    el.innerHTML = text.substring(0, i);
+
+    if (!isDeleting) {
+      if (i < text.length) {
+        i++;
+        setTimeout(type, 150);
+      } else {
+        isDeleting = true;
+        setTimeout(type, 1000);
+      }
+    } else {
+      if (i > 0) {
+        i--;
+        setTimeout(type, 100);
+      } else {
+        isDeleting = false;
+        setTimeout(type, 500);
+      }
     }
   }
 
-  // --- PAGE 2 : Texte animé dans header ---
-  const animatedTextEl = document.getElementById("animated-text");
-  const textInteraction = "Que souhaites-tu savoir sur moi ou sur la culture baoulé ?";
+  type();
+}
 
-  async function typeWriterInteraction() {
-    while (document.getElementById("page-interaction").classList.contains("active")) {
-      animatedTextEl.innerHTML = "";
-      for (let i = 0; i < textInteraction.length; i++) {
-        animatedTextEl.innerHTML += textInteraction.charAt(i);
-        await new Promise(r => setTimeout(r, 200));
+
+    // --- PAGE 2 : Texte animé dans header ---
+    const animatedTextEl = document.getElementById("animated-text");
+    const textInteraction = "Que souhaites-tu savoir sur moi ou sur la culture baoulé ?";
+
+    async function typeWriterInteraction() {
+      while (document.getElementById("page-interaction").classList.contains("active")) {
+        animatedTextEl.innerHTML = "";
+        for (let i = 0; i < textInteraction.length; i++) {
+          animatedTextEl.innerHTML += textInteraction.charAt(i);
+          await new Promise(r => setTimeout(r, 200));
+        }
+        await new Promise(r => setTimeout(r, 1500));
       }
-      await new Promise(r => setTimeout(r, 1500));
     }
-  }
 
-  // --- Auto resize de la textarea selon contenu ---
-  function enableTextareaAutoResize() {
-    const textarea = document.querySelector('#page-interaction textarea');
-    if (!textarea) return;
-    const adjustHeight = () => {
-      textarea.style.height = 'auto';
-      textarea.style.height = textarea.scrollHeight + 'px';
-    };
-    textarea.addEventListener('input', adjustHeight);
-    adjustHeight();
-  }
+    // --- Auto resize de la textarea selon contenu ---
+    function enableTextareaAutoResize() {
+      const textarea = document.querySelector('#page-interaction textarea');
+      if (!textarea) return;
+      const adjustHeight = () => {
+        textarea.style.height = 'auto';
+        textarea.style.height = textarea.scrollHeight + 'px';
+      };
+      textarea.addEventListener('input', adjustHeight);
+      adjustHeight();
+    }
 
-  // --- Gestion du passage de page 1 vers page 2 ---
-  function goToPageInteraction() {
-    document.getElementById("page-repos").classList.remove("active");
-    document.getElementById("page-interaction").classList.add("active");
-    typeWriterInteraction();
-    enableTextareaAutoResize();
-  }
+    // --- Gestion du passage de page 1 vers page 2 ---
+    function goToPageInteraction() {
+      document.getElementById("page-repos").classList.remove("active");
+      document.getElementById("page-interaction").classList.add("active");
+      typeWriterInteraction();
+      enableTextareaAutoResize();
+    }
 
-  // --- Événement click bouton envoyer ---
-  const sendButton = document.getElementById("send-button");
-  const textarea = document.querySelector('#page-interaction textarea');
+    
+const sendButton = document.getElementById("send-button");
+const textarea = document.querySelector('#page-interaction textarea');
 
-  function handleUserMessage() {
-    const message = textarea.value.trim();
-    if (!message) return;
-    // Suppression du passage automatique à la page 3 ici
-    // Le passage vers la page 3 devra être géré par backend ou autre logique
-  }
+if (sendButton && textarea) {
+ function handleUserMessage() {
+  const message = textarea.value.trim();
+  if (!message) return;
+
+  console.log("[JS] ✉️ Envoi de la question au serveur Flask :", message);
+
+  fetch("http://192.168.252.143:5000", {  
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ message: message })
+  })
+  .then(response => response.json())
+  .then(data => {
+    console.log("[JS] ✅ Réponse du serveur Flask :", data);
+
+    if (data.status === "ok") {
+      // Jouer l'audio reçu en base64
+      if (data.audio) {
+        const audioBytes = Uint8Array.from(atob(data.audio), c => c.charCodeAt(0));
+        const blob = new Blob([audioBytes], { type: 'audio/wav' });
+        const audioUrl = URL.createObjectURL(blob);
+        const audio = new Audio(audioUrl);
+        audio.play().catch(e => console.warn("Erreur lecture audio :", e));
+      }
+
+      // Masquer les autres pages, afficher page-aboya
+      document.querySelectorAll('.page').forEach(p => p.classList.remove("active"));
+      document.getElementById("page-aboya").classList.add("active");
+
+      // Lancer l'animation texte fixe "N'BOTUMBO PARLE"
+      startAboyaMagicTyping();
+
+    } else {
+      console.error("[JS] ❌ Erreur dans la réponse Flask :", data.error || "Réponse inattendue");
+    }
+  })
+  .catch(error => {
+    console.error("[JS] ❌ Erreur de connexion au serveur Flask :", error);
+  });
+}
+
 
   sendButton.addEventListener("click", handleUserMessage);
 
-  // Envoi aussi avec la touche Entrée sans saut de ligne
-  textarea.addEventListener('keypress', function(e) {
-    if (e.key === 'Enter') {
+  textarea.addEventListener("keypress", function (e) {
+    if (e.key === "Enter") {
       e.preventDefault();
       handleUserMessage();
     }
   });
+}
 
-  // --- VIDEO ---
-  const video = document.getElementById("video-danse");
-  video.loop = false;
+    // --- VIDEO ---
+    const video = document.getElementById("video-danse");
+    if (video) {
+      video.loop = false;
 
-  video.addEventListener("play", () => {
-    stopCarousel();
-  });
-
-  video.addEventListener("ended", () => {
-    stopCarousel();
-    stopSectionSwitcher();
-    goToPageRepos();
-  });
-
-  // --- PAGE 4 : CAROUSEL MASQUES ---
-  const carouselContainer = document.getElementById("carousel-masques");
-  const slides = carouselContainer ? carouselContainer.querySelectorAll("img") : [];
-  let currentSlide = 0;
-  let carouselInterval;
-
-  function nextSlide() {
-    slides[currentSlide].classList.remove("active");
-    currentSlide = (currentSlide + 1) % slides.length;
-    slides[currentSlide].classList.add("active");
-  }
-
-  function startCarousel() {
-    if (carouselInterval) clearInterval(carouselInterval);
-    carouselInterval = setInterval(nextSlide, 3000);
-  }
-
-  function stopCarousel() {
-    if (carouselInterval) clearInterval(carouselInterval);
-  }
-
-  // --- SWITCHER ENTRE LES DEUX SECTIONS MEDIA ---
-  const sections = [
-    document.getElementById("cadre_medias_masques"),
-    document.getElementById("cadre_medias_danse")
-  ];
-  let currentIndex = 0;
-  let switcherInterval;
-
-  function switchSection() {
-    sections[currentIndex].style.display = "none";
-    currentIndex = (currentIndex + 1) % sections.length;
-    sections[currentIndex].style.display = "flex";
-
-    if (currentIndex === 0) {
-      startCarousel();
-
-      // Pause la vidéo si elle est lancée
-      if (!video.paused && !video.ended) {
-        video.pause();
-      }
-      video.currentTime = 0;
-    } else {
-      stopCarousel();
-
-      // Lance la vidéo, sans erreur si impossible
-      video.play().catch((error) => {
-        console.warn("Erreur lors du lancement de la vidéo :", error);
+      video.addEventListener("play", () => stopCarousel());
+      video.addEventListener("ended", () => {
+        stopCarousel();
+        stopSectionSwitcher();
+        goToPageRepos();
       });
     }
-  }
 
-  function startSectionSwitcher() {
-    switcherInterval = setInterval(switchSection, 60000);
-  }
+    // --- PAGE 4 : CAROUSEL MASQUES ---
+    const carouselContainer = document.getElementById("carousel-masques");
+    const slides = carouselContainer ? carouselContainer.querySelectorAll("img") : [];
+    let currentSlide = 0;
+    let carouselInterval;
 
-  function stopSectionSwitcher() {
-    if (switcherInterval) clearInterval(switcherInterval);
-  }
+    function nextSlide() {
+      slides[currentSlide].classList.remove("active");
+      currentSlide = (currentSlide + 1) % slides.length;
+      slides[currentSlide].classList.add("active");
+    }
 
-  // --- Retour à page repos (page 1) ---
-  function goToPageRepos() {
-    document.querySelectorAll('.page').forEach(p => p.classList.remove("active"));
-    document.getElementById("page-repos").classList.add("active");
-    typeWriterRepos();
-  }
+    function startCarousel() {
+      if (carouselInterval) clearInterval(carouselInterval);
+      carouselInterval = setInterval(nextSlide, 3000);
+    }
 
-  // --- THREE.JS GLB Viewer ---
-  let camera, renderer, container, scene, controls;
+    function stopCarousel() {
+      if (carouselInterval) clearInterval(carouselInterval);
+    }
 
-  function initGLBViewer() {
-    container = document.getElementById('glb-viewer');
-    scene = new THREE.Scene();
+    // --- SWITCH ENTRE LES DEUX SECTIONS MEDIA ---
+    const sections = [
+      document.getElementById("cadre_medias_masques"),
+      document.getElementById("cadre_medias_danse")
+    ];
+    let currentIndex = 0;
+    let switcherInterval;
 
-    camera = new THREE.PerspectiveCamera(50, container.clientWidth / container.clientHeight, 0.1, 1000);
-    camera.position.set(0, 1, 2.5);
+    function switchSection() {
+      if (!sections[0] || !sections[1]) return;
+      sections[currentIndex].style.display = "none";
+      currentIndex = (currentIndex + 1) % sections.length;
+      sections[currentIndex].style.display = "flex";
 
-    renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
-    renderer.setSize(container.clientWidth, container.clientHeight);
-    renderer.setClearColor(0xffffff, 1);
-    container.appendChild(renderer.domElement);
-
-    controls = new THREE.OrbitControls(camera, renderer.domElement);
-    controls.enableDamping = true;
-    controls.dampingFactor = 0.05;
-    controls.autoRotate = true;
-    controls.autoRotateSpeed = 5.0;
-
-    const loader = new THREE.GLTFLoader();
-
-    loader.load('/static/models/Statuette3D.glb', function(gltf) {
-      gltf.scene.traverse((child) => {
-        if (child.isMesh) {
-          child.material = new THREE.MeshBasicMaterial({ color: 0xF77F00 });
-          child.geometry.computeBoundingBox();
-          const box = child.geometry.boundingBox;
-          const center = new THREE.Vector3();
-          box.getCenter(center);
-          child.position.sub(center);
-          child.position.y -= 0.2;
+      if (currentIndex === 0) {
+        startCarousel();
+        if (video && !video.paused && !video.ended) {
+          video.pause();
         }
+        if (video) video.currentTime = 0;
+      } else {
+        stopCarousel();
+        if (video) {
+          video.play().catch((error) => {
+            console.warn("Erreur lors du lancement de la vidéo :", error);
+          });
+        }
+      }
+    }
+
+    function startSectionSwitcher() {
+      switcherInterval = setInterval(switchSection, 60000);
+    }
+
+    function stopSectionSwitcher() {
+      if (switcherInterval) clearInterval(switcherInterval);
+    }
+
+    // --- Retour à page repos (page 1) ---
+    function goToPageRepos() {
+      document.querySelectorAll('.page').forEach(p => p.classList.remove("active"));
+      document.getElementById("page-repos").classList.add("active");
+      typeWriterRepos();
+    }
+
+    // --- THREE.JS GLB Viewer ---
+    let camera, renderer, container, scene, controls;
+
+    function initGLBViewer() {
+      container = document.getElementById('glb-viewer');
+      if (!container) return;
+
+      scene = new THREE.Scene();
+      camera = new THREE.PerspectiveCamera(50, container.clientWidth / container.clientHeight, 0.1, 1000);
+      camera.position.set(0, 1, 2.5);
+
+      renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
+      renderer.setSize(container.clientWidth, container.clientHeight);
+      renderer.setClearColor(0xffffff, 1);
+      container.appendChild(renderer.domElement);
+
+      controls = new THREE.OrbitControls(camera, renderer.domElement);
+      controls.enableDamping = true;
+      controls.dampingFactor = 0.05;
+      controls.autoRotate = true;
+      controls.autoRotateSpeed = 5.0;
+
+      const loader = new THREE.GLTFLoader();
+      loader.load('/static/models/Statuette3D.glb', function (gltf) {
+        gltf.scene.traverse((child) => {
+          if (child.isMesh) {
+            child.material = new THREE.MeshBasicMaterial({ color: 0xF77F00 });
+            child.geometry.computeBoundingBox();
+            const box = child.geometry.boundingBox;
+            const center = new THREE.Vector3();
+            box.getCenter(center);
+            child.position.sub(center);
+            child.position.y -= 0.2;
+          }
+        });
+        scene.add(gltf.scene);
+        animate();
+      }, undefined, function (error) {
+        console.error('Erreur de chargement GLB :', error);
       });
-      scene.add(gltf.scene);
-      animate();
-    }, undefined, function(error) {
-      console.error('Erreur de chargement GLB :', error);
+
+      function animate() {
+        requestAnimationFrame(animate);
+        controls.update();
+        renderer.render(scene, camera);
+      }
+    }
+
+    // --- GESTION DU RESIZE ---
+    window.addEventListener('resize', () => {
+      if (!camera || !renderer || !container) return;
+      camera.aspect = container.clientWidth / container.clientHeight;
+      camera.updateProjectionMatrix();
+      renderer.setSize(container.clientWidth, container.clientHeight);
     });
 
-    function animate() {
-      requestAnimationFrame(animate);
-      controls.update();
-      renderer.render(scene, camera);
-    }
-  }
-
-  // --- INITIALISATION AU CHARGEMENT ---
-  window.onload = () => {
+    // --- INITIALISATION ---
     typeWriterRepos();
     initGLBViewer();
-  };
 
-  // --- GESTION DU RESIZE ---
-  window.addEventListener('resize', () => {
-    if (!camera || !renderer || !container) return;
-    camera.aspect = container.clientWidth / container.clientHeight;
-    camera.updateProjectionMatrix();
-    renderer.setSize(container.clientWidth, container.clientHeight);
-  });
+    // --- VERIFICATION DU CHANGEMENT DE PAGE CÔTÉ BACKEND ---
+    let currentPageState = "repos";
 
-  // --- VERIFICATION DU CHANGEMENT DE PAGE CÔTÉ BACKEND ---
-  let currentPageState = "repos"; // Valeur initiale
+    async function verifierPageState() {
+      try {
+        const response = await fetch('/static/page_state.txt', { cache: 'no-store' });
+        const nouvellePage = await response.text();
+        const page = nouvellePage.trim();
 
-  async function verifierPageState() {
-    try {
-      const response = await fetch('/static/page_state.txt', { cache: 'no-store' });
-      const nouvellePage = await response.text();
-      const page = nouvellePage.trim();
+        if (page !== currentPageState) {
+          currentPageState = page;
 
-      if (page !== currentPageState) {
-        currentPageState = page;
-
-        if (page === "interaction") {
-          goToPageInteraction();
-          console.log("[JS] 🌀 Passage détecté : page 1 → page 2");
-        } else {
-          // Ignorer les autres états (page 3 et 4 ne sont pas gérés ici)
-          console.log("[JS] 🌀 Changement détecté mais ignoré :", page);
+          if (page === "interaction") {
+            goToPageInteraction();
+            console.log("[JS] 🌀 Passage détecté : page 1 → page 2");
+          } else {
+            console.log("[JS] 🌀 Changement détecté mais ignoré :", page);
+          }
         }
+      } catch (err) {
+        console.error("❌ Erreur lecture page_state.txt :", err);
       }
-    } catch (err) {
-      console.error("❌ Erreur lecture page_state.txt :", err);
     }
-  }
 
-  // Vérification toutes les 2 secondes
-  setInterval(verifierPageState, 2000);
+    setInterval(verifierPageState, 2000);
+  });
 </script>
 
   

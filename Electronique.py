@@ -1,60 +1,65 @@
-# electronique.py
-
 import RPi.GPIO as GPIO
 import time
-
-# --- Configuration Générale ---
-GPIO.setwarnings(False)
-GPIO.setmode(GPIO.BCM)
 
 BROCHE_TRIG = 23
 BROCHE_ECHO = 24
 BROCHE_LED = 17
 
-DELAI_EXTINCTION_SECONDES = 2
 DISTANCE_DETECTION_CM = 9
 
 def initialiser_gpio():
+    print("[GPIO] Initialisation avec RPi.GPIO...")
+    GPIO.setmode(GPIO.BCM)
+    GPIO.setup(BROCHE_LED, GPIO.OUT)
     GPIO.setup(BROCHE_TRIG, GPIO.OUT)
     GPIO.setup(BROCHE_ECHO, GPIO.IN)
-    GPIO.output(BROCHE_TRIG, False)
+    eteindre_led()
     time.sleep(0.5)
 
-    GPIO.setup(BROCHE_LED, GPIO.OUT)
-    GPIO.output(BROCHE_LED, GPIO.LOW)
-
 def nettoyer_gpio():
+    print("[GPIO] Nettoyage RPi.GPIO...")
     GPIO.cleanup()
 
 def mesurer_distance():
+    # S'assurer que TRIG est à l'état bas
+    GPIO.output(BROCHE_TRIG, False)
+    time.sleep(0.0002)  # petit délai pour éviter des erreurs
+
+    # Déclenchement du capteur (10 µs)
     GPIO.output(BROCHE_TRIG, True)
     time.sleep(0.00001)
     GPIO.output(BROCHE_TRIG, False)
 
-    debut = time.time()
+    # Attente du signal de départ (timeout anti-boucle infinie)
+    t_start = time.time()
+    timeout_start = time.time()
     while GPIO.input(BROCHE_ECHO) == 0:
-        debut = time.time()
-        if time.time() - debut > 1:
-            return 9999.99
+        t_start = time.time()
+        if time.time() - timeout_start > 0.02:  # 20 ms timeout
+            print("[ERREUR] Timeout attente départ signal")
+            return -1
 
-    fin = time.time()
+    # Attente du retour du signal (timeout anti-boucle infinie)
+    timeout_end = time.time()
     while GPIO.input(BROCHE_ECHO) == 1:
-        fin = time.time()
-        if time.time() - fin > 1:
-            return 9999.99
+        t_end = time.time()
+        if time.time() - timeout_end > 0.02:
+            print("[ERREUR] Timeout retour signal")
+            return -1
 
-    duree = fin - debut
-    distance = round(duree * 34300 / 2, 2)
-    return distance
+    duration = t_end - t_start
+    distance_cm = duration * 17150  # (34300 cm/s) / 2 aller-retour
+    return round(distance_cm, 2)
 
 def allumer_led():
-    GPIO.output(BROCHE_LED, GPIO.HIGH)
+    GPIO.output(BROCHE_LED, True)
 
 def eteindre_led():
-    GPIO.output(BROCHE_LED, GPIO.LOW)
+    GPIO.output(BROCHE_LED, False)
 
 def personne_detectee():
-    """Renvoie True si quelqu’un est détecté à moins de DISTANCE_DETECTION_CM"""
     distance = mesurer_distance()
-    print(f"Distance mesurée : {distance} cm")
+    if distance == -1:
+        return False
+    print(f"[CAPTEUR] Distance mesurée : {distance} cm")
     return distance < DISTANCE_DETECTION_CM

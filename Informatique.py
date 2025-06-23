@@ -1,17 +1,15 @@
-import requests
-import time
 import os
 
-URL_BASE = "http://192.168.158.231:5000"  
-
 def lancer_message_introduction():
-    texte = "Bonjour et bienvenue sur l'interface N'Botumbo. Posez-moi une question sur la culture Baoulé."
-    os.system(f'espeak -v fr "{texte}"')  # ou utiliser pyttsx3 si installé
-    print("[INFO] Message vocal lancé.")
+    fichier_intro = "message_intro.wav"
+    if os.path.exists(fichier_intro):
+        print("[INFO] Lecture du message d’introduction local.")
+        os.system(f"aplay {fichier_intro}")
+    else:
+        print(f"[WARNING] Fichier {fichier_intro} introuvable.")
 
 def changer_page(page_name):
-    """Change l'état de la page visible (repos, interaction, aboya, media...)"""
-    with open("page_state.txt", "w") as f:
+    chemin_fichier = os.path.join("static", "page_state.txt")
+    with open(chemin_fichier, "w") as f:
         f.write(page_name)
     print(f"[INFO] Page changée : {page_name}")
-
